@@ -34,46 +34,46 @@
         <item>Bone meal  hoof meal, horn meal</item>
         <item>Cereal grains hulled</item>
         <item>Palmyra jaggery</item>
-         <item>Kajal</item>
-         <item>Childrens picture, drawing or colouring books</item>
+        <item>Kajal</item>
+        <item>Childrens picture, drawing or colouring books</item>
         <item>Human hair</item>
         <item>Services-Hotels and lodges with rent below Rs 1,000</item>
         <item>Rough precious and semi-precious stones will attract GST rate of 0.25%</item>
     </string-array>
-<string-array name="_0_products_images">
-    <item>jute.jpg</item>
-    <item>freshmeat.jpg</item>
-    <item>freshfish.jpg</item>
-    <item>chicken.jpeg</item>
-    <item>egg.jpg</item>
-    <item>raw-milk.jpg</item>
-    <item>buttermilk.png</item>
-    <item>curd.jpg</item>
-    <item>natural_honey.png</item>
-    <item>freshfruits.jpg</item>
-    <item>freshvegetables.jpg</item>
-    <item>flour.jpg</item>
-    <item>besan.jpg</item>
-    <item>bread.jpg</item>
-    <item>prasad.jpg</item>
-    <item>salt.jpg</item>
-    <item>bindi.jpg</item>
-    <item>sindoor.jpg</item>
-    <item>stamps.jpg</item>
-    <item>judicial_papers.jpg</item>
-    <item>printed-books.jpg</item>
-    <item>news_paper.png</item>
-    <item>bangle.jpg</item>
-    <item>handloom.jpg</item>
-    <item>beefbones.jpg</item>
-    <item>Cereal grains hulled.jpg</item>
-    <item>palmyra_jaggery.jpg</item>
-    <item>kajal.jpg</item>
-    <item>drawing.jpg</item>
-    <item>Human-Hair.jpg</item>
-    <item>hotel.png</item>
-    <item>rough_semi_precious_stones.jpg</item>
-</string-array>
+    <string-array name="_0_products_images">
+        <item>jute.jpg</item>
+        <item>freshmeat.jpg</item>
+        <item>freshfish.jpg</item>
+        <item>chicken.jpeg</item>
+        <item>egg.jpg</item>
+        <item>raw-milk.jpg</item>
+        <item>buttermilk.png</item>
+        <item>curd.jpg</item>
+        <item>natural_honey.png</item>
+        <item>freshfruits.jpg</item>
+        <item>freshvegetables.jpg</item>
+        <item>flour.jpg</item>
+        <item>besan.jpg</item>
+        <item>bread.jpg</item>
+        <item>prasad.jpg</item>
+        <item>salt.jpg</item>
+        <item>bindi.jpg</item>
+        <item>sindoor.jpg</item>
+        <item>stamps.jpg</item>
+        <item>judicial_papers.jpg</item>
+        <item>printed-books.jpg</item>
+        <item>news_paper.png</item>
+        <item>bangle.jpg</item>
+        <item>handloom.jpg</item>
+        <item>beefbones.jpg</item>
+        <item>Cereal grains hulled.jpg</item>
+        <item>palmyra_jaggery.jpg</item>
+        <item>kajal.jpg</item>
+        <item>drawing.jpg</item>
+        <item>Human-Hair.jpg</item>
+        <item>hotel.png</item>
+        <item>rough_semi_precious_stones.jpg</item>
+    </string-array>
     <string-array name="_5_products_names">
         <item>Fish fillet</item>
         <item>Packaged food items</item>
@@ -107,39 +107,40 @@
         <item>Small restraurants</item>
 
     </string-array>
-<string-array name="_5_products_images">
-    <item>Fish-Fillet.jpeg</item>
-    <item>packaged_food.jpg</item>
-    <item>footwear.jpg</item>
-    <item>cream.jpg</item>
-    <item>skimmedmilkpowder.jpg</item>
-    <item>brandedpaneer.jpg</item>
-    <item>frozenvegetables.jpg</item>
-    <item>coffee.jpg</item>
-    <item>tea.jpg</item>
-    <item>spices.jpg</item>
-    <item>pizzabread.jpg</item>
-    <item>rusk.jpg</item>
-    <item>sabudana.jpg</item>
-    <item>kerosene.jpg</item>
-    <item>coal.jpg</item>
-    <item>medicines.png</item>
-    <item>stent.jpg</item>
-    <item>lifeboats.jpg</item>
-    <item>cashewnut.jpg</item>
-    <item>cashewnutinshell.jpg</item>
-    <item>raisin.jpg</item>
-    <item>biogas.jpg</item>
-    <item>insulin.jpg</item>
-    <item>agarbatti.jpg</item>
-    <item>kites.jpg</item>
-    <item>postage_revenuestamps.jpg</item>
-    <item>stamp_post_marks.jpg</item>
-    <item>first_day_covers.jpg</item>
-    <item>transport_services.jpg</item>
-    <item>restraurant.png</item>
+    <string-array name="_5_products_images">
+        <item>Fish-Fillet.jpeg</item>
+        <item>packaged_food.jpg</item>
+        <item>footwear.jpg</item>
+        <item>cream.jpg</item>
+        <item>skimmedmilkpowder.jpg</item>
+        <item>brandedpaneer.jpg</item>
+        <item>frozenvegetables.jpg</item>
+        <item>coffee.jpg</item>
+        <item>tea.jpg</item>
+        <item>spices.jpg</item>
+        <item>pizzabread.jpg</item>
+        <item>rusk.jpg</item>
+        <item>sabudana.jpg</item>
+        <item>kerosene.jpg</item>
+        <item>coal.jpg</item>
+        <item>medicines.png</item>
+        <item>stent.jpg</item>
+        <item>lifeboats.jpg</item>
+        <item>cashewnut.jpg</item>
+        <item>cashewnutinshell.jpg</item>
+        <item>raisin.jpg</item>
+        <item>biogas.jpg</item>
+        <item>insulin.jpg</item>
+        <item>agarbatti.jpg</item>
+        <item>kites.jpg</item>
+        <item>postage_revenuestamps.jpg</item>
+        <item>stamp_post_marks.jpg</item>
+        <item>first_day_covers.jpg</item>
+        <item>transport_services.jpg</item>
+        <item>restraurant.png</item>
 
-</string-array>>
+    </string-array>
+    >
     <string-array name="_12_products_names">
         <item>Frozen meat products</item>
         <item>Butter</item>
