@@ -1,10 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 <ImageView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:src="@drawable/gst"
+    android:scaleType="fitCenter"
+    android:id="@+id/imageview_gst"
+    />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview_gst"
+        android:id="@+id/text_input_layout_amount"
+        >
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/editText_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview_gst"
+        android:ems="20"
+        android:hint="Amount"
+        android:inputType="numberDecimal"
+        android:drawableLeft="@drawable/ic_indian_rupee_symbol"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_applicable_gst"
+        android:text="Applicable GST Rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/text_input_layout_amount"
+        />
+    <RadioGroup
+        android:id="@+id/radio_button_grp_gst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_below="@+id/textview_applicable_gst"
+        android:layout_alignRight="@+id/button_remove_gst"
+        android:layout_alignEnd="@+id/button_remove_gst">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:id="@+id/radio_button_0"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5"
+            android:id="@+id/radio_button_5"
+
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_12"
+            android:id="@+id/radio_button_12"
+
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_18"
+            android:id="@+id/radio_button_18"
+
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_28"
+            android:id="@+id/radio_button_28"
+
+            />
+    </RadioGroup>
+<Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
+    android:id="@+id/button_add_gst"
+    android:layout_marginTop="10dp"
+    android:layout_below="@id/radio_button_grp_gst"
+    android:layout_marginLeft="20dp"
+    android:text="Add GST"
+    android:theme="@style/ZeroButton"
     />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_remove_gst"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/radio_button_grp_gst"
+        android:layout_alignParentEnd="true"
+        android:text="Remove GST"
+        android:layout_marginRight="20dp"
+        android:theme="@style/TwentyEightButton"
+        android:layout_alignParentRight="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gray"
+        android:layout_below="@id/button_add_gst"
+        android:layout_marginTop="16dp"
+        android:id="@+id/view_line1_gst_calc"
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/textview_result"
+    android:layout_marginTop="12dp"
+    android:textColor="@color/color_text_black"
+    android:layout_below="@id/view_line1_gst_calc"
+    android:text="Result:"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_result"
+        android:id="@+id/linear_layout_result"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Net Amount"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/textview_net_amt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/color_text_black"
+                android:layout_marginRight="16dp"
+                tools:text="500.00"
+                android:id="@+id/textview_net_value"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GST Amount"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/textview_gst_amt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/color_text_black"
+                android:layout_marginRight="16dp"
+                tools:text="500.00"
+                android:id="@+id/textview_gst_value"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:layout_marginTop="16dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/textview_total_amt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/color_text_black"
+                android:layout_marginRight="16dp"
+                tools:text="500.00"
+                android:id="@+id/textview_total_value"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:layout_marginTop="16dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thank you "
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            />
+    </LinearLayout>
+
 </RelativeLayout>

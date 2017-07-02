@@ -219,5 +219,6 @@
 
     </string-array>
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>
