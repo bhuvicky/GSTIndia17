@@ -3,5 +3,4 @@
     <dimen name="dimen_width_of_gallery_item">150dp</dimen>
     <dimen name="dimen_height_of_gallery_item">100dp</dimen>
     <dimen name="dimen_gap_between_item">1dp</dimen>
-
 </resources>
