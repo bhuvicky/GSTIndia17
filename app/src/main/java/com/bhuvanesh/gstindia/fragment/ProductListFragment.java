@@ -37,7 +37,7 @@ import java.util.Map;
 
 public class ProductListFragment extends BaseFragment implements SearchView.OnQueryTextListener, android.support.v7.widget.SearchView.OnQueryTextListener {
 
-    private Button zeroButton,fiveButton,twelveButton,eighteenButton,twentyEightButton;
+    private Button zeroButton, fiveButton, twelveButton, eighteenButton, twentyEightButton;
     private RecyclerView productRecyclerView;
     private TextView taxTextView;
     private String gst;
@@ -55,13 +55,13 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         productListFragment.tax.put("eighteen",18);
         productListFragment.tax.put("twentyeight",28);
 
-
         return productListFragment;
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_product_list,container,false);
+        return inflater.inflate(R.layout.fragment_product_list, container, false);
     }
 
     @Override
@@ -79,7 +79,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         twentyEightButton=view.findViewById(R.id.button_twenty_eight);
         productRecyclerView=view.findViewById(R.id.recycler_view_products);
         productListAdapter=new ProductListAdapter(getContext());
-        productListAdapter.setData(data(gst));
+        productListAdapter.setData(prepareData(gst));
         taxTextView.setText(tax.get(gst)+"% GST");
         productRecyclerView.setAdapter(productListAdapter);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -87,73 +87,66 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         zeroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="zero";
-                taxTextView.setText(tax.get(gst)+"% GST");
-                productListAdapter.setData(data(gst));
+                productListAdapter.setData(prepareData("zero"));
             }
         });
         fiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="five";
-                taxTextView.setText(tax.get(gst)+"% GST");
-
-                productListAdapter.setData(data(gst));
+                productListAdapter.setData(prepareData("five"));
             }
         });
         twelveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="twelve";
-                taxTextView.setText(tax.get(gst)+"% GST");
-                productListAdapter.setData(data(gst));
+                productListAdapter.setData(prepareData("twelve"));
+            }
+        });
+
+        eighteenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                productListAdapter.setData(prepareData("eighteen"));
+            }
+        });
+
+        twentyEightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                productListAdapter.setData(prepareData("twenty_eight"));
             }
         });
 
 
     }
 
-    private List<Product> data(String gst){
-        products=new ArrayList<>();
-        switch (gst){
+    private List<Product> prepareData(String gst) {
+        switch (gst) {
             case "zero":
-                String[] namesOf0Products=getActivity().getResources().getStringArray(R.array._0_products_name);
-                String[] imagesOf0Products=getActivity().getResources().getStringArray(R.array._0_products_images);
-                for(int i=0;i<namesOf0Products.length;i++){
-                    Product product=new Product();
-                    product.productName=namesOf0Products[i];
-                    product.productImage=imagesOf0Products[i];
-                    product.gst=gst;
-                    products.add(product);
-                }
-                break;
+            return productDetails(R.array._0_products_name, R.array._0_products_images, gst);
             case "five":
-                String[] namesOf5Products=getActivity().getResources().getStringArray(R.array._5_products_names);
-                String[] imagesOf5Products=getActivity().getResources().getStringArray(R.array._5_products_images);
-                for(int i=0;i<namesOf5Products.length;i++){
-                    Product product=new Product();
-                    product.productName=namesOf5Products[i];
-                    product.productImage=imagesOf5Products[i];
-                    product.gst=gst;
-                    products.add(product);
-                }
-                break;
+            return productDetails(R.array._5_products_names, R.array._5_products_images, gst);
             case "twelve":
-                String[] namesOf12Products=getActivity().getResources().getStringArray(R.array._12_products_names);
-                String[] imagesOf12Products=getActivity().getResources().getStringArray(R.array._12_products_images);
-                for(int i=0;i<namesOf12Products.length;i++){
-                    Product product=new Product();
-                    product.productName=namesOf12Products[i];
-                    product.productImage=imagesOf12Products[i];
-                    product.gst=gst;
-                    products.add(product);
-                }
-                break;
+            return productDetails(R.array._12_products_names, R.array._12_products_images, gst);
+            case "eighteen":
+                return productDetails(R.array._18_products_names, R.array._18_products_images, gst);
+            default:
+                return productDetails(R.array._28_products_names, R.array._28_products_images, gst);
         }
+    }
 
+    private List<Product> productDetails(int arrayResIdNames, int arrayResIdImages, String gst) {
+        List<Product> products = new ArrayList<>();
+        String[] namesOf12Products = getActivity().getResources().getStringArray(arrayResIdNames);
+        String[] imagesOf12Products = getActivity().getResources().getStringArray(arrayResIdImages);
+        for (int i = 0; i < namesOf12Products.length; i++) {
+            Product product = new Product();
+            product.productName = namesOf12Products[i];
+            product.productImage = imagesOf12Products[i];
+            product.gst = gst;
+            products.add(product);
+        }
         return products;
-
-
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -197,13 +190,13 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         if(s.length()>2){
                filteredModelList=(filteredModelList.size()==0)?filter(products,s):filter(filteredModelList,s);
             if(filteredModelList.size()==0){
-                productListAdapter.setData(data(gst));
+                productListAdapter.setData(prepareData(gst));
                 Toast.makeText(getContext(),"No data found",Toast.LENGTH_LONG).show();
             }else {
                 productListAdapter.setData(filteredModelList);
             }
 
-        }else {productListAdapter.setData(data(gst));}
+        }else {productListAdapter.setData(prepareData(gst));}
         return true;
     }
     private List<Product> filter(List<Product> items, String query) {

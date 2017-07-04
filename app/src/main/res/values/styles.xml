@@ -29,6 +29,12 @@
 
     </style>
 
+    <style name="HeaderText" parent="android:Widget.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_text_black</item>
+    </style>
+
     <style name="TwentyEightButton" parent="ThemeOverlay.AppCompat.Dark">
         <item name="colorButtonNormal">@color/color_red</item>
 

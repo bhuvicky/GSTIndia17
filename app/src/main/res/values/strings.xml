@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GST India</string>
+    <string name="api_key_fabric">d8de04147a6bbc030add5baf0a387d418859b476</string>
     <string name="_0">0%</string>
     <string name="_5">5%</string>
     <string name="_12">12%</string>
@@ -13,7 +14,7 @@
         <item>Chicken</item>
         <item>Eggs</item>
         <item>Milk</item>
-        <item>Butter milk</item>
+        <item>Butter Milk</item>
         <item>Curd</item>
         <item>Natural Honey</item>
         <item>Fresh Fruits</item>
@@ -26,8 +27,8 @@
         <item>Bindi</item>
         <item>Sindoor</item>
         <item>Stamps</item>
-        <item>Judicial papers</item>
-        <item>Printed books</item>
+        <item>Judicial Papers</item>
+        <item>Printed Books</item>
         <item>Newspapers</item>
         <item>Bangles</item>
         <item>Handloom</item>
@@ -36,7 +37,7 @@
         <item>Palmyra jaggery</item>
         <item>Kajal</item>
         <item>Childrens picture, drawing or colouring books</item>
-        <item>Human hair</item>
+        <item>Human Hair</item>
         <item>Services-Hotels and lodges with rent below Rs 1,000</item>
         <item>Rough precious and semi-precious stones will attract GST rate of 0.25%</item>
     </string-array>
@@ -216,8 +217,154 @@
         <item>business_class_air_ticket.jpg</item>
         <item>fertilisers.png</item>
         <item>work_contract.jpg</item>
-
     </string-array>
+
+    <string-array name="_18_products_names">
+        <item>Aluminum Foil</item>
+        <item>Bamboo Furniture</item>
+        <item>Biscuits</item>
+        <item>Cameras</item>
+        <item>CCTV</item>
+        <item>Corn-Flakes</item>
+        <item>Electrical Transformer</item>
+        <item>Envelopes</item>
+        <item>Footwear</item>
+        <item>Hat</item>
+        <item>Helmets</item>
+        <item>Ice Cream</item>
+        <item>Instant Food Mixes</item>
+        <item>Jams</item>
+        <item>Kajal Pencil Stick</item>
+        <item>Mayonnaise</item>
+        <item>Mineral Water</item>
+        <item>Mixed Condiments</item>
+        <item>Monitors</item>
+        <item>Notebooks</item>
+        <item>Optical Fiber</item>
+        <item>Pasta</item>
+        <item>Pastries and Cakes</item>
+        <item>Preserved Vegetables</item>
+        <item>Printed Circuits</item>
+        <item>Printers [other than multifunction printers]</item>
+        <item>Refined Sugar</item>
+        <item>Salad Dressings</item>
+        <item>Sauces</item>
+        <item>Soups</item>
+        <item>Speakers</item>
+        <item>Steel Products</item>
+        <item>Swimming and Padding Pool</item>
+        <item>Tampons</item>
+        <item>Tissues</item>
+        <item>Weighing Machinery [other than electric or electronic weighing machinery]</item>
+        <item>AC Hotel</item>
+        <item>Branded Graments</item>
+        <item>Financial Services</item>
+        <item>Hotel Room Rs.2500 - Rs.7500</item>
+        <item>Telecom Services</item>
+    </string-array>
+
+    <string-array name="_18_products_images">
+        <item>Aluminum Foil.png</item>
+        <item>bamboo furniture.png</item>
+        <item>biscuits.png</item>
+        <item>cameras.png</item>
+        <item>cctv.jpg</item>
+        <item>Corn-Flakes.jpg</item>
+        <item>curry paste.png</item>
+        <item>electrical transformer.png</item>
+        <item>envelopes.png</item>
+        <item>footwear.png</item>
+        <item>headgear (cap).png</item>
+        <item>helmets.png</item>
+        <item>Ice Cream.png</item>
+        <item>instant food mixes.png</item>
+        <item>jams.png</item>
+        <item>kajal pencil stick.png</item>
+        <item>mayonnaise.png</item>
+        <item>mineral water.png</item>
+        <item>mixed condiments.jpg</item>
+        <item>monitors.png</item>
+        <item>notebooks.png</item>
+        <item>optical fiber.png</item>
+        <item>PASTA_.png</item>
+        <item>pastries and cakes.png</item>
+        <item>preserved vegetables.png</item>
+        <item>printed_circuits.png</item>
+        <item>Printers [other than multifunction printers].png</item>
+        <item>refined sugar.png</item>
+        <item>salad dressings.png</item>
+        <item>sauces.png</item>
+        <item>soups.png</item>
+        <item>speakers.png</item>
+        <item>steel products.png</item>
+        <item>swimming and padding pool.jpg</item>
+        <item>tampons.png</item>
+        <item>tissues.png</item>
+        <item>Weighing Machinery [other than electric or electronic weighing machinery].png</item>
+        <item>ac hotel.png</item>
+        <item>branded graments.png</item>
+        <item>financialservices.jpg</item>
+        <item>hotel room 2500 - 7500.png</item>
+        <item>telecom services.png</item>
+    </string-array>
+
+    <string-array name="_28_products_names">
+        <item>After Shave</item>
+        <item>ATM</item>
+        <item>Beedi</item>
+        <item>Ceramic Tiles</item>
+        <item>Chewing Gum</item>
+        <item>Chocolate</item>
+        <item>Deodrants</item>
+        <item>Dish Washer</item>
+        <item>Dye</item>
+        <item>Molasses</item>
+        <item>Motor-Cycle</item>
+        <item>Paan Masala</item>
+        <item>Paint</item>
+        <item>Shaving Creams</item>
+        <item>Shavers</item>
+        <item>Sunscreen</item>
+        <item>Vacum Cleaner</item>
+        <item>Vending Machine</item>
+        <item>Waffles and Wafers</item>
+        <item>Washing Machine</item>
+        <item>Water Heater</item>
+        <item>Weighing Machine</item>
+        <item>Cinema Ticket above 100</item>
+        <item>Lottery</item>
+        <item>Race Club betting</item>
+    </string-array>
+
+    <string-array name="_28_products_images">
+        <item>after shave.png</item>
+        <item>atm.jpg</item>
+        <item>beedi.png</item>
+        <item>ceramic tiles.png</item>
+        <item>chewing gum.png</item>
+        <item>chocolate.png</item>
+        <item>deodrants.png</item>
+        <item>dishwasher.png</item>
+        <item>dye.png</item>
+        <item>hair shampoo.jpg</item>
+        <item>molasses.png</item>
+        <item>motorcycle.png</item>
+        <item>paan masala.png</item>
+        <item>paint.png</item>
+        <item>saving creams.png</item>
+        <item>shavers.png</item>
+        <item>sunscreen.png</item>
+        <item>vaccum_cleaner.png</item>
+        <item>vending machine.png</item>
+        <item>waffles and wafers.png</item>
+        <item>washing-machine.png</item>
+        <item>water heater.png</item>
+        <item>weighing machine.png</item>
+        <item>cinema ticket above 100.png</item>
+        <item>lottery.png</item>
+        <item>race club betting.jpg</item>
+    </string-array>
+
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_search">search</string>
