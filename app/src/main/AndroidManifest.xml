@@ -12,12 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashScreenActivity"></activity>
+        <activity android:name=".activity.SplashScreenActivity">
+
+        </activity>
 
         <activity android:name=".activity.GstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,6 +26,5 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="d8de04147a6bbc030add5baf0a387d418859b476" />
-
     </application>
 </manifest>
