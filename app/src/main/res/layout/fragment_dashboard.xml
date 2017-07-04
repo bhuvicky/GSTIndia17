@@ -45,7 +45,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_centerHorizontal="true"
-            android:text="GST Rules"
+            android:text="Life after July 1"
             android:layout_below="@id/textview_calculator"
             android:drawablePadding="3dp"
             android:drawableLeft="@drawable/ic_action_ic_verified_user_black_48dp_1"

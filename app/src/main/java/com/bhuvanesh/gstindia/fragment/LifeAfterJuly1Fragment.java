@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.adapter.LifeAfterJuly1Adapter;
@@ -30,7 +31,7 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_bill_feed, container, false);
+        View view = inflater.inflate(R.layout.fragment_life_after_july1, container, false);
 
         RecyclerView recyclerViewAfterJuly1 = view.findViewById(R.id.recyclerview_life_after_july1);
         recyclerViewAfterJuly1.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -44,5 +45,14 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
         recyclerViewAfterJuly1.setAdapter(adapter);
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
+        ((BaseActivity)getActivity()).setBackEnabled(true);
+        ((BaseActivity)getActivity()).setTitle("Life after July 1");
+
     }
 }
