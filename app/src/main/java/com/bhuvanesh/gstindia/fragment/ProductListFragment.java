@@ -53,7 +53,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         productListFragment.tax.put("five",5);
         productListFragment.tax.put("twelve",12);
         productListFragment.tax.put("eighteen",18);
-        productListFragment.tax.put("twentyeight",28);
+        productListFragment.tax.put("twenty_eight",28);
 
         return productListFragment;
     }
@@ -80,25 +80,32 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         productRecyclerView=view.findViewById(R.id.recycler_view_products);
         productListAdapter=new ProductListAdapter(getContext());
         productListAdapter.setData(prepareData(gst));
-        taxTextView.setText(tax.get(gst)+"% GST");
+        taxTextView.setText(getTitle(gst));
         productRecyclerView.setAdapter(productListAdapter);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         zeroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gst="zero";
+                taxTextView.setText(getTitle(gst));
+
                 productListAdapter.setData(prepareData("zero"));
             }
         });
         fiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gst="five";
+                taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("five"));
             }
         });
         twelveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gst="twelve";
+                taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("twelve"));
             }
         });
@@ -106,6 +113,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         eighteenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gst="eighteen";
+                taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("eighteen"));
             }
         });
@@ -113,13 +122,17 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         twentyEightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gst="twenty_eight";
+                taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("twenty_eight"));
             }
         });
 
 
     }
-
+    private String getTitle(String gs){
+      return   tax.get(gs)+"% GST";
+    }
     private List<Product> prepareData(String gst) {
         switch (gst) {
             case "zero":
@@ -136,7 +149,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     }
 
     private List<Product> productDetails(int arrayResIdNames, int arrayResIdImages, String gst) {
-        List<Product> products = new ArrayList<>();
+        products = new ArrayList<>();
         String[] namesOf12Products = getActivity().getResources().getStringArray(arrayResIdNames);
         String[] imagesOf12Products = getActivity().getResources().getStringArray(arrayResIdImages);
         for (int i = 0; i < namesOf12Products.length; i++) {
@@ -152,7 +165,6 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu,menu);
-        final MenuItem item = menu.findItem(R.id.action_search);
         SearchManager searchManager =
                 (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         android.support.v7.widget.SearchView searchView =
