@@ -1,0 +1,563 @@
+{
+   "costlier":[
+      {
+         "item":"Agarbatti",
+         "bgst":"0",
+         "agst":"5"
+      },
+      {
+         "item":"Preserved Vegtable",
+         "bgst":"0",
+         "agst":"18"
+      },
+      {
+         "item":"Butter,ghee,Cheese",
+         "bgst":"6",
+         "agst":"12"
+      },
+      {
+         "item":"Frozen meat",
+         "bgst":"6",
+         "agst":"12"
+      },
+      {
+         "item":"Dry Fruit",
+         "bgst":"6",
+         "agst":"12"
+      },
+      {
+         "item":"Branded paneer",
+         "bgst":"0",
+         "agst":"5"
+      },
+      {
+         "item":"Branded cereals",
+         "bgst":"0",
+         "agst":"5"
+      },
+      {
+         "item":"Coca butter, oils chocolates",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Instant ,aroma coffee",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Coffee concentrates, custard powder",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Protein concentrates,Sugar syrups",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Razors",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Dental floss",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Toothpaste",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Deodorants",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"After shave",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Shaving cream",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"cell phones",
+         "bgst":"6",
+         "agst":"18"
+      },
+      {
+         "item":"Leather bags",
+         "bgst":"6",
+         "agst":"28"
+      },
+      {
+         "item":"Yachts",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Air Conditioners",
+         "bgst":"6",
+         "agst":"28"
+      },
+      {
+         "item":"Refrigerators",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Storage Water Heater",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Dish washing machines",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Dish washing machines",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Photocopier,dax machines",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Wristwatches",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Furniture",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Video game consoles",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Exercise equipment",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Perfumes",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Manicure,pedicure sets",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Beauty or makeup preparations",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Skincare items including sunscreen",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Shampoos,hair cream,hair dyes",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"wings,false beards,eyelashes",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Stoves",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Electrical hot plates",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Wallpaper",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Paints and varnishes",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Putty, wall fillings",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Plaster",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Ceramic tiles",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Tempered glass",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Fly ash bricks",
+         "bgst":"6",
+         "agst":"12"
+      },
+      {
+         "item":"Rubber tyres",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Plastic products",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Calcerous stone",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Artists',students' or signboard colours",
+         "bgst":"18.5",
+         "agst":"28"
+      },
+      {
+         "item":"Pianos",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Revolvers",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Artificial Flowers",
+         "bgst":"26",
+         "agst":"28"
+      },
+      {
+         "item":"Telecom",
+         "bgst":"15",
+         "agst":"18"
+      },
+      {
+         "item":"Five star restaurants",
+         "bgst":"18",
+         "agst":"28"
+      }
+   ],
+   "cheaper":[
+      {
+         "item":"Aluminium Foil",
+         "bgst":"18.5",
+         "agst":"18"
+      },
+      {
+         "item":"Soyabean,groundnut,sunn flower seeds",
+         "bgst":"6",
+         "agst":"5"
+      },
+      {
+         "item":"Cofee,tea",
+         "bgst":"6",
+         "agst":"5"
+      },
+      {
+         "item":"Frozen vegetable",
+         "bgst":"6",
+         "agst":"5"
+      },
+      {
+         "item":"Condensed mik",
+         "bgst":"18.5",
+         "agst":"18"
+      },
+      {
+         "item":"Toilet paper",
+         "bgst":"18.5",
+         "agst":"18"
+      },
+      {
+         "item":"Hot water bottles",
+         "bgst":"18.5",
+         "agst":"18"
+      },
+      {
+         "item":"Petroleum jelly,paraffin wax",
+         "bgst":"20",
+         "agst":"18"
+      },
+      {
+         "item":"Pencil sharpeners,Knives",
+         "bgst":"18.5",
+         "agst":"12"
+      },
+      {
+         "item":"Meat & fish preparations",
+         "bgst":"19.5",
+         "agst":"12"
+      },
+      {
+         "item":"Sweetmeats",
+         "bgst":"12",
+         "agst":"5"
+      },
+      {
+         "item":"Bakery mixes,doughs,pizza bread",
+         "bgst":"12",
+         "agst":"5"
+      },
+      {
+         "item":"Vegetable fats & oils",
+         "bgst":"12",
+         "agst":"5"
+      },
+      {
+         "item":"Tea concenntrates,soups",
+         "bgst":"12",
+         "agst":"5"
+      },
+      {
+         "item":"Ice cream,instant food mixes,sharbet",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Refined sugar",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Soap",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Dentrifices-toothpaste",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Hair oil",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Handmade safety matches",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"Broomsticks",
+         "bgst":"18",
+         "agst":"5"
+      },
+      {
+         "item":"Candles",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Tooth powder",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Led Lights",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Milk beverages",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Ready to eat namkeen/bhujiya",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Beet sugar,Cane sugar",
+         "bgst":"26",
+         "agst":"12"
+      },
+      {
+         "item":"Sports goods",
+         "bgst":"18.5",
+         "agst":"12"
+      },
+      {
+         "item":"Bicycles",
+         "bgst":"18.5",
+         "agst":"12"
+      },
+      {
+         "item":"Spectacle lens",
+         "bgst":"18.5",
+         "agst":"12"
+      },
+      {
+         "item":"Whey proteins & fitness supplements",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Hats and other headgears",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Steel utensils",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"Printers",
+         "bgst":"26",
+         "agst":"18"
+      },
+      {
+         "item":"Aluminium utensils",
+         "bgst":"18.5",
+         "agst":"12"
+      },
+      {
+         "item":"LPG for domestic supply",
+         "bgst":"17",
+         "agst":"5"
+      },
+      {
+         "item":"Household copper articles",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"copper utensils",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"Iron/steel/household articles",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"Iron steel/kerosene stoves",
+         "bgst":"18.5",
+         "agst":"5"
+      },
+      {
+         "item":"sand lime bricks",
+         "bgst":"6",
+         "agst":"5"
+      },
+      {
+         "item":"Work contracts",
+         "bgst":"15",
+         "agst":"12"
+      },
+      {
+         "item":"Non Ac Restaurants",
+         "bgst":"13-14",
+         "agst":"12"
+      },
+      {
+         "item":"AC,alcphol-serving restaurants",
+         "bgst":"22",
+         "agst":"18"
+      }
+   ],
+   "unchanged":[
+      {
+         "item":"Fresh Milk",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Fresh vegetables,roots &tubers",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Fresh Fruits",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Fruits & vegetables juices",
+         "bgst":"12",
+         "agst":"12"
+      },
+      {
+         "item":"Cereals",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Puffed rice,papad,bread",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Aquatic/poultry/cattle feed",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"salt",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Human blood",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Condoms/contraceptives",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Glands and other organs",
+         "bgst":"0",
+         "agst":"0"
+      },
+      {
+         "item":"Ayurvardic,unani medicaments",
+         "bgst":"12",
+         "agst":"12"
+      },
+      {
+         "item":"Homoeopathic,siddha medicaments",
+         "bgst":"12",
+         "agst":"12"
+      }
+   ]
+}

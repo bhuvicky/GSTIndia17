@@ -8,13 +8,15 @@
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:src="@drawable/gst_splash"
+    android:src="@drawable/gst"
     android:scaleType="fitXY"
     />
 
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text=""
+    android:text="One Nation . One Tax"
+
+
     />
 </FrameLayout>
