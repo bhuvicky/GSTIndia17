@@ -1,16 +1,21 @@
-package com.bhuvanesh.gstindia.activity;
+package com.bhuvanesh.gstindia.fragment;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
+import android.widget.TextView;
 
+import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
-import com.bhuvanesh.gstindia.fragment.ProductListFragment;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
@@ -30,7 +35,8 @@ import java.util.ArrayList;
 public class DashboardFragment extends BaseFragment {
 
     private PieChart pieChart;
-
+    private TextView exploreBillsTextView;
+    private TextView calculatorTextView;
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
     }
@@ -39,7 +45,8 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
+        ((BaseActivity)getActivity()).setBackEnabled(false);
+        ((BaseActivity)getActivity()).setTitle("GST India 2017");
         pieChart = view.findViewById(R.id.piechart);
         pieChart.setDescription("");
         pieChart.setUsePercentValues(true);
@@ -53,6 +60,27 @@ public class DashboardFragment extends BaseFragment {
         createDataSet();
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        exploreBillsTextView=view.findViewById(R.id.textview_explore_bill);
+        exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replace(R.id.fragment_host,BillFeedFragment.newInstance());
+            }
+        });
+        calculatorTextView=view.findViewById(R.id.textview_calculator);
+        calculatorTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replace(R.id.fragment_host, GSTCalcFragment.newInstance());
+            }
+        });
+
+
     }
 
     private void createDataSet() {
@@ -96,11 +124,19 @@ public class DashboardFragment extends BaseFragment {
                     return;
                 switch (e.getXIndex()) {
                     case 0:
+                        replace(R.id.fragment_host, ProductListFragment.newInstance("zero"));
+                        break;
                     case 1:
+                        replace(R.id.fragment_host, ProductListFragment.newInstance("five"));
+                        break;
                     case 2:
+                        replace(R.id.fragment_host, ProductListFragment.newInstance("twelve"));
+                        break;
                     case 3:
+                        replace(R.id.fragment_host, ProductListFragment.newInstance("eighteen"));
+                        break;
                     case 4:
-                        replace(R.id.fragment_host, ProductListFragment.newInstance(""));
+                        replace(R.id.fragment_host, ProductListFragment.newInstance("twentyeight"));
                         break;
                 }
             }
@@ -124,4 +160,7 @@ public class DashboardFragment extends BaseFragment {
         // update pie chart
         pieChart.invalidate();
     }
+
+
+
 }

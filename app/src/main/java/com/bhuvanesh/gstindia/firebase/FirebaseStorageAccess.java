@@ -37,7 +37,7 @@ public class FirebaseStorageAccess {
     }
     public UploadTask uploadPhoto(Uri photoUrl){
         // Create a storage reference from our app
-        StorageReference storageRef = firebaseStorage.getReferenceFromUrl("gs://talent-hive.appspot.com");
+        StorageReference storageRef = firebaseStorage.getReferenceFromUrl("gs://gst-india-20cc9.appspot.com");
         String fileName="photo"+System.currentTimeMillis()+".jpg";
         StorageReference invoiceRef = storageRef.child("invoice");
         StorageReference photoRef = invoiceRef.child(fileName);

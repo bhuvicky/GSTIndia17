@@ -1,10 +1,10 @@
 package com.bhuvanesh.gstindia.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.fragment.DashboardFragment;
 
 public class GstActivity extends BaseActivity {
 
@@ -17,4 +17,5 @@ public class GstActivity extends BaseActivity {
 
         replace(R.id.fragment_host, DashboardFragment.newInstance());
     }
+
 }

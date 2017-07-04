@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -14,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
 
@@ -39,6 +41,10 @@ public class GSTCalcFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((BaseActivity)getActivity()).setBackEnabled(true);
+        ((BaseActivity)getActivity()).setTitle("GST Calculator");
+        setHasOptionsMenu(true);
+
         gstRadioGroup=view.findViewById(R.id.radio_button_grp_gst);
         addGSTButton=view.findViewById(R.id.button_add_gst);
         removeGSTButton=view.findViewById(R.id.button_remove_gst);
@@ -134,5 +140,15 @@ public class GSTCalcFragment extends BaseFragment {
                 }
             }
         });
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                pop();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

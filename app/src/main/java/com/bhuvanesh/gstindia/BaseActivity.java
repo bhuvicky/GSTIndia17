@@ -30,9 +30,9 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected void setBackEnabled() {
+    public void setBackEnabled(boolean enable) {
         if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(enable);
     }
 
     public void replace(int containerId, BaseFragment fragment) {

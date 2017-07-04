@@ -49,6 +49,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                 .using(new FirebaseImageLoader())
                 .load(storageReference)
                 .into(holder.productNImageView);
+
     }
 
     @Override

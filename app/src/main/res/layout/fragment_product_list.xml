@@ -51,6 +51,16 @@
                 android:theme="@style/TwentyEightButton"
                 />
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_tax"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="8dp"
+        />
 <android.support.v7.widget.RecyclerView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

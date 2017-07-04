@@ -6,4 +6,5 @@ package com.bhuvanesh.gstindia.model;
 
 public class Bill {
     public String billUrl;
+    public long time;
 }

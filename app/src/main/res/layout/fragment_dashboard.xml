@@ -8,50 +8,34 @@
         android:id="@+id/piechart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentTop="true"
+        />
 
-    <LinearLayout
-        android:id="@+id/llayout1"
+
+
+    <RelativeLayout
+        android:id="@+id/rlayout1"
+        android:layout_below="@id/piechart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/piechart"
-        android:layout_margin="32dp">
-
+        android:layout_marginTop="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <TextView
             android:id="@+id/textview_calculator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Calculator"/>
+            android:layout_marginLeft="16dp"
+            android:text="Calculator"
+            android:textStyle="bold"
 
-        <TextView
-            android:id="@+id/textview_cheaper_costlier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:text="Cheaper / Costlier items"/>
+            android:drawablePadding="3dp"
+            android:drawableLeft="@drawable/ic_action_icons8_calculator_26"
+            />
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/llayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/llayout1"
-        android:layout_margin="32dp">
-
-        <TextView
-            android:id="@+id/textview_faq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="FAQ"/>
 
         <TextView
             android:id="@+id/textview_rules"
@@ -59,9 +43,60 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:text="Rules After GST"/>
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="GST Rules"
+            android:layout_below="@id/textview_calculator"
+            android:drawablePadding="3dp"
+            android:drawableLeft="@drawable/ic_action_ic_verified_user_black_48dp_1"
+            android:textStyle="bold"
 
-    </LinearLayout>
+            />
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/textview_explore_bill"
+             android:text="Explore Bill"
+             android:textStyle="bold"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="16dp"
+             android:drawableLeft="@drawable/ic_action_ic_receipt_black_48dp"
+             />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/llayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlayout1"
+
+        android:layout_marginTop="36dp"
+        >
+        <TextView
+            android:id="@+id/textview_faq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_icons8_question_26"
+            android:drawablePadding="3dp"
+            android:layout_marginLeft="16dp"
+            android:text="FAQ"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:id="@+id/textview_cheaper_costlier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:drawableRight="@drawable/ic_action_ic_arrow_drop_down_black_48dp"
+            android:drawableLeft="@drawable/ic_action_ic_arrow_drop_up_black_48dp"
+            android:text="Costlier/Cheaper"
+            android:textStyle="bold"
+
+            />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
