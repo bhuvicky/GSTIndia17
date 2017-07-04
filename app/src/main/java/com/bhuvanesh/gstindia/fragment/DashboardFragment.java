@@ -10,12 +10,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.fragment.LifeAfterJuly1Fragment;
+import com.bhuvanesh.gstindia.fragment.ProductListFragment;
+import com.bhuvanesh.gstindia.model.LifeAfterJuly1;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
@@ -47,6 +51,14 @@ public class DashboardFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ((BaseActivity)getActivity()).setBackEnabled(false);
         ((BaseActivity)getActivity()).setTitle("GST India 2017");
+
+        TextView textViewLifeAfterJuly1 = view.findViewById(R.id.textview_rules);
+        textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replace(R.id.fragment_host, LifeAfterJuly1Fragment.newInstance());
+            }
+        });
         pieChart = view.findViewById(R.id.piechart);
         pieChart.setDescription("");
         pieChart.setUsePercentValues(true);
