@@ -1,0 +1,307 @@
+[
+   {
+      "categoryName":"Consumer Goods",
+      "productList":[
+         {
+            "item":"Agarbatti",
+            "bgst":"0",
+            "agst":"5"
+         },
+         {
+            "item":"Preserved Vegtable",
+            "bgst":"0",
+            "agst":"18"
+         },
+         {
+            "item":"Butter,ghee,Cheese",
+            "bgst":"6",
+            "agst":"12"
+         },
+         {
+            "item":"Frozen meat",
+            "bgst":"6",
+            "agst":"12"
+         },
+         {
+            "item":"Dry Fruit",
+            "bgst":"6",
+            "agst":"12"
+         },
+         {
+            "item":"Branded paneer",
+            "bgst":"0",
+            "agst":"5"
+         },
+         {
+            "item":"Branded cereals",
+            "bgst":"0",
+            "agst":"5"
+         },
+         {
+            "item":"Coca butter, oils chocolates",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Instant ,aroma coffee",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Coffee concentrates, custard powder",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Protein concentrates,Sugar syrups",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Razors",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Dental floss",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Toothpaste",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Deodorants",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"After shave",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Shaving cream",
+            "bgst":"26",
+            "agst":"28"
+         }
+      ]
+   },
+   {
+      "categoryName":"Lifestyle and Home",
+      "productList":[
+         {
+            "item":"cell phones",
+            "bgst":"6",
+            "agst":"18"
+         },
+         {
+            "item":"Leather bags",
+            "bgst":"6",
+            "agst":"28"
+         },
+         {
+            "item":"Yachts",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Air Conditioners",
+            "bgst":"6",
+            "agst":"28"
+         },
+         {
+            "item":"Refrigerators",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Storage Water Heater",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Dish washing machines",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Dish washing machines",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Photocopier,dax machines",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Wristwatches",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Furniture",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Video game consoles",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Exercise equipment",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Perfumes",
+            "bgst":"26",
+            "agst":"28"
+         }
+      ]
+   },
+   {
+      "categoryName":"Beauty and Personal Care",
+      "productList":[
+         {
+            "item":"Manicure,pedicure sets",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Beauty or makeup preparations",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Skincare items including sunscreen",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Shampoos,hair cream,hair dyes",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"wings,false beards,eyelashes",
+            "bgst":"26",
+            "agst":"28"
+         }
+      ]
+   },
+   {
+      "categoryName":"KitchenWare and Appliances",
+      "productList":[
+         {
+            "item":"Stoves",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Electrical hot plates",
+            "bgst":"18.5",
+            "agst":"28"
+         }
+      ]
+   },
+   {
+      "categoryName":"Construction",
+      "productList":[
+         {
+            "item":"Wallpaper",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Paints and varnishes",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Putty, wall fillings",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Plaster",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Ceramic tiles",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Tempered glass",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Fly ash bricks",
+            "bgst":"6",
+            "agst":"12"
+         }
+      ]
+   },
+   {
+      "categoryName":"Others",
+      "productList":[
+         {
+            "item":"Rubber tyres",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Plastic products",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Calcerous stone",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Artists',students' or signboard colours",
+            "bgst":"18.5",
+            "agst":"28"
+         },
+         {
+            "item":"Pianos",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Revolvers",
+            "bgst":"26",
+            "agst":"28"
+         },
+         {
+            "item":"Artificial Flowers",
+            "bgst":"26",
+            "agst":"28"
+         }
+      ]
+   },
+   {
+      "categoryName":"Services",
+      "productList":[
+         {
+            "item":"Telecom",
+            "bgst":"15",
+            "agst":"18"
+         },
+         {
+            "item":"Five star restaurants",
+            "bgst":"18",
+            "agst":"28"
+         }
+      ]
+   }
+]

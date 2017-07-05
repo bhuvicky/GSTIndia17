@@ -1,0 +1,397 @@
+[
+   {
+      "categoryName":"Consumer Goods",
+      "productList":[
+         {
+            "item":"Aluminium Foil",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Soyabean,groundnut,sunn flower seeds",
+            "bgst":"6",
+            "agst":"5"
+         },
+         {
+            "item":"Cofee,tea",
+            "bgst":"6",
+            "agst":"5"
+         },
+         {
+            "item":"Frozen vegetable",
+            "bgst":"6",
+            "agst":"5"
+         },
+         {
+            "item":"Condensed mik",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Toilet paper",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Hot water bottles",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Petroleum jelly,paraffin wax",
+            "bgst":"20",
+            "agst":"18"
+         },
+         {
+            "item":"Pencil sharpeners,Knives",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Meat & fish preparations",
+            "bgst":"19.5",
+            "agst":"12"
+         },
+         {
+            "item":"Sweetmeats",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Bakery mixes,doughs,pizza bread",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Vegetable fats & oils",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Tea concenntrates,soups",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Ice cream,instant food mixes,sharbet",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Refined sugar",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Soap",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Dentrifices-toothpaste",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Hair oil",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Handmade safety matches",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"Broomsticks",
+            "bgst":"18",
+            "agst":"5"
+         },
+         {
+            "item":"Candles",
+            "bgst":"26",
+            "agst":"12"
+         },
+         {
+            "item":"Tooth powder",
+            "bgst":"26",
+            "agst":"12"
+         },
+         {
+            "item":"Led Lights",
+            "bgst":"26",
+            "agst":"12"
+         },
+         {
+            "item":"Milk beverages",
+            "bgst":"26",
+            "agst":"12"
+         },
+         {
+            "item":"Ready to eat namkeen/bhujiya",
+            "bgst":"26",
+            "agst":"12"
+         },
+         {
+            "item":"Beet sugar,Cane sugar",
+            "bgst":"26",
+            "agst":"12"
+         }
+      ]
+   },
+   {
+      "categoryName":"Lifestyle and Home",
+      "productList":[
+         {
+            "item":"Sports goods",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Bicycles",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Spectacle lens",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Whey proteins & fitness supplements",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Hats and other headgears",
+            "bgst":"26",
+            "agst":"18"
+         },
+         {
+            "item":"Steel utensils",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"Printers",
+            "bgst":"26",
+            "agst":"18"
+         }
+      ]
+   },
+   {
+      "categoryName":"Kitchenware and Appliances",
+      "productList":[
+         {
+            "item":"Aluminium utensils",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"LPG for domestic supply",
+            "bgst":"17",
+            "agst":"5"
+         },
+         {
+            "item":"Household copper articles",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"copper utensils",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"Iron/steel/household articles",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"Iron steel/kerosene stoves",
+            "bgst":"18.5",
+            "agst":"5"
+         }
+      ]
+   },
+   {
+      "categoryName":"Construction",
+      "productList":[
+         {
+            "item":"sand lime bricks",
+            "bgst":"6",
+            "agst":"5"
+         }
+      ]
+   },
+   {
+      "categoryName":"Metals & Minerals",
+      "productList":[
+         {
+            "item":"Peat",
+            "bgst":"19.5",
+            "agst":"5"
+         },
+         {
+            "item":"All ores and concentrates",
+            "bgst":"18.5",
+            "agst":"5"
+         },
+         {
+            "item":"Kerosene",
+            "bgst":"17",
+            "agst":"5"
+         },
+         {
+            "item":"Petroleum coke,petroleum bitumen",
+            "bgst":"27.5",
+            "agst":"18"
+         },
+         {
+            "item":"Tar",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Coal",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Lignite",
+            "bgst":"12",
+            "agst":"5"
+         },
+         {
+            "item":"Copper bars ,rodes,wires",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Copper screws ,nuts,bolts",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Nickel bars,rodes,wires",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Nickel screw ,nuts,bolts",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Nickel tubes,pipes,netting",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Aluminium ingots,rods,wires",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Lead plates,sheets,strips",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Zinc goods",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Tin bars,rods",
+            "bgst":"18.5",
+            "agst":"18"
+         }
+      ]
+   },
+   {
+      "categoryName":"Consumer Good",
+      "productList":[
+         {
+            "item":"Braille typewriters",
+            "bgst":"13.5",
+            "agst":"5"
+         },
+         {
+            "item":"Animal or human blood vaccines",
+            "bgst":"6",
+            "agst":"5"
+         },
+         {
+            "item":"Sand lime bricks,fly ash bricks",
+            "bgst":"6",
+            "agst":"5"
+         },
+         {
+            "item":"Power driven water pumps",
+            "bgst":"12.5",
+            "agst":"12"
+         },
+         {
+            "item":"Helmets",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Padlocks,locks",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Fertilizers",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Tractors",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Sewing/knitting needles",
+            "bgst":"18.5",
+            "agst":"12"
+         },
+         {
+            "item":"Agriculture",
+            "bgst":"12.5",
+            "agst":"0"
+         },
+         {
+            "item":"Firewood",
+            "bgst":"18.5",
+            "agst":"18"
+         },
+         {
+            "item":"Geometry boxes",
+            "bgst":"12.5",
+            "agst":"5"
+         }
+      ]
+   },
+   {
+      "categoryName":"Consumer Good",
+      "productList":[
+         {
+            "item":"Work contracts",
+            "bgst":"15",
+            "agst":"12"
+         },
+         {
+            "item":"Non Ac Restaurants",
+            "bgst":"13-14",
+            "agst":"12"
+         },
+         {
+            "item":"AC,alcphol-serving restaurants",
+            "bgst":"22",
+            "agst":"18"
+         }
+      ]
+   }
+]

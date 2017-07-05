@@ -1,0 +1,82 @@
+[
+   {
+      "categoryName":"Dairy and Farm Products",
+      "productList":[
+         {
+            "item":"Fresh Milk",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Fresh vegetables,roots &tubers",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Fresh Fruits",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Fruits & vegetables juices",
+            "bgst":"12",
+            "agst":"12"
+         }
+      ]
+   },
+   {
+      "categoryName":"Consumer Goods",
+      "productList":[
+         {
+            "item":"Cereals",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Puffed rice,papad,bread",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Aquatic/poultry/cattle feed",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"salt",
+            "bgst":"0",
+            "agst":"0"
+         }
+      ]
+   },
+   {
+      "categoryName":"Medical Supplies",
+      "productList":[
+         {
+            "item":"Human blood",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Condoms/contraceptives",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Glands and other organs",
+            "bgst":"0",
+            "agst":"0"
+         },
+         {
+            "item":"Ayurvardic,unani medicaments",
+            "bgst":"12",
+            "agst":"12"
+         },
+         {
+            "item":"Homoeopathic,siddha medicaments",
+            "bgst":"12",
+            "agst":"12"
+         }
+      ]
+   }
+]
