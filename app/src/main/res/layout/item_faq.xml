@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textview_faq_question"
+    android:textSize="20sp"
+    android:layout_marginTop="8dp"
+    tools:text="Questions"
+    android:drawableRight="@drawable/ic_action_ic_navigate_next_black_48dp_1"
+    android:layout_marginLeft="8dp"
+    android:textStyle="bold"
+    />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gray"
+        android:layout_below="@id/textview_faq_question"
+        android:layout_marginTop="4dp"
+        />
+</RelativeLayout>

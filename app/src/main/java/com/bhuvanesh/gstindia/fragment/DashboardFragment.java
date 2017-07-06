@@ -41,6 +41,8 @@ public class DashboardFragment extends BaseFragment {
     private PieChart pieChart;
     private TextView exploreBillsTextView;
     private TextView calculatorTextView;
+    private TextView faqTextview;
+
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
     }
@@ -89,6 +91,13 @@ public class DashboardFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 replace(R.id.fragment_host, GSTCalcFragment.newInstance());
+            }
+        });
+        faqTextview=view.findViewById(R.id.textview_faq);
+        faqTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replace(R.id.fragment_host,FAQFragment.newInstance());
             }
         });
 

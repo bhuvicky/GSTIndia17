@@ -368,5 +368,239 @@
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_search">search</string>
+    <string-array name="questions" formatted="false">
+        <item>1.Why petrol and alcohol exempt ?</item>
+        <item formatted="false">2.How is GST beneficial for the country? How would it help to improve the country\'s economy?</item>
+        <item>What\'s the importance of GST bill in India?</item>
+        <item>4.What is the procedure for registration under GST?</item>
+        <item>5. Which taxes at the Centre and State level are being subsumed into GST?</item>
+        <item>6.What are CGST, SGST and IGST?</item>
+        <item>7.What exactly is the concept of destination based tax on consumption?</item>
+        <item>8.Logistics firms will be GST’s biggest unnoticeable beneficiaries why?</item>
+        <item>9.What are the taxes that GST replaces?</item>
+        <item>10.What are the finer points in the implementation of the bill?</item>
+    </string-array>
+    <string-array name="answers" formatted="false">
+              <item>"\t\tThey two are not kept out of GST by BJP or centre alone. Even states wanted them out of GST. VAT or Sales Tax on petroleum products contributes to nearly 33% of state revenues and they dont want to share it with centre, at least in initial days of GST. Once, revenue under GST stabilizes the GST council will gradually include petroleum also (may be 2–3 years after GST rollout). Centre also earns significant customs and other import duties on petroleum today and also Excise for generation of petroleum products from crude. They want to include it gradually./n"
+         "Similary for many states the revenue from state excise imposed on alcohol brings in revenue of 25 of total. Hence states do not want to bring alcohol under GST. Many politicians are also involved in Liquor business and GST wil drive more transparency. The business of ‘seconds’ will reduce drastically. There is little clarity of when will it be included in GST."</item>
+        <item>"\t\tLet's say a truck is moving stuff from Delhi to Chennai. It will pass through about 8 states. During that time, it will pay a variety of taxes - octroi, VAT, excise duties and so on. Each source of tax collection is a source of confusion, corruption and delay. By the time the truck arrives at a destination in a couple of weeks, a huge amount of cost is indirectly added to the consumer. Instead of India being a common economy, we are a patchwork of dozens of economies making growth slow, business impossible and corruption high.\n"
+"\t\tThis problem has been recognized by the developed economies and all the progressive ones - Sweden, Denmark, Germany, Switzerland, Japan - have moved to a common GST (Goods and Service Tax) to provide a one common window for tax collection. With just one place of collecting taxes, there won't be much delays and corruption. When delays and corruption reduce, economy prospers. The single place for tax collection will drastically improve amount of revenues collected [since it will be much easier to verify who didn't pay] and at the same time help businesses grow. Win-Win."
+"\t\tIndia Inc pleads with lawmakers as time runs short for tax reform\n"
+"\t\tExplained: How India will become a common market with GST\n"
+"\t\tSo, who gets to lose? All the babus and police who are in the middle and used to collecting random taxes and bribes from these businesses will lose if the taxes are streamlined. Even some businesses that are built around babu connections will lose as their competitors can grow without much political connections. The middleman is the ultimate power in India - whether it be kiranas blocking retail reforms or blocking GST through a variety of hidden tactics - and given that the consumers are sheep with no voice for themselves reforms will sleep.\n"
+"\t\tThe thing is, the issue is so straightforward that all the major political parties agree to it. However, it doesn't move. Because, all political parties depend on the middleman. Thus, they all keep making noise about it - with no real action.\n"
+"\t\tIf you really want prosperity for India, push the government to pass the bill.\n Shoutout on Twitter with the hashtag: #PassGSTBill and share this post with your social media networks."</item>
+        <item formatted="false">"\t\tGoods and services tax was introduced to put an end to multiple taxes like CST, VAT, service tax, sales tax, central sales tax which are levied on different products, starting from the source of manufacturing till it reaches to the end consumer which makes movement of goods and doing business very hard.\n"
+"\t\tAt present goods and services are taxed differently and also at many levels but after the GST the goods and services will be treated equally and multiple level taxation will be significantly reduce this will eventual lead to less corruption.\n"
+"\t\tGST will reduce complexity in taxation and help businesses. Most of the company don’t want to manufacture goods in India because of complexities in the taxes they eventually try to find some shortcuts and this often leads to more corruption\n\n"
+"Advantages of good and services tax(GST)\n"
+"1.Increase in government revenue.\n"
+"2.The cost of doing business will significantly reduce.\n"
+"3.There will be huge reduction in manufacturing cost of products.\n"
+"4.GST will remove %17 indirect tax levies.\n"
+"5.Logistics cost will see a huge dip due to less checks at state borders and no state taxes. In India a truck carrying goods move 280 km a day while compared to US’s 800 km.\n"
+"6.Many businesses create warehouses in different states due to difference in tax rates but now with GST the difference between states will vanish.\n"
+"7.It will give a boost to India which can be as much as 2% increase in growth rate.\n"
+"8.The GST Network (GSTN) is designed to capture all transaction details up to invoice level. Hence, you can’t escape the inputs or services used in providing the goods or services. Earlier traders didn’t print the invoices as it helped to reduce some burden on them but now they will not be able to that.\n"
+"GST will be monitored by both state and central government officers so there are very little chances of escaping from paying the taxes.\n\n"
+"Disadvantages of goods and services tax (GST)\n"
+"1.Tax rate for services is very high thus it will drive services cost to a new high which includes telecom, airlines and more just to say it will increase your monthly mobile bills. The proposed 18% is higher than many countries such as China, Singapore, Malaysia etc.\n"
+"2.Imported goods will come costly and will be taxed around 6%\n"
+"3.Many states mostly manufacturing states will lose a huge share of their revenue and monopoly on taxes of central government will increase.\n"
+"4.It could potentially drive up the costs in real estate by up to 8%."</item>
+ <item>"\t\tToday, registration has necessary for all business person and startups. The government providing an online process for registration through official website where you can easily register with all necessary information and documents. You need to some specific documents for new registration. Most of the firms have developed GST app for providing information related to GST India and step by step procedure for registration under GST.\n"
+"Here is the list of following documents is necessary for registration\n\n"
+"Document required for Pvt. Company\n"
+"1.PAN card of the company\n"
+"2.Registration Certificate of the company\n"
+"3.Memorandum of Association (MOA) /Articles of Association (AOA)\n"
+"4.Copy of Bank Statement\n"
+"5.Declaration to comply with the provisions\n"
+"6.Copy of Board resolution\n\n"
+"Documents necessary for Director\n"
+"1.PAN and ID proof of directors\n\n"
+"Necessary documents for Registered Office\n"
+"1.electricity bill/landline bill, water Bill copy\n"
+"2.No objection certificate of the owner\n"
+"3.Rent agreement (in case premises are rented)\n\n"
+"Required documents for Limited Liability Partnerships (LLP)\n"
+"1.PAN card of the LLP\n"
+"2.Registration Certificate of the LLP\n"
+"3.LLP Partnership agreement\n"
+"4.Copy of Bank Statement of the LLP\n"
+"5.Declaration to comply with the provisions\n"
+"6.Copy of Board resolution\n\n"
+"Designated Partner related documents\n"
+"1.PAN and ID proof of partners\n\n"
+"Documents for Registered Office\n"
+"1.Copy of electricity bill/landline bill, water Bill\n"
+"2.No objection certificate of the owner\n"
+"1.Rent agreement (in case premises are rented)\n\n"
+"Documents required for Normal Partnerships\n"
+"1.Partnership documents\n"
+"2.PAN card of the Partnership\n"
+"3.Partnership Deed\n"
+"4.Copy of Bank Statement\n"
+"5.Declaration to comply with the provisions\n"
+"6.Partner related documents\n"
+"7.PAN and ID proof of designated partners\n\n"
+"Registered Office documents\n"
+"1.Copy of electricity bill/landline bill, water Bill\n"
+"2.No objection certificate of the owner\n"
+"3.Rent agreement (in case premises are rented)\n\n"
+"Documents required for Sole proprietorship/Individual\n"
+"1.Individual documents\n"
+"2.PAN card and ID proof of the individual.\n"
+"3.Copy of Cancelled cheque or bank statement\n"
+"4.Declaration to comply with the provisions.\n"
+"5.Registered Office documents\n"
+"6.Copy of electricity bill/landline bill, water Bill\n"
+"7.No objection certificate of the owner\n"
+"8.Rent agreement (in case premises are rented)"</item>
+        <item>
+            "\t\tAt the Central level, the following taxes are being subsumed:\n"
 
+"Central Excise Duty,\n"
+"Additional Excise Duty,\n"
+"Service Tax,\n"
+"Additional Customs Duty commonly known as Countervailing Duty, and\n"
+"Special Additional Duty of Customs.\n\n"
+"At the State level, the following taxes are being subsumed:\n"
+
+"Subsuming of State Value Added Tax/Sales Tax,\n"
+"Entertainment Tax (other than the tax levied by the local bodies), Central Sales Tax (levied by the Centre and collected by the States),\n"
+"Octroi and Entry tax,\n"
+"Purchase Tax,\n"
+"Luxury tax, and\n"
+"Taxes on lottery, betting and gambling.\n"</item>
+        <item>
+"\t\tIndia is a federal democracy that is one which has clear demarcation of powers, responsibility and revenue collection between the states and the centre in its constitution. For example law and order falls under the state’s jurisdiction while the nation’s defence is the centre’s responsibility. The GST too needs to have clear provisions on what areas the centre and the state are allowed to collect revenue from taxation to prevent an overlapping.\n"
+
+"\t\tThe Central GST or CGST is the areas where the centre has the powers and State GST where the State has taxation capabilities. The IGST or Integrated GST is for movement of goods within the states of the Indian union. This will be collected by the union however will be transferred over to the states. Thus it is essential that if and when the GST comes out it is rolled over in the entire nation simultaneously.\n"
+        </item>
+        <item>
+ "\t\tThe tax would accrue to the taxing authority which"
+"has jurisdiction over the place of consumption which is"
+"also termed as place of supply"
+</item>
+        <item>
+            "\t\tWith the introduction of the Goods and Services Tax (GST) from July 1, 2017, inter-state transportation of goods would become more efficient. And among all, the logistics sector, comprising inbound and outbound segments of manufacturing and services supply chains, is likely to get the much-needed boost. Logistics companies in India are moving from traditional setups towards integration of IT and technology and this is expected to reduce the costs incurred and meet service demands."
+        </item>
+        <item>
+            "\t\tThe GST replaces numerous different indirect taxes such as:\n\n"
+
+"Central Excise Duty\n"
+"Service Tax\n"
+"Countervailing Duty\n"
+"Special Countervailing Duty\n"
+"Value Added Tax (VAT)\n"
+"Central Sales Tax (CST)\n"
+"Octroi\n"
+"Entertainment Tax\n"
+"Entry Tax\n"
+"Purchase Tax\n"
+"Luxury Tax\n"
+"Advertisement taxes\n"
+"Taxes applicable on lotteries.\n"</item>
+        <item>
+            "\t\tSeveral committees were setup to evaluate the feasibility and implementation of the GST. Some fine points which were considered are:\n\n"
+
+"\t\tThe problem of separating the taxation powers of the state and the centre which resulted in CGST and SGST.\n"
+"\t\tExemptions from the GST which currently includes Petroleum and Liquor for human consumption.\n"
+"\t\tGST will be applicable on imports too along with the Basic Customs Duty which has not been scrapped.\n"
+"\t\tThe GST will be applicable at the point of sale. In comparison the Value Added Tax is a destination based tax while excise duties are taxed at the origin.\n"
+"The workings in the implementation of IGST."
+        </item>
+    </string-array>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>
