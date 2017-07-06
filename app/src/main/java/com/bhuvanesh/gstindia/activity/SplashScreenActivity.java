@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.TransformationMethod;
 import android.util.DisplayMetrics;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
@@ -45,7 +47,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         Animation animation1 = new TranslateAnimation(metrics.widthPixels, -299,0, 0);
         animation1.setDuration(2000);
         animation1.setFillAfter(true);
-
+        Animation animation2 = new AlphaAnimation(0.2f,1f);
+        animation2.setDuration(2000);
+        animation2.setFillAfter(true);
+        ImageView splashImageView= (ImageView) findViewById(R.id.image_view_slash);
+        splashImageView.startAnimation(animation2);
         oneTextView.startAnimation(animation);
         oneTaxTextView.startAnimation(animation1);
          int secdelay=4;
