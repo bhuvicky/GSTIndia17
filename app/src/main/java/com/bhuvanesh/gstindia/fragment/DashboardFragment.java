@@ -5,21 +5,15 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
+import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
-import com.bhuvanesh.gstindia.fragment.LifeAfterJuly1Fragment;
-import com.bhuvanesh.gstindia.fragment.ProductListFragment;
-import com.bhuvanesh.gstindia.model.LifeAfterJuly1;
+import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
@@ -29,6 +23,9 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -51,8 +48,8 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        ((BaseActivity)getActivity()).setBackEnabled(false);
-        ((BaseActivity)getActivity()).setTitle("GST India 2017");
+        ((BaseActivity) getActivity()).setBackEnabled(false);
+        ((BaseActivity) getActivity()).setTitle("GST India 2017");
 
         TextView textViewLifeAfterJuly1 = view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
@@ -79,17 +76,26 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        exploreBillsTextView=view.findViewById(R.id.textview_explore_bill);
+        exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
         exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replace(R.id.fragment_host,BillFeedFragment.newInstance());
+                logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
+                        "Explore Bill", FirebaseAnalytics.Event.SELECT_CONTENT);
+                replace(R.id.fragment_host, BillFeedFragment.newInstance());
             }
         });
-        calculatorTextView=view.findViewById(R.id.textview_calculator);
+        calculatorTextView = view.findViewById(R.id.textview_calculator);
         calculatorTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                GSTApplication.getInstance().getInterstitialAdInstance().loadAd(GSTApplication.getInstance().getAdRequest());
+//                GSTApplication.getInstance().getAdRequest();
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
+                System.out.println("log is test device = " +  adRequest.isTestDevice(getActivity()));
+
+                logDashboardEvent("Dashboard Screen Content", "GST Calculator", "favourite_app_feature",
+                        "GST Calculator", FirebaseAnalytics.Event.SELECT_CONTENT);
                 replace(R.id.fragment_host, GSTCalcFragment.newInstance());
             }
         });
@@ -98,6 +104,14 @@ public class DashboardFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 replace(R.id.fragment_host,FAQFragment.newInstance());
+            }
+        });
+
+        GSTApplication.getInstance().getInterstitialAdInstance().setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                GstLoggerUtil.println("log ad loaded");
+                GSTApplication.getInstance().getInterstitialAdInstance().show();
             }
         });
 
@@ -124,16 +138,7 @@ public class DashboardFragment extends BaseFragment {
         PieData data = new PieData(xVals, dataSet);
         data.setValueFormatter(new PercentFormatter());
 
-
-        /*dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
-
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);*/
-
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
-        /*dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
-
-        dataSet.setColors(ColorTemplate.PASTEL_COLORS);*/
 
         data.setValueTextSize(13f);
         data.setValueTextColor(Color.WHITE);
@@ -145,18 +150,28 @@ public class DashboardFragment extends BaseFragment {
                     return;
                 switch (e.getXIndex()) {
                     case 0:
+                        logDashboardEvent("Dashboard Screen Content", "0% Slab", "favourite_app_feature",
+                                "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                         replace(R.id.fragment_host, ProductListFragment.newInstance("zero"));
                         break;
                     case 1:
+                        logDashboardEvent("Dashboard Screen Content", "5% Slab", "favourite_app_feature",
+                                "5% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                         replace(R.id.fragment_host, ProductListFragment.newInstance("five"));
                         break;
                     case 2:
+                        logDashboardEvent("Dashboard Screen Content", "12% Slab", "favourite_app_feature",
+                                "12% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                         replace(R.id.fragment_host, ProductListFragment.newInstance("twelve"));
                         break;
                     case 3:
+                        logDashboardEvent("Dashboard Screen Content", "18% Slab", "favourite_app_feature",
+                                "18% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                         replace(R.id.fragment_host, ProductListFragment.newInstance("eighteen"));
                         break;
                     case 4:
+                        logDashboardEvent("Dashboard Screen Content", "28% Slab", "favourite_app_feature",
+                                "28% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                         replace(R.id.fragment_host, ProductListFragment.newInstance("twentyeight"));
                         break;
                 }
@@ -181,7 +196,6 @@ public class DashboardFragment extends BaseFragment {
         // update pie chart
         pieChart.invalidate();
     }
-
 
 
 }

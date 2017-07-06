@@ -29,22 +29,24 @@ import java.util.List;
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
 
 
-    public List<Product> mProductList=new ArrayList<>();
-    public ImageLoader imageLoader= GSTApplication.getInstance().getImageLoader();
+    public List<Product> mProductList = new ArrayList<>();
+    public ImageLoader imageLoader = GSTApplication.getInstance().getImageLoader();
     private Context context;
-    public ProductListAdapter(Context context){
-        this.context=context;
+
+    public ProductListAdapter(Context context) {
+        this.context = context;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product_list,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product_list, parent, false));
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-         Product product= mProductList.get(position);
+        Product product = mProductList.get(position);
         holder.nameTextView.setText(product.productName);
-        StorageReference storageReference=new FirebaseStorageAccess(context).getUrl(product.gst+"/"+product.productImage);
+        StorageReference storageReference = new FirebaseStorageAccess(context).getUrl(product.gst + "/" + product.productImage);
         Glide.with(context)
                 .using(new FirebaseImageLoader())
                 .load(storageReference)
@@ -56,23 +58,24 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public int getItemCount() {
         return mProductList.size();
     }
+
     public void setData(List<Product> productList) {
         mProductList.clear();
         mProductList = productList;
         notifyDataSetChanged();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-     public TextView nameTextView;
-     public ImageView productNImageView;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView nameTextView;
+        public ImageView productNImageView;
 
-    public ViewHolder(View itemView) {
-        super(itemView);
-        nameTextView=itemView.findViewById(R.id.textview_name_of_product);
-        productNImageView=itemView.findViewById(R.id.imageview_product);
+        public ViewHolder(View itemView) {
+            super(itemView);
+            nameTextView = itemView.findViewById(R.id.textview_name_of_product);
+            productNImageView = itemView.findViewById(R.id.imageview_product);
 
+        }
     }
-}
 
 
 }

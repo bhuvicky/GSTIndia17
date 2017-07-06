@@ -12,19 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashScreenActivity">
+        <activity android:name=".activity.SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.GstActivity"></activity>
+
+        <activity android:name=".activity.GstActivity"
+            android:screenOrientation="portrait">
+        </activity>
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="d8de04147a6bbc030add5baf0a387d418859b476" />
-
     </application>
-
 </manifest>

@@ -25,6 +25,7 @@ import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.adapter.ProductListAdapter;
 import com.bhuvanesh.gstindia.model.Bill;
 import com.bhuvanesh.gstindia.model.Product;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,16 +45,16 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     ProductListAdapter productListAdapter;
     List<Product> products;
     List<Product> filteredModelList;
-    Map<String,Integer> tax=new HashMap<>();
+    Map<String, Integer> tax = new HashMap<>();
 
-    public static ProductListFragment newInstance(String gst){
-        ProductListFragment productListFragment=new ProductListFragment();
-        productListFragment.gst=gst;
-         productListFragment.tax.put("zero",0);
-        productListFragment.tax.put("five",5);
-        productListFragment.tax.put("twelve",12);
-        productListFragment.tax.put("eighteen",18);
-        productListFragment.tax.put("twenty_eight",28);
+    public static ProductListFragment newInstance(String gst) {
+        ProductListFragment productListFragment = new ProductListFragment();
+        productListFragment.gst = gst;
+        productListFragment.tax.put("zero", 0);
+        productListFragment.tax.put("five", 5);
+        productListFragment.tax.put("twelve", 12);
+        productListFragment.tax.put("eighteen", 18);
+        productListFragment.tax.put("twenty_eight", 28);
 
         return productListFragment;
     }
@@ -67,27 +68,33 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("Product List");
+
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        ((BaseActivity) getActivity()).setTitle("Product List");
         setHasOptionsMenu(true);
-        filteredModelList=new ArrayList<>();
-        taxTextView=view.findViewById(R.id.textview_tax);
-        zeroButton=view.findViewById(R.id.button_zero);
-        fiveButton=view.findViewById(R.id.button_five);
-        twelveButton=view.findViewById(R.id.button_twelve);
-        eighteenButton=view.findViewById(R.id.button_eighteen);
-        twentyEightButton=view.findViewById(R.id.button_twenty_eight);
-        productRecyclerView=view.findViewById(R.id.recycler_view_products);
-        productListAdapter=new ProductListAdapter(getContext());
-        productListAdapter.setData(prepareData(gst));
-        taxTextView.setText(getTitle(gst));
-        productRecyclerView.setAdapter(productListAdapter);
+
+        filteredModelList = new ArrayList<>();
+        taxTextView = view.findViewById(R.id.textview_tax);
+        zeroButton = view.findViewById(R.id.button_zero);
+        fiveButton = view.findViewById(R.id.button_five);
+        twelveButton = view.findViewById(R.id.button_twelve);
+        eighteenButton = view.findViewById(R.id.button_eighteen);
+        twentyEightButton = view.findViewById(R.id.button_twenty_eight);
+
+        productRecyclerView = view.findViewById(R.id.recycler_view_products);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        productListAdapter = new ProductListAdapter(getContext());
+        productListAdapter.setData(prepareData(gst));
+        productRecyclerView.setAdapter(productListAdapter);
+
+        taxTextView.setText(tax.get(gst) + "% GST");
+        taxTextView.setText(getTitle(gst));
+
 
         zeroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="zero";
+                gst = "zero";
                 taxTextView.setText(getTitle(gst));
 
                 productListAdapter.setData(prepareData("zero"));
@@ -96,7 +103,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         fiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="five";
+                gst = "five";
                 taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("five"));
             }
@@ -104,7 +111,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         twelveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="twelve";
+                gst = "twelve";
                 taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("twelve"));
             }
@@ -113,7 +120,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         eighteenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="eighteen";
+                gst = "eighteen";
                 taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("eighteen"));
             }
@@ -122,7 +129,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         twentyEightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gst="twenty_eight";
+                gst = "twenty_eight";
                 taxTextView.setText(getTitle(gst));
                 productListAdapter.setData(prepareData("twenty_eight"));
             }
@@ -130,20 +137,32 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
 
 
     }
-    private String getTitle(String gs){
-      return   tax.get(gs)+"% GST";
+
+    private String getTitle(String gs) {
+        return tax.get(gs) + "% GST";
     }
+
     private List<Product> prepareData(String gst) {
         switch (gst) {
             case "zero":
-            return productDetails(R.array._0_products_name, R.array._0_products_images, gst);
+                logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
+                        "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
+                return productDetails(R.array._0_products_name, R.array._0_products_images, gst);
             case "five":
-            return productDetails(R.array._5_products_names, R.array._5_products_images, gst);
+                logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
+                        "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
+                return productDetails(R.array._5_products_names, R.array._5_products_images, gst);
             case "twelve":
-            return productDetails(R.array._12_products_names, R.array._12_products_images, gst);
+                logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
+                        "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
+                return productDetails(R.array._12_products_names, R.array._12_products_images, gst);
             case "eighteen":
+                logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
+                        "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 return productDetails(R.array._18_products_names, R.array._18_products_images, gst);
             default:
+                logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
+                        "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 return productDetails(R.array._28_products_names, R.array._28_products_images, gst);
         }
     }
@@ -161,10 +180,11 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         }
         return products;
     }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu,menu);
+        inflater.inflate(R.menu.menu, menu);
         SearchManager searchManager =
                 (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         android.support.v7.widget.SearchView searchView =
@@ -176,41 +196,38 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
                 return true;
-
         }
-
         return super.onOptionsItemSelected(item);
-
     }
 
 
     @Override
     public boolean onQueryTextSubmit(String s) {
-
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String s) {
 
-        if(s.length()>2){
-               filteredModelList=(filteredModelList.size()==0)?filter(products,s):filter(filteredModelList,s);
-            if(filteredModelList.size()==0){
+        if (s.length() > 2) {
+            filteredModelList = (filteredModelList.size() == 0) ? filter(products, s) : filter(filteredModelList, s);
+            if (filteredModelList.size() == 0) {
                 productListAdapter.setData(prepareData(gst));
-                Toast.makeText(getContext(),"No data found",Toast.LENGTH_LONG).show();
-            }else {
+                Toast.makeText(getContext(), "No data found", Toast.LENGTH_LONG).show();
+            } else {
                 productListAdapter.setData(filteredModelList);
             }
 
-        }else {productListAdapter.setData(prepareData(gst));}
+        } else {
+            productListAdapter.setData(prepareData(gst));
+        }
         return true;
     }
+
     private List<Product> filter(List<Product> items, String query) {
         query = query.toLowerCase();
 

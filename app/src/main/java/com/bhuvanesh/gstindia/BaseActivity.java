@@ -81,4 +81,17 @@ public class BaseActivity extends AppCompatActivity {
             fm.popBackStack();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+        if (count <= 1) {
+            finish();
+        } else {
+            BaseFragment fragment = (BaseFragment) getSupportFragmentManager().findFragmentByTag((count - 1) + "");
+            if (fragment != null) {
+                fragment.onBackPress();
+            }
+        }
+    }
 }

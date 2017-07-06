@@ -5,4 +5,6 @@
     <dimen name="dimen_gap_between_item">1dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="dimen_adview_medium_rect_width">300dp</dimen>
+    <dimen name="dimen_adview_medium_rect_height">90dp</dimen>
 </resources>
