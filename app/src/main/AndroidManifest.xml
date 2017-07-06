@@ -25,10 +25,6 @@
             android:name="io.fabric.ApiKey"
             android:value="d8de04147a6bbc030add5baf0a387d418859b476" />
 
-        <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
