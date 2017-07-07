@@ -1,306 +1,306 @@
 [
    {
       "categoryName":"Consumer Goods",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Agarbatti",
-            "bgst":"0",
-            "agst":"5"
+            "itemName":"Agarbatti",
+            "beforeGST":"0",
+            "afterGST":"5"
          },
          {
-            "item":"Preserved Vegtable",
-            "bgst":"0",
-            "agst":"18"
+            "itemName":"Preserved Vegtable",
+            "beforeGST":"0",
+            "afterGST":"18"
          },
          {
-            "item":"Butter,ghee,Cheese",
-            "bgst":"6",
-            "agst":"12"
+            "itemName":"Butter,ghee,Cheese",
+            "beforeGST":"6",
+            "afterGST":"12"
          },
          {
-            "item":"Frozen meat",
-            "bgst":"6",
-            "agst":"12"
+            "itemName":"Frozen meat",
+            "beforeGST":"6",
+            "afterGST":"12"
          },
          {
-            "item":"Dry Fruit",
-            "bgst":"6",
-            "agst":"12"
+            "itemName":"Dry Fruit",
+            "beforeGST":"6",
+            "afterGST":"12"
          },
          {
-            "item":"Branded paneer",
-            "bgst":"0",
-            "agst":"5"
+            "itemName":"Branded paneer",
+            "beforeGST":"0",
+            "afterGST":"5"
          },
          {
-            "item":"Branded cereals",
-            "bgst":"0",
-            "agst":"5"
+            "itemName":"Branded cereals",
+            "beforeGST":"0",
+            "afterGST":"5"
          },
          {
-            "item":"Coca butter, oils chocolates",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Coca butter, oils chocolates",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Instant ,aroma coffee",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Instant ,aroma coffee",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Coffee concentrates, custard powder",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Coffee concentrates, custard powder",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Protein concentrates,Sugar syrups",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Protein concentrates,Sugar syrups",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Razors",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Razors",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Dental floss",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Dental floss",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Toothpaste",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Toothpaste",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Deodorants",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Deodorants",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"After shave",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"After shave",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Shaving cream",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Shaving cream",
+            "beforeGST":"26",
+            "afterGST":"28"
          }
       ]
    },
    {
       "categoryName":"Lifestyle and Home",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"cell phones",
-            "bgst":"6",
-            "agst":"18"
+            "itemName":"cell phones",
+            "beforeGST":"6",
+            "afterGST":"18"
          },
          {
-            "item":"Leather bags",
-            "bgst":"6",
-            "agst":"28"
+            "itemName":"Leather bags",
+            "beforeGST":"6",
+            "afterGST":"28"
          },
          {
-            "item":"Yachts",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Yachts",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Air Conditioners",
-            "bgst":"6",
-            "agst":"28"
+            "itemName":"Air Conditioners",
+            "beforeGST":"6",
+            "afterGST":"28"
          },
          {
-            "item":"Refrigerators",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Refrigerators",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Storage Water Heater",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Storage Water Heater",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Dish washing machines",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Dish washing machines",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Dish washing machines",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Dish washing machines",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Photocopier,dax machines",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Photocopier,dax machines",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Wristwatches",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Wristwatches",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Furniture",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Furniture",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Video game consoles",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Video game consoles",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Exercise equipment",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Exercise equipment",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Perfumes",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Perfumes",
+            "beforeGST":"26",
+            "afterGST":"28"
          }
       ]
    },
    {
       "categoryName":"Beauty and Personal Care",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Manicure,pedicure sets",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Manicure,pedicure sets",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Beauty or makeup preparations",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Beauty or makeup preparations",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Skincare items including sunscreen",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Skincare itemNames including sunscreen",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Shampoos,hair cream,hair dyes",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Shampoos,hair cream,hair dyes",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"wings,false beards,eyelashes",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"wings,false beards,eyelashes",
+            "beforeGST":"26",
+            "afterGST":"28"
          }
       ]
    },
    {
       "categoryName":"KitchenWare and Appliances",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Stoves",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Stoves",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Electrical hot plates",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Electrical hot plates",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          }
       ]
    },
    {
       "categoryName":"Construction",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Wallpaper",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Wallpaper",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Paints and varnishes",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Paints and varnishes",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Putty, wall fillings",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Putty, wall fillings",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Plaster",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Plaster",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Ceramic tiles",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Ceramic tiles",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Tempered glass",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Tempered glass",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Fly ash bricks",
-            "bgst":"6",
-            "agst":"12"
+            "itemName":"Fly ash bricks",
+            "beforeGST":"6",
+            "afterGST":"12"
          }
       ]
    },
    {
       "categoryName":"Others",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Rubber tyres",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Rubber tyres",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Plastic products",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Plastic products",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Calcerous stone",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Calcerous stone",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Artists',students' or signboard colours",
-            "bgst":"18.5",
-            "agst":"28"
+            "itemName":"Artists',students' or signboard colours",
+            "beforeGST":"18.5",
+            "afterGST":"28"
          },
          {
-            "item":"Pianos",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Pianos",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Revolvers",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Revolvers",
+            "beforeGST":"26",
+            "afterGST":"28"
          },
          {
-            "item":"Artificial Flowers",
-            "bgst":"26",
-            "agst":"28"
+            "itemName":"Artificial Flowers",
+            "beforeGST":"26",
+            "afterGST":"28"
          }
       ]
    },
    {
       "categoryName":"Services",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Telecom",
-            "bgst":"15",
-            "agst":"18"
+            "itemName":"Telecom",
+            "beforeGST":"15",
+            "afterGST":"18"
          },
          {
-            "item":"Five star restaurants",
-            "bgst":"18",
-            "agst":"28"
+            "itemName":"Five star restaurants",
+            "beforeGST":"18",
+            "afterGST":"28"
          }
       ]
    }

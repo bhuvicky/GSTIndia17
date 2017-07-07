@@ -1,5 +1,6 @@
 package com.bhuvanesh.gstindia;
 
+import android.content.Context;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,6 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+
+import java.io.IOException;
 
 /**
  * Created by bhuvanesh on 01-07-2017.
@@ -15,6 +23,7 @@ import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 public class BaseActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
+
 
     protected void setActionBar(int resId) {
         mToolbar = (Toolbar) findViewById(resId);

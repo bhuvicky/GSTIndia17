@@ -4,15 +4,19 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.cheapercostlierproduct.fragment.TaxComparisonViewPagerFragment;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -25,6 +29,8 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
@@ -39,7 +45,7 @@ public class DashboardFragment extends BaseFragment {
     private TextView exploreBillsTextView;
     private TextView calculatorTextView;
     private TextView faqTextview;
-
+    private InterstitialAd interstitialAd;
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
     }
@@ -50,6 +56,9 @@ public class DashboardFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ((BaseActivity) getActivity()).setBackEnabled(false);
         ((BaseActivity) getActivity()).setTitle("GST India 2017");
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+         interstitialAd=new InterstitialAd(getContext());
 
         TextView textViewLifeAfterJuly1 = view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +70,7 @@ public class DashboardFragment extends BaseFragment {
         pieChart = view.findViewById(R.id.piechart);
         pieChart.setDescription("");
         pieChart.setUsePercentValues(true);
-        pieChart.setMinimumHeight(600);
+        pieChart.setMinimumHeight(metrics.heightPixels/2);
         pieChart.setCenterText("GST");
         pieChart.setCenterTextSize(24f);
         pieChart.setCenterTextTypeface(Typeface.DEFAULT_BOLD);
@@ -76,11 +85,27 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        AdView adView=view.findViewById(R.id.adview);
+        AdRequest adRequest=new AdRequest.Builder()
+                .addTestDevice("D7485D34081F44384E25018239E6810B")
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        adView.loadAd(adRequest);
+        interstitialAd.setAdUnitId("ca-app-pub-2950380730218514/7106047184");
+        interstitialAd.loadAd(adRequest);
+        RelativeLayout relativeLayout=view.findViewById(R.id.relative_layout_dashboard);
+        Snackbar snackbar = Snackbar
+                .make(relativeLayout, "click pie chart to see items comes under respctive tax %", Snackbar.LENGTH_LONG);
+
+        snackbar.show();
+
         exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
         exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
+               logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
                         "Explore Bill", FirebaseAnalytics.Event.SELECT_CONTENT);
                 replace(R.id.fragment_host, BillFeedFragment.newInstance());
             }
@@ -89,9 +114,7 @@ public class DashboardFragment extends BaseFragment {
         calculatorTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                GSTApplication.getInstance().getInterstitialAdInstance().loadAd(GSTApplication.getInstance().getAdRequest());
-//                GSTApplication.getInstance().getAdRequest();
-                AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
+              AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
                 System.out.println("log is test device = " +  adRequest.isTestDevice(getActivity()));
 
                 logDashboardEvent("Dashboard Screen Content", "GST Calculator", "favourite_app_feature",
@@ -104,6 +127,7 @@ public class DashboardFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 replace(R.id.fragment_host,FAQFragment.newInstance());
+
             }
         });
 
@@ -112,6 +136,7 @@ public class DashboardFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 replace(R.id.fragment_host, TaxComparisonViewPagerFragment.newInstance());
+
             }
         });
 
@@ -121,6 +146,7 @@ public class DashboardFragment extends BaseFragment {
             public void onAdLoaded() {
                 GstLoggerUtil.println("log ad loaded");
                 GSTApplication.getInstance().getInterstitialAdInstance().show();
+
             }
         });
 
@@ -138,11 +164,11 @@ public class DashboardFragment extends BaseFragment {
         PieDataSet dataSet = new PieDataSet(yvalues, "");
         ArrayList<String> xVals = new ArrayList<>();
 
-        xVals.add("0% Slab");
-        xVals.add("5% Slab");
-        xVals.add("12% Slab");
-        xVals.add("18% Slab");
-        xVals.add("28% Slab");
+        xVals.add("0% Tax");
+        xVals.add("5% Tax");
+        xVals.add("12% Tax");
+        xVals.add("18% Tax");
+        xVals.add("28% Tax");
 
         PieData data = new PieData(xVals, dataSet);
         data.setValueFormatter(new PercentFormatter());
@@ -206,5 +232,9 @@ public class DashboardFragment extends BaseFragment {
         pieChart.invalidate();
     }
 
-
+    @Override
+    protected void onBackPress() {
+        super.onBackPress();
+        if (interstitialAd.isLoaded())interstitialAd.show();
+    }
 }

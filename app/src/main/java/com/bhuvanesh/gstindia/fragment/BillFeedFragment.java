@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.adapter.BillListAdapter;
 import com.bhuvanesh.gstindia.database.FirebaseRTDB;
 import com.bhuvanesh.gstindia.firebase.FirebaseStorageAccess;
@@ -28,6 +29,7 @@ import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.bhuvanesh.gstindia.utils.UIUtils;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
@@ -54,64 +56,44 @@ public class BillFeedFragment extends BaseFragment {
     private RecyclerView billRecyclerView;
     private FloatingActionButton addFab;
     private BillListAdapter billListAdapter;
-    private int noOfColumns=0;
-    private List<Bill> billList=new ArrayList<>();
+    private int noOfColumns = 0;
+    private List<Bill> billList = new ArrayList<>();
     private Query postsQuery;
     private ProgressBar paginationProgressBar;
-    public static BillFeedFragment newInstance(){
+    private InterstitialAd mInterstitialAd;
+
+    public static BillFeedFragment newInstance() {
         return new BillFeedFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_bill_feed,container,false);
+        return inflater.inflate(R.layout.fragment_bill_feed, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("Bill Explore");
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        ((BaseActivity) getActivity()).setTitle("Bill Explore");
         setHasOptionsMenu(true);
-
-        billRecyclerView=view.findViewById(R.id.recycler_view_bills);
-        paginationProgressBar=view.findViewById(R.id.progressbar);
-        addFab=view.findViewById(R.id.fab_add);
-        billListAdapter=new BillListAdapter(getContext(), new BillListAdapter.ItemClickListener() {
+        mInterstitialAd=getInterstitialAdInstance(getContext());
+        mInterstitialAd.loadAd(getAdRequest());
+        billRecyclerView = view.findViewById(R.id.recycler_view_bills);
+        paginationProgressBar = view.findViewById(R.id.progressbar);
+        addFab = view.findViewById(R.id.fab_add);
+        billListAdapter = new BillListAdapter(getContext(), new BillListAdapter.ItemClickListener() {
             @Override
             public void onClick(String url) {
-                replace(R.id.fragment_host,BillViewFragment.newInstance(url));
+                replace(R.id.fragment_host, BillViewFragment.newInstance(url));
             }
         });
         billRecyclerView.setAdapter(billListAdapter);
-        noOfColumns= UIUtils.getNumOfColumns(getActivity(),100);
-        final GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),noOfColumns);
+        noOfColumns = UIUtils.getNumOfColumns(getActivity(), 100);
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), noOfColumns);
         billRecyclerView.setLayoutManager(gridLayoutManager);
 
-//        billRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-//                super.onScrollStateChanged(recyclerView, newState);
-//            }
-//
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//                if (dy > 0) {
-//                    int firstVisibleItemPosition, totalVisibleItem, totalItemCount;
-//                    firstVisibleItemPosition = gridLayoutManager.findFirstVisibleItemPosition();
-//                    totalVisibleItem = gridLayoutManager.getChildCount();
-//                    totalItemCount = gridLayoutManager.getItemCount();
-//
-//                    if (firstVisibleItemPosition + totalVisibleItem == totalItemCount)
-//                    {
-//                        paginationProgressBar.setVisibility(View.VISIBLE);
-////                        pagination(totalItemCount);
-//                    }
-//                }
-//            }
-//        });
         addFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,12 +138,6 @@ public class BillFeedFragment extends BaseFragment {
         postsQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
-//
-//                    billList.add(postSnapshot.getValue(Bill.class));
-//                    GstLoggerUtil.debug("hh",postSnapshot.getValue().toString());
-//                }
-//                billListAdapter.setData(billList);
             }
 
             @Override
@@ -170,31 +146,12 @@ public class BillFeedFragment extends BaseFragment {
             }
         });
     }
-    public void newData(){
+
+    public void newData() {
         postsQuery = FirebaseDatabase.getInstance().getReference().child("bills")
                 .orderByKey().limitToFirst(100);
-        //postsQuery.keepSynced(true);
-    }
-//    private void pagination(int totalItemCount) {
-//        //postsQuery.startAt(billListAdapter.getTime(20)+"");
-//
-//                 FirebaseDatabase.getInstance().getReference().child("bills")
-//                .endAt(billListAdapter.getTime(0)+"").addValueEventListener(new ValueEventListener() {
-//                     @Override
-//                     public void onDataChange(DataSnapshot dataSnapshot) {
-//                         for(DataSnapshot post:dataSnapshot.getChildren()){
-//                             billListAdapter.addData(post.getValue(Bill.class));
-//                         }
-//                     }
-//
-//                     @Override
-//                     public void onCancelled(DatabaseError databaseError) {
-//
-//                     }
-//                 });
-//
-//    }
 
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -202,13 +159,13 @@ public class BillFeedFragment extends BaseFragment {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
             Uri uri = data.getData();
-            UploadTask uploadTask=new FirebaseStorageAccess(getContext()).uploadPhoto(uri);
+            UploadTask uploadTask = new FirebaseStorageAccess(getContext()).uploadPhoto(uri);
             uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    Bill bill=new Bill();
-                    bill.billUrl=task.getResult().getDownloadUrl().toString();
-                    bill.time=System.currentTimeMillis();
+                    Bill bill = new Bill();
+                    bill.billUrl = task.getResult().getDownloadUrl().toString();
+                    bill.time = System.currentTimeMillis();
                     new FirebaseRTDB().addBill(bill);
 
                 }
@@ -216,20 +173,30 @@ public class BillFeedFragment extends BaseFragment {
             uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    Toast.makeText(getContext(),"Unable to upload your Invoice",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Unable to upload your Invoice", Toast.LENGTH_SHORT).show();
                 }
             });
 
         }
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                  pop();
+                pop();
+                if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onBackPress() {
+        super.onBackPress();
+        if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+
     }
 }

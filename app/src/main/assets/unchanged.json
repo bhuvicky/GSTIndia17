@@ -1,81 +1,81 @@
 [
    {
       "categoryName":"Dairy and Farm Products",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Fresh Milk",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Fresh Milk",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Fresh vegetables,roots &tubers",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Fresh vegetables,roots &tubers",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Fresh Fruits",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Fresh Fruits",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Fruits & vegetables juices",
-            "bgst":"12",
-            "agst":"12"
+            "itemName":"Fruits & vegetables juices",
+            "beforeGST":"12",
+            "afterGST":"12"
          }
       ]
    },
    {
       "categoryName":"Consumer Goods",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Cereals",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Cereals",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Puffed rice,papad,bread",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Puffed rice,papad,bread",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Aquatic/poultry/cattle feed",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Aquatic/poultry/cattle feed",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"salt",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"salt",
+            "beforeGST":"0",
+            "afterGST":"0"
          }
       ]
    },
    {
       "categoryName":"Medical Supplies",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Human blood",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Human blood",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Condoms/contraceptives",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Condoms/contraceptives",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Glands and other organs",
-            "bgst":"0",
-            "agst":"0"
+            "itemName":"Glands and other organs",
+            "beforeGST":"0",
+            "afterGST":"0"
          },
          {
-            "item":"Ayurvardic,unani medicaments",
-            "bgst":"12",
-            "agst":"12"
+            "itemName":"Ayurvardic,unani medicaments",
+            "beforeGST":"12",
+            "afterGST":"12"
          },
          {
-            "item":"Homoeopathic,siddha medicaments",
-            "bgst":"12",
-            "agst":"12"
+            "itemName":"Homoeopathic,siddha medicaments",
+            "beforeGST":"12",
+            "afterGST":"12"
          }
       ]
    }

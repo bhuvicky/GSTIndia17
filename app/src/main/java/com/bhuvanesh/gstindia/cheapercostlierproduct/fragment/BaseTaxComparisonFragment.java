@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bhuvanesh.gstindia.BaseFragment;
+import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.cheapercostlierproduct.adapter.CategoryItemsListAdapter;
 import com.bhuvanesh.gstindia.cheapercostlierproduct.adapter.TaxComparisonViewPagerAdapter;
 import com.bhuvanesh.gstindia.model.CategoryWiseItem;
 import com.bhuvanesh.gstindia.utils.FileUtil;
+import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
@@ -44,21 +46,24 @@ public class BaseTaxComparisonFragment extends BaseFragment {
         List<CategoryWiseItem> list;
         switch (mItemCategoryType) {
             case TaxComparisonViewPagerAdapter.TAB_CHEAPER:
-                list = FileUtil.getFromAssetsFolder("cheaper.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
+                list = FileUtil.getFromAssetsFolder("cheaper.json",null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
                 break;
             case TaxComparisonViewPagerAdapter.TAB_COSTLIER:
-                list = FileUtil.getFromAssetsFolder("cheaper.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
+                list = FileUtil.getFromAssetsFolder("costlier.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
                 break;
             default:
-                list = FileUtil.getFromAssetsFolder("cheaper.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
+                list = FileUtil.getFromAssetsFolder("unchanged.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
                 break;
         }
 
         RecyclerView recyclerViewItemCategory = view.findViewById(R.id.recyclerview_item_category);
         recyclerViewItemCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        GstLoggerUtil.debug("hh",list.get(0).categoryName);
         CategoryItemsListAdapter adapter = new CategoryItemsListAdapter(getActivity());
+
         adapter.setData(list);
+
+
         recyclerViewItemCategory.setAdapter(adapter);
     }
 }

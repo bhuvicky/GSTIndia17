@@ -22,9 +22,12 @@ import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.R;
 
 import com.bhuvanesh.gstindia.BaseFragment;
+import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.adapter.ProductListAdapter;
 import com.bhuvanesh.gstindia.model.Bill;
 import com.bhuvanesh.gstindia.model.Product;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     List<Product> products;
     List<Product> filteredModelList;
     Map<String, Integer> tax = new HashMap<>();
+    private InterstitialAd mInterstitialAd;
 
     public static ProductListFragment newInstance(String gst) {
         ProductListFragment productListFragment = new ProductListFragment();
@@ -72,6 +76,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         ((BaseActivity) getActivity()).setBackEnabled(true);
         ((BaseActivity) getActivity()).setTitle("Product List");
         setHasOptionsMenu(true);
+        mInterstitialAd=getInterstitialAdInstance(getContext());
+        mInterstitialAd.loadAd(getAdRequest());
 
         filteredModelList = new ArrayList<>();
         taxTextView = view.findViewById(R.id.textview_tax);
@@ -199,6 +205,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
+                if(mInterstitialAd.isLoaded())mInterstitialAd.show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -240,4 +247,12 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         }
         return filteredModelList;
     }
+
+    @Override
+    protected void onBackPress() {
+        super.onBackPress();
+        if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+
+    }
+
 }

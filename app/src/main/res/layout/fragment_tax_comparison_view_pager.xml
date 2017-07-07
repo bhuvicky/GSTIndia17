@@ -21,20 +21,28 @@
             android:id="@+id/textview_item_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/action_search"
+            android:text="Items"
+            android:textColor="@color/color_text_black"
             android:layout_weight="0.6" />
 
         <TextView
             android:id="@+id/textview_tax_post_gst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:text="after \nGST"
+            android:textColor="@color/color_text_black"
+
+            />
 
         <TextView
             android:id="@+id/textview_tax_pre_gst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:text="before GST"
+            android:textColor="@color/color_text_black"
+            />
 
     </LinearLayout>
 

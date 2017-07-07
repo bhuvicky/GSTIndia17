@@ -96,7 +96,7 @@ public class GSTApplication extends Application {
             if (BuildConfig.REPORT_TEST_AD) {
                 System.out.println("log test device debug mode");
                 mAdRequestInstance = new AdRequest.Builder()
-                        //.addTestDevice("D7485D34081F44384E25018239E6810B")
+                        .addTestDevice("D7485D34081F44384E25018239E6810B")
                         .build();
             }
         } else {
@@ -106,7 +106,7 @@ public class GSTApplication extends Application {
     }
     public InterstitialAd getInterstitialAdInstance() {
         if (mInterstitialAdInstance == null) {
-            mInterstitialAdInstance = new InterstitialAd(this);
+            mInterstitialAdInstance = new InterstitialAd(getBaseContext());
             mInterstitialAdInstance.setAdUnitId("ca-app-pub-2950380730218514/7106047184");
         }
         return mInterstitialAdInstance;

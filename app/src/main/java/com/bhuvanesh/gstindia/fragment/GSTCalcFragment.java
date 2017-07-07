@@ -18,8 +18,10 @@ import android.widget.Toast;
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 /**
  * Created by Karthikeyan on 02-07-2017.
@@ -31,6 +33,8 @@ public class GSTCalcFragment extends BaseFragment {
     private Button addGSTButton,removeGSTButton;
     private TextView netValueTextView,gstValueTextView,totalValueTextView;
     private TextInputEditText amountEditText;
+    private InterstitialAd mInterstitialAd;
+
     public static GSTCalcFragment newInstance(){
         return new GSTCalcFragment();
     }
@@ -47,11 +51,9 @@ public class GSTCalcFragment extends BaseFragment {
         ((BaseActivity)getActivity()).setTitle("GST Calculator");
         setHasOptionsMenu(true);
         AdView adView=view.findViewById(R.id.adview);
-        AdRequest adRequest=new AdRequest.Builder()
-                .addTestDevice("D7485D34081F44384E25018239E6810B")
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-        adView.loadAd(adRequest);
+        adView.loadAd(getAdRequest());
+        mInterstitialAd=getInterstitialAdInstance(getContext());
+        mInterstitialAd.loadAd(getAdRequest());
 
         gstRadioGroup=view.findViewById(R.id.radio_button_grp_gst);
         addGSTButton=view.findViewById(R.id.button_add_gst);
@@ -154,9 +156,17 @@ public class GSTCalcFragment extends BaseFragment {
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
+                if(mInterstitialAd.isLoaded())mInterstitialAd.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onBackPress() {
+        super.onBackPress();
+        if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+
     }
 }

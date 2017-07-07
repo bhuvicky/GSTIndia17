@@ -1,396 +1,396 @@
 [
    {
       "categoryName":"Consumer Goods",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Aluminium Foil",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Aluminium Foil",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Soyabean,groundnut,sunn flower seeds",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"Soyabean,groundnut,sunn flower seeds",
+            "beforeGST":"6",
+            "afterGST":"5"
          },
          {
-            "item":"Cofee,tea",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"Cofee,tea",
+            "beforeGST":"6",
+            "afterGST":"5"
          },
          {
-            "item":"Frozen vegetable",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"Frozen vegetable",
+            "beforeGST":"6",
+            "afterGST":"5"
          },
          {
-            "item":"Condensed mik",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Condensed mik",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Toilet paper",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Toilet paper",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Hot water bottles",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Hot water bottles",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Petroleum jelly,paraffin wax",
-            "bgst":"20",
-            "agst":"18"
+            "itemName":"Petroleum jelly,paraffin wax",
+            "beforeGST":"20",
+            "afterGST":"18"
          },
          {
-            "item":"Pencil sharpeners,Knives",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Pencil sharpeners,Knives",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Meat & fish preparations",
-            "bgst":"19.5",
-            "agst":"12"
+            "itemName":"Meat & fish preparations",
+            "beforeGST":"19.5",
+            "afterGST":"12"
          },
          {
-            "item":"Sweetmeats",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Sweetmeats",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Bakery mixes,doughs,pizza bread",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Bakery mixes,doughs,pizza bread",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Vegetable fats & oils",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Vegetable fats & oils",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Tea concenntrates,soups",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Tea concenntrates,soups",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Ice cream,instant food mixes,sharbet",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Ice cream,instant food mixes,sharbet",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Refined sugar",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Refined sugar",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Soap",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Soap",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Dentrifices-toothpaste",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Dentrifices-toothpaste",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Hair oil",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Hair oil",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Handmade safety matches",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"Handmade safety matches",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"Broomsticks",
-            "bgst":"18",
-            "agst":"5"
+            "itemName":"Broomsticks",
+            "beforeGST":"18",
+            "afterGST":"5"
          },
          {
-            "item":"Candles",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Candles",
+            "beforeGST":"26",
+            "afterGST":"12"
          },
          {
-            "item":"Tooth powder",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Tooth powder",
+            "beforeGST":"26",
+            "afterGST":"12"
          },
          {
-            "item":"Led Lights",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Led Lights",
+            "beforeGST":"26",
+            "afterGST":"12"
          },
          {
-            "item":"Milk beverages",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Milk beverages",
+            "beforeGST":"26",
+            "afterGST":"12"
          },
          {
-            "item":"Ready to eat namkeen/bhujiya",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Ready to eat namkeen/bhujiya",
+            "beforeGST":"26",
+            "afterGST":"12"
          },
          {
-            "item":"Beet sugar,Cane sugar",
-            "bgst":"26",
-            "agst":"12"
+            "itemName":"Beet sugar,Cane sugar",
+            "beforeGST":"26",
+            "afterGST":"12"
          }
       ]
    },
    {
       "categoryName":"Lifestyle and Home",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Sports goods",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Sports goods",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Bicycles",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Bicycles",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Spectacle lens",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Spectacle lens",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Whey proteins & fitness supplements",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Whey proteins & fitness supplements",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Hats and other headgears",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Hats and other headgears",
+            "beforeGST":"26",
+            "afterGST":"18"
          },
          {
-            "item":"Steel utensils",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"Steel utensils",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"Printers",
-            "bgst":"26",
-            "agst":"18"
+            "itemName":"Printers",
+            "beforeGST":"26",
+            "afterGST":"18"
          }
       ]
    },
    {
       "categoryName":"Kitchenware and Appliances",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Aluminium utensils",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Aluminium utensils",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"LPG for domestic supply",
-            "bgst":"17",
-            "agst":"5"
+            "itemName":"LPG for domestic supply",
+            "beforeGST":"17",
+            "afterGST":"5"
          },
          {
-            "item":"Household copper articles",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"Household copper articles",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"copper utensils",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"copper utensils",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"Iron/steel/household articles",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"Iron/steel/household articles",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"Iron steel/kerosene stoves",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"Iron steel/kerosene stoves",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          }
       ]
    },
    {
       "categoryName":"Construction",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"sand lime bricks",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"sand lime bricks",
+            "beforeGST":"6",
+            "afterGST":"5"
          }
       ]
    },
    {
       "categoryName":"Metals & Minerals",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Peat",
-            "bgst":"19.5",
-            "agst":"5"
+            "itemName":"Peat",
+            "beforeGST":"19.5",
+            "afterGST":"5"
          },
          {
-            "item":"All ores and concentrates",
-            "bgst":"18.5",
-            "agst":"5"
+            "itemName":"All ores and concentrates",
+            "beforeGST":"18.5",
+            "afterGST":"5"
          },
          {
-            "item":"Kerosene",
-            "bgst":"17",
-            "agst":"5"
+            "itemName":"Kerosene",
+            "beforeGST":"17",
+            "afterGST":"5"
          },
          {
-            "item":"Petroleum coke,petroleum bitumen",
-            "bgst":"27.5",
-            "agst":"18"
+            "itemName":"Petroleum coke,petroleum bitumen",
+            "beforeGST":"27.5",
+            "afterGST":"18"
          },
          {
-            "item":"Tar",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Tar",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Coal",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Coal",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Lignite",
-            "bgst":"12",
-            "agst":"5"
+            "itemName":"Lignite",
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "item":"Copper bars ,rodes,wires",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Copper bars ,rodes,wires",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Copper screws ,nuts,bolts",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Copper screws ,nuts,bolts",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Nickel bars,rodes,wires",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Nickel bars,rodes,wires",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Nickel screw ,nuts,bolts",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Nickel screw ,nuts,bolts",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Nickel tubes,pipes,netting",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Nickel tubes,pipes,netting",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Aluminium ingots,rods,wires",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Aluminium ingots,rods,wires",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Lead plates,sheets,strips",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Lead plates,sheets,strips",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Zinc goods",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Zinc goods",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Tin bars,rods",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Tin bars,rods",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          }
       ]
    },
    {
       "categoryName":"Consumer Good",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Braille typewriters",
-            "bgst":"13.5",
-            "agst":"5"
+            "itemName":"Braille typewriters",
+            "beforeGST":"13.5",
+            "afterGST":"5"
          },
          {
-            "item":"Animal or human blood vaccines",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"Animal or human blood vaccines",
+            "beforeGST":"6",
+            "afterGST":"5"
          },
          {
-            "item":"Sand lime bricks,fly ash bricks",
-            "bgst":"6",
-            "agst":"5"
+            "itemName":"Sand lime bricks,fly ash bricks",
+            "beforeGST":"6",
+            "afterGST":"5"
          },
          {
-            "item":"Power driven water pumps",
-            "bgst":"12.5",
-            "agst":"12"
+            "itemName":"Power driven water pumps",
+            "beforeGST":"12.5",
+            "afterGST":"12"
          },
          {
-            "item":"Helmets",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Helmets",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Padlocks,locks",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Padlocks,locks",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Fertilizers",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Fertilizers",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Tractors",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Tractors",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Sewing/knitting needles",
-            "bgst":"18.5",
-            "agst":"12"
+            "itemName":"Sewing/knitting needles",
+            "beforeGST":"18.5",
+            "afterGST":"12"
          },
          {
-            "item":"Agriculture",
-            "bgst":"12.5",
-            "agst":"0"
+            "itemName":"Agriculture",
+            "beforeGST":"12.5",
+            "afterGST":"0"
          },
          {
-            "item":"Firewood",
-            "bgst":"18.5",
-            "agst":"18"
+            "itemName":"Firewood",
+            "beforeGST":"18.5",
+            "afterGST":"18"
          },
          {
-            "item":"Geometry boxes",
-            "bgst":"12.5",
-            "agst":"5"
+            "itemName":"Geometry boxes",
+            "beforeGST":"12.5",
+            "afterGST":"5"
          }
       ]
    },
    {
       "categoryName":"Consumer Good",
-      "productList":[
+      "taxComparedItemList":[
          {
-            "item":"Work contracts",
-            "bgst":"15",
-            "agst":"12"
+            "itemName":"Work contracts",
+            "beforeGST":"15",
+            "afterGST":"12"
          },
          {
-            "item":"Non Ac Restaurants",
-            "bgst":"13-14",
-            "agst":"12"
+            "itemName":"Non Ac Restaurants",
+            "beforeGST":"13-14",
+            "afterGST":"12"
          },
          {
-            "item":"AC,alcphol-serving restaurants",
-            "bgst":"22",
-            "agst":"18"
+            "itemName":"AC,alcphol-serving restaurants",
+            "beforeGST":"22",
+            "afterGST":"18"
          }
       ]
    }

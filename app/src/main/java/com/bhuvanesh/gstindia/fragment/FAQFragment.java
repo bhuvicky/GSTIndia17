@@ -13,7 +13,10 @@ import android.widget.TextView;
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.adapter.FAQAdapter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,8 @@ import java.util.List;
 
 public class FAQFragment extends BaseFragment {
 
+
+    private InterstitialAd mInterstitialAd;
 
     public static FAQFragment newInstance(){return new FAQFragment();}
     @Nullable
@@ -39,6 +44,9 @@ public class FAQFragment extends BaseFragment {
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("GST FAQ ?");
         setHasOptionsMenu(true);
+        mInterstitialAd=getInterstitialAdInstance(getContext());
+        mInterstitialAd.loadAd(getAdRequest());
+
         RecyclerView questionRecyclerView=view.findViewById(R.id.recycler_view_question);
         questionRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         final String[] answers=getActivity().getResources().getStringArray(R.array.answers);
@@ -63,10 +71,17 @@ public class FAQFragment extends BaseFragment {
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
+                if(mInterstitialAd.isLoaded())mInterstitialAd.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    @Override
+    protected void onBackPress() {
+        super.onBackPress();
+        if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+
     }
 
 }

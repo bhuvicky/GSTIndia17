@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.model.CategoryWiseItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItemsListAdapter.ViewHolder> {
 
-    private List<CategoryWiseItem> mCategoryWiseItem;
+    private List<CategoryWiseItem> mCategoryWiseItem=new ArrayList<>();
     private Context mContext;
 
     public CategoryItemsListAdapter(Context context) {
