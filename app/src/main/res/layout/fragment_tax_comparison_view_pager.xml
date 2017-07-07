@@ -18,6 +18,7 @@
         android:layout_marginRight="16dp">
 
         <TextView
+            style="@style/HeaderText"
             android:id="@+id/textview_item_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -25,12 +26,14 @@
             android:layout_weight="0.6" />
 
         <TextView
+            style="@style/HeaderText"
             android:id="@+id/textview_tax_post_gst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2" />
 
         <TextView
+            style="@style/HeaderText"
             android:id="@+id/textview_tax_pre_gst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
