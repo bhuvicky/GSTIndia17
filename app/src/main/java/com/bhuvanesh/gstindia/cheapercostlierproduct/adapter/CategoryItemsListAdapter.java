@@ -64,6 +64,7 @@ public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItems
 
             textViewCategoryName = itemView.findViewById(R.id.textview_category_name);
             recyclerViewItemTax = itemView.findViewById(R.id.recycler_view_single_category_items);
+            recyclerViewItemTax.setNestedScrollingEnabled(false);
             recyclerViewItemTax.setLayoutManager(new LinearLayoutManager(mContext));
         }
     }
