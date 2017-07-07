@@ -62,7 +62,7 @@ public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItems
             super(itemView);
 
             textViewCategoryName = itemView.findViewById(R.id.textview_category_name);
-            recyclerViewItemTax = itemView.findViewById(R.id.recyclerview_item_category);
+            recyclerViewItemTax = itemView.findViewById(R.id.recycler_view_single_category_items);
             recyclerViewItemTax.setLayoutManager(new LinearLayoutManager(mContext));
         }
     }
