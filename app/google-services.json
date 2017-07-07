@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "663471882725",
+    "firebase_url": "https://gst-india-20cc9.firebaseio.com",
+    "project_id": "gst-india-20cc9",
+    "storage_bucket": "gst-india-20cc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663471882725:android:5fc8f56234c79370",
+        "android_client_info": {
+          "package_name": "com.bhuvanesh.gstindia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663471882725-va191740jo99j7c0ivlusgp9bib0anfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEDDZoyyc2nVtOD2yELoq839OuG-NCR7I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
