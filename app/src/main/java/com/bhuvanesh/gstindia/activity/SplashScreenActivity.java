@@ -45,12 +45,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         Animation animation = new TranslateAnimation(0, distance, 0, 0);
         animation.setDuration(2000);
         animation.setFillAfter(true);
-<<<<<<< Updated upstream
 
-        Animation animation1 = new TranslateAnimation(metrics.widthPixels, -299, 0, 0);
-=======
         Animation animation1 = new TranslateAnimation(metrics.widthPixels, -distance,0, 0);
->>>>>>> Stashed changes
         animation1.setDuration(2000);
         animation1.setFillAfter(true);
 
