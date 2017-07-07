@@ -6,6 +6,15 @@
     <string name="_12">12%</string>
     <string name="_18">18%</string>
     <string name="_28">28%</string>
+    <string name="lbl_item_name">Item Name</string>
+    <string name="lbl_gst_perc">GST %</string>
+    <string name="lbl_pre_gst_perc">Before GST %</string>
+
+    <string-array name="array_cheaper_costlier">
+        <item>Cheaper</item>
+        <item>Costlier</item>
+        <item>Unchanged</item>
+    </string-array>
 
     <string-array name="_0_products_name">
         <item>Jute</item>
@@ -41,6 +50,7 @@
         <item>Services-Hotels and lodges with rent below Rs 1,000</item>
         <item>Rough precious and semi-precious stones will attract GST rate of 0.25%</item>
     </string-array>
+
     <string-array name="_0_products_images">
         <item>jute.jpg</item>
         <item>freshmeat.jpg</item>
@@ -408,7 +418,7 @@
 "2.Imported goods will come costly and will be taxed around 6%\n"
 "3.Many states mostly manufacturing states will lose a huge share of their revenue and monopoly on taxes of central government will increase.\n"
 "4.It could potentially drive up the costs in real estate by up to 8%."</item>
- <item>"\t\tToday, registration has necessary for all business person and startups. The government providing an online process for registration through official website where you can easily register with all necessary information and documents. You need to some specific documents for new registration. Most of the firms have developed GST app for providing information related to GST India and step by step procedure for registration under GST.\n"
+        <item>"\t\tToday, registration has necessary for all business person and startups. The government providing an online process for registration through official website where you can easily register with all necessary information and documents. You need to some specific documents for new registration. Most of the firms have developed GST app for providing information related to GST India and step by step procedure for registration under GST.\n"
 "Here is the list of following documents is necessary for registration\n\n"
 "Document required for Pvt. Company\n"
 "1.PAN card of the company\n"

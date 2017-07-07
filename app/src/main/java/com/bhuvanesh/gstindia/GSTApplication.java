@@ -47,7 +47,6 @@ public class GSTApplication extends Application {
             Fabric.with(this, new Crashlytics());
 
         mAnalyticsInstance = FirebaseAnalytics.getInstance(this);
-        MobileAds.initialize(this, "ca-app-pub-2950380730218514~5629313986");
     }
 
     public static synchronized GSTApplication getInstance() {

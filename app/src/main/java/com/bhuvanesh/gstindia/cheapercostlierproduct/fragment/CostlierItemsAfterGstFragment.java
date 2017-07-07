@@ -6,9 +6,12 @@ import com.bhuvanesh.gstindia.BaseFragment;
  * Created by Bhuvanesh on 7/5/2017.
  */
 
-public class CostlierItemsAfterGstFragment extends BaseFragment {
+public class CostlierItemsAfterGstFragment extends BaseTaxComparisonFragment {
 
-    public static CostlierItemsAfterGstFragment newInstance() {
-        return new CostlierItemsAfterGstFragment();
+    public static CostlierItemsAfterGstFragment newInstance(int type) {
+        CostlierItemsAfterGstFragment fragment = new CostlierItemsAfterGstFragment();
+        fragment.mItemCategoryType = type;
+        return fragment;
     }
+
 }

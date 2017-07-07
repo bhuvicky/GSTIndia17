@@ -27,34 +27,40 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        GstLoggerUtil.println("log this is a launcher activity");
+
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "earth.ttf");
 
-        final float screen_width_half = metrics.widthPixels/2;
+        final float screen_width_half = metrics.widthPixels / 2;
 
         //final float distance = screen_width_half -;
-        TextView oneTextView= (TextView) findViewById(R.id.textview_market);
+        TextView oneTextView = (TextView) findViewById(R.id.textview_market);
         oneTextView.setTypeface(custom_font);
-        final float distance = screen_width_half/2;
+        final float distance = screen_width_half / 2;
 
-        TextView oneTaxTextView= (TextView) findViewById(R.id.textview_one_tax);
+        TextView oneTaxTextView = (TextView) findViewById(R.id.textview_one_tax);
         oneTaxTextView.setTypeface(custom_font);
-        Animation animation = new TranslateAnimation(0, distance,0, 0);
+
+        Animation animation = new TranslateAnimation(0, distance, 0, 0);
         animation.setDuration(2000);
         animation.setFillAfter(true);
-        Animation animation1 = new TranslateAnimation(metrics.widthPixels, -299,0, 0);
+
+        Animation animation1 = new TranslateAnimation(metrics.widthPixels, -299, 0, 0);
         animation1.setDuration(2000);
         animation1.setFillAfter(true);
-        Animation animation2 = new AlphaAnimation(0.2f,1f);
+
+        Animation animation2 = new AlphaAnimation(0.2f, 1f);
         animation2.setDuration(2000);
         animation2.setFillAfter(true);
-        ImageView splashImageView= (ImageView) findViewById(R.id.image_view_slash);
+
+        ImageView splashImageView = (ImageView) findViewById(R.id.image_view_slash);
         splashImageView.startAnimation(animation2);
+
         oneTextView.startAnimation(animation);
         oneTaxTextView.startAnimation(animation1);
-         int secdelay=4;
+
+        int secdelay = 4;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
