@@ -216,5 +216,5 @@
             android:layout_marginTop="8dp"
             />
     </LinearLayout>
-
+<include layout="@layout/layout_adview_medium_rectangle"/>
 </RelativeLayout>

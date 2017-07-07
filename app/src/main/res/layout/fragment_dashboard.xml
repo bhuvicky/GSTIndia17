@@ -96,9 +96,12 @@
 
             />
 
+
     </RelativeLayout>
 
+<include layout="@layout/layout_adview_medium_rectangle"
 
+    />
 </RelativeLayout>
 
 

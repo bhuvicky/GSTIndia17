@@ -26,6 +26,8 @@ import com.bhuvanesh.gstindia.firebase.FirebaseStorageAccess;
 import com.bhuvanesh.gstindia.model.Bill;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.bhuvanesh.gstindia.utils.UIUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
@@ -72,6 +74,7 @@ public class BillFeedFragment extends BaseFragment {
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("Bill Explore");
         setHasOptionsMenu(true);
+
         billRecyclerView=view.findViewById(R.id.recycler_view_bills);
         paginationProgressBar=view.findViewById(R.id.progressbar);
         addFab=view.findViewById(R.id.fab_add);

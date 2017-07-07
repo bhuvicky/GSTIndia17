@@ -13,7 +13,6 @@ import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
-import com.bhuvanesh.gstindia.cheapercostlierproduct.fragment.TaxComparisonViewPagerFragment;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -26,7 +25,6 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
@@ -38,6 +36,9 @@ import java.util.ArrayList;
 public class DashboardFragment extends BaseFragment {
 
     private PieChart pieChart;
+    private TextView exploreBillsTextView;
+    private TextView calculatorTextView;
+    private TextView faqTextview;
 
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
@@ -49,9 +50,6 @@ public class DashboardFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ((BaseActivity) getActivity()).setBackEnabled(false);
         ((BaseActivity) getActivity()).setTitle("GST India 2017");
-
-        MobileAds.initialize(getActivity(), "ca-app-pub-2950380730218514~5629313986");
-
 
         TextView textViewLifeAfterJuly1 = view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
@@ -78,9 +76,8 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        TextView textviewExploreBills = view.findViewById(R.id.textview_explore_bill);
-        textviewExploreBills.setOnClickListener(new View.OnClickListener() {
+        exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
+        exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
@@ -88,28 +85,25 @@ public class DashboardFragment extends BaseFragment {
                 replace(R.id.fragment_host, BillFeedFragment.newInstance());
             }
         });
-
-        TextView calculatorTextView = view.findViewById(R.id.textview_calculator);
+        calculatorTextView = view.findViewById(R.id.textview_calculator);
         calculatorTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                GSTApplication.getInstance().getInterstitialAdInstance().loadAd(GSTApplication.getInstance().getAdRequest());
 //                GSTApplication.getInstance().getAdRequest();
-//                AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
-                AdRequest adRequest = new AdRequest.Builder().build();
-                System.out.println("log is test device = " + adRequest.isTestDevice(getActivity()));
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
+                System.out.println("log is test device = " +  adRequest.isTestDevice(getActivity()));
 
                 logDashboardEvent("Dashboard Screen Content", "GST Calculator", "favourite_app_feature",
                         "GST Calculator", FirebaseAnalytics.Event.SELECT_CONTENT);
                 replace(R.id.fragment_host, GSTCalcFragment.newInstance());
             }
         });
-
-        TextView faqTextview = view.findViewById(R.id.textview_faq);
+        faqTextview=view.findViewById(R.id.textview_faq);
         faqTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replace(R.id.fragment_host, FAQFragment.newInstance());
+                replace(R.id.fragment_host,FAQFragment.newInstance());
             }
         });
 

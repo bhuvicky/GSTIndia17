@@ -96,7 +96,8 @@ public class GSTApplication extends Application {
             if (BuildConfig.REPORT_TEST_AD) {
                 System.out.println("log test device debug mode");
                 mAdRequestInstance = new AdRequest.Builder()
-                        .addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
+                        //.addTestDevice("D7485D34081F44384E25018239E6810B")
+                        .build();
             }
         } else {
             System.out.println("log ad ins not null");

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.gms.ads.AdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ad="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_adview_medium_rect_height">
+    android:id="@+id/adview"
+    android:layout_height="@dimen/dimen_adview_medium_rect_height"
+    ads:adSize="SMART_BANNER"
+    ads:adUnitId="ca-app-pub-2950380730218514/9949618785"
+    android:layout_alignParentBottom="true"
+    >
+
 
 </com.google.android.gms.ads.AdView>

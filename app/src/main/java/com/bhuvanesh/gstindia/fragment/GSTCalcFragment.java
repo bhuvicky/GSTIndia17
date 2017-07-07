@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 /**
  * Created by Karthikeyan on 02-07-2017.
@@ -44,6 +46,12 @@ public class GSTCalcFragment extends BaseFragment {
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("GST Calculator");
         setHasOptionsMenu(true);
+        AdView adView=view.findViewById(R.id.adview);
+        AdRequest adRequest=new AdRequest.Builder()
+                .addTestDevice("D7485D34081F44384E25018239E6810B")
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
 
         gstRadioGroup=view.findViewById(R.id.radio_button_grp_gst);
         addGSTButton=view.findViewById(R.id.button_add_gst);
