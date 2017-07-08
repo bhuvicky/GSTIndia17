@@ -60,7 +60,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         oneTextView.startAnimation(animation);
         oneTaxTextView.startAnimation(animation1);
 
-        int secdelay = 4;
+        int secdelay = 3;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
