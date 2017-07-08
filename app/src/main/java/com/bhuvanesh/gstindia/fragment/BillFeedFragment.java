@@ -163,7 +163,7 @@ public class BillFeedFragment extends BaseFragment {
             uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    Toast.makeText(getContext(), " Your invoice is uploaded", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), " Your invoice is uploaded", Toast.LENGTH_SHORT).show();
                 }
             });
 

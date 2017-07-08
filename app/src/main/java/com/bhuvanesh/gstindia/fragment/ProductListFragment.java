@@ -2,7 +2,9 @@ package com.bhuvanesh.gstindia.fragment;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,11 +26,17 @@ import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.adapter.ProductListAdapter;
+import com.bhuvanesh.gstindia.firebase.FirebaseStorageAccess;
 import com.bhuvanesh.gstindia.model.Bill;
 import com.bhuvanesh.gstindia.model.Product;
+import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -102,8 +110,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "zero";
                 taxTextView.setText(getTitle(gst));
-
-                productListAdapter.setData(prepareData("zero"));
+                prepareData("zero");
+               // productListAdapter.setData();
             }
         });
         fiveButton.setOnClickListener(new View.OnClickListener() {
@@ -178,13 +186,27 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         String[] namesOf12Products = getActivity().getResources().getStringArray(arrayResIdNames);
         String[] imagesOf12Products = getActivity().getResources().getStringArray(arrayResIdImages);
         for (int i = 0; i < namesOf12Products.length; i++) {
-            Product product = new Product();
+            final Product product = new Product();
             product.productName = namesOf12Products[i];
             product.productImage = imagesOf12Products[i];
             product.gst = gst;
-            products.add(product);
+            StorageReference storageReference = new FirebaseStorageAccess(getContext()).getUrl(product.gst + "/" + product.productImage);
+
+            storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    GstLoggerUtil.debug("hh", task.getResult().toString());
+                    product.url = task.getResult().toString();
+                    productListAdapter.addItem(product);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
         }
-        return products;
+            return products;
     }
 
     @Override

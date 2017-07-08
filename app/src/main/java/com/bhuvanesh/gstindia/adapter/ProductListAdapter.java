@@ -1,6 +1,8 @@
 package com.bhuvanesh.gstindia.adapter;
 
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +16,15 @@ import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.firebase.FirebaseStorageAccess;
 import com.bhuvanesh.gstindia.model.Product;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.firebase.storage.FirebaseStorage;
+import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Karthikeyan on 02-07-2017.
@@ -31,26 +35,30 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     public List<Product> mProductList = new ArrayList<>();
     private Context context;
+    private ImageLoader imageLoader= GSTApplication.getInstance().getImageLoader();
 
     public ProductListAdapter(Context context) {
         this.context = context;
+
+
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product_list, parent, false));
+        ViewHolder viewHolder=new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product_list, parent, false));
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         Product product = mProductList.get(position);
         holder.nameTextView.setText(product.productName);
-        StorageReference storageReference = new FirebaseStorageAccess(context).getUrl(product.gst + "/" + product.productImage);
-        Glide.with(context)
-                .using(new FirebaseImageLoader())
-                .load(storageReference)
-                .into(holder.productNImageView);
 
+        if(product.url!=null) {
+            holder.productNImageView.setImageUrl(product.url, imageLoader);
+        }else {
+
+        }
     }
 
     @Override
@@ -64,17 +72,23 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         notifyDataSetChanged();
     }
 
+    public void addItem(Product product){
+        mProductList.add(product);
+        notifyDataSetChanged();
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTextView;
-        public ImageView productNImageView;
+        public NetworkImageView productNImageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.textview_name_of_product);
-            productNImageView = itemView.findViewById(R.id.imageview_product);
+            productNImageView = itemView.findViewById(R.id.network_imageview_product);
 
         }
     }
+     }
 
 
-}
+

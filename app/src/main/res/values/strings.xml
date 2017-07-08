@@ -61,17 +61,17 @@
         <item>buttermilk.png</item>
         <item>curd.jpg</item>
         <item>natural_honey.png</item>
-        <item>freshfruits.jpg</item>
+        <item>freshfruit.jpg</item>
         <item>freshvegetables.jpg</item>
         <item>flour.jpg</item>
-        <item>besan.jpg</item>
+        <item>besan.png</item>
         <item>bread.jpg</item>
         <item>prasad.jpg</item>
         <item>salt.jpg</item>
         <item>bindi.jpg</item>
         <item>sindoor.jpg</item>
-        <item>stamps.jpg</item>
-        <item>judicial_papers.jpg</item>
+        <item>stamp.jpg</item>
+        <item>judicial_paper.jpg</item>
         <item>printed-books.jpg</item>
         <item>news_paper.png</item>
         <item>bangle.jpg</item>
@@ -119,7 +119,7 @@
 
     </string-array>
     <string-array name="_5_products_images">
-        <item>Fish-Fillet.jpeg</item>
+        <item>Fish-Fillets.jpeg</item>
         <item>packaged_food.jpg</item>
         <item>footwear.jpg</item>
         <item>cream.jpg</item>
@@ -129,7 +129,7 @@
         <item>coffee.jpg</item>
         <item>tea.jpg</item>
         <item>spices.jpg</item>
-        <item>pizzabread.jpg</item>
+        <item>pizzabread.JPG</item>
         <item>rusk.jpg</item>
         <item>sabudana.jpg</item>
         <item>kerosene.jpg</item>

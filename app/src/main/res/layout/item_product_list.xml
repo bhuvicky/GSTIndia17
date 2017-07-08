@@ -17,12 +17,12 @@
     android:layout_centerHorizontal="true"
     />
 
-    <ImageView
+    <com.android.volley.toolbox.NetworkImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY"
         android:background="@color/color_gray"
-        android:id="@+id/imageview_product"
+        android:id="@+id/network_imageview_product"
         android:layout_below="@id/textview_name_of_product"
         />
 </RelativeLayout>

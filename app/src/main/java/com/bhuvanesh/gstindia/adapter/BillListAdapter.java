@@ -7,12 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.model.Bill;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +27,11 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
     private ItemClickListener listener;
     private List<Bill> billList=new ArrayList<>();
     private Context context;
+    private ImageLoader imageLoader= GSTApplication.getInstance().getImageLoader();
     public BillListAdapter(Context context,ItemClickListener listener){
         this.context=context;
         this.listener=listener;
+
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,18 +40,17 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+
         Bill bill=billList.get(position);
-        StorageReference storageReference= FirebaseStorage.getInstance().getReferenceFromUrl(bill.billUrl);
-        Glide.with(context)
-                .using(new FirebaseImageLoader())
-                .load(storageReference)
-                .into(holder.billImageView);
+        holder.billImageView.setImageUrl(bill.billUrl,imageLoader);
+
         holder.billImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.onClick(billList.get(holder.getAdapterPosition()).billUrl);
             }
         });
+
     }
 
     public void setData(List<Bill> bills){
@@ -68,10 +68,10 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
     }
 
      class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView billImageView;
+        private NetworkImageView billImageView;
          ViewHolder(View itemView) {
             super(itemView);
-            billImageView=itemView.findViewById(R.id.image_view_bill);
+            billImageView=itemView.findViewById(R.id.network_imageview_bill);
         }
     }
 }

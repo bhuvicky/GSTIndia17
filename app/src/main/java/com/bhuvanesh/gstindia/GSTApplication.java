@@ -2,6 +2,10 @@ package com.bhuvanesh.gstindia;
 
 import android.app.Application;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+import com.bhuvanesh.gstindia.utils.LRUBitmapCache;
 import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -12,9 +16,11 @@ import io.fabric.sdk.android.Fabric;
  */
 
 public class GSTApplication extends Application {
-
+    private RequestQueue mRequestQueue;
     private static GSTApplication mInstance;
     private static FirebaseAnalytics mAnalyticsInstance;
+    private ImageLoader mImageLoader;
+    private LRUBitmapCache mLruBitmapCache;
 
     //onCreate will call only one time
     @Override
@@ -36,6 +42,26 @@ public class GSTApplication extends Application {
     public static synchronized FirebaseAnalytics getAnalyticsInstance() {
         mAnalyticsInstance.setAnalyticsCollectionEnabled(true);
         return mAnalyticsInstance;
+    }
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+        return mRequestQueue;
+    }
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+        if (mImageLoader == null) {
+            getLruBitmapCache();
+            mImageLoader = new ImageLoader(this.mRequestQueue, mLruBitmapCache);
+        }
+        return this.mImageLoader;
+    }
+
+    public LRUBitmapCache getLruBitmapCache() {
+        if (mLruBitmapCache == null)
+            mLruBitmapCache = new LRUBitmapCache();
+        return this.mLruBitmapCache;
     }
 
 }
