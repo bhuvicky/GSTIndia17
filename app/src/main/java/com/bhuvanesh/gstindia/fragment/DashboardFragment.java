@@ -1,12 +1,20 @@
 package com.bhuvanesh.gstindia.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ShareCompat;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.ShareActionProvider;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -57,6 +65,7 @@ public class DashboardFragment extends BaseFragment {
         ((BaseActivity) getActivity()).setBackEnabled(false);
         ((BaseActivity) getActivity()).setTitle("GST India 2017");
         DisplayMetrics metrics = new DisplayMetrics();
+        setHasOptionsMenu(true);
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
          interstitialAd=new InterstitialAd(getContext());
 
@@ -233,8 +242,42 @@ public class DashboardFragment extends BaseFragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.menu_dash_board,menu);
+        MenuItem item = menu.findItem(R.id.action_share);
+        ShareActionProvider actionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+
+        // Create the share Intent
+        String shareText = "Install Life After GSt app to Know completely about GST \n http://play.google.com/store/apps/details?id=com.bhuvanesh.gstindia";
+        Intent shareIntent = ShareCompat.IntentBuilder.from(getActivity())
+                .setType("text/plain").setText(shareText).getIntent();
+        actionProvider.setShareIntent(shareIntent);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_send_feedback:
+                composeEmail(new String[]{"gstindia017@gmail.com"},"Life After GST Feedback");
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onBackPress() {
         super.onBackPress();
         if (interstitialAd.isLoaded())interstitialAd.show();
+    }
+    public void composeEmail(String[] addresses, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 }

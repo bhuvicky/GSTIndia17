@@ -24,6 +24,5 @@
         android:background="@color/color_gray"
         android:id="@+id/imageview_product"
         android:layout_below="@id/textview_name_of_product"
-        tools:src="@drawable/egg"
         />
 </RelativeLayout>

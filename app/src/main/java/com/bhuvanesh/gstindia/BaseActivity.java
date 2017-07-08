@@ -48,9 +48,6 @@ public class BaseActivity extends AppCompatActivity {
         replace(containerId, fragment, true);
     }
 
-    public void replace(int containerId, DialogFragment fragment) {
-        replace(containerId, fragment, true);
-    }
 
     /**
      * Method for replacing fragment
@@ -68,28 +65,8 @@ public class BaseActivity extends AppCompatActivity {
         GstLoggerUtil.debug(BaseActivity.class.getSimpleName(), "BackStackEntryCount: " + fm.getBackStackEntryCount());
     }
 
-    public void replace(int containerId, DialogFragment fragment, boolean addToBackStack) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(containerId, fragment, Integer.toString(getSupportFragmentManager().getBackStackEntryCount()));
-        if (addToBackStack) ft.addToBackStack(null);
-        ft.commit();
-        fm.executePendingTransactions();
-        GstLoggerUtil.debug(BaseActivity.class.getSimpleName(), "BackStackEntryCount: " + fm.getBackStackEntryCount());
-    }
 
-    public void pop() {
-        FragmentManager fm = getSupportFragmentManager();
-        fm.popBackStackImmediate();
-    }
 
-    public void popAllFragmentsUpto(int index) {
-        FragmentManager fm = getSupportFragmentManager();
-        int count = fm.getBackStackEntryCount();
-        for (int i = 0; i < count - index; ++i) {
-            fm.popBackStack();
-        }
-    }
 
     @Override
     public void onBackPressed() {

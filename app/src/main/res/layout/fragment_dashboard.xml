@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="Calculator"
+            android:text="@string/calculator"
             android:textStyle="bold"
 
             android:drawablePadding="3dp"
@@ -46,7 +46,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_centerHorizontal="true"
-            android:text="Life after July 1"
+            android:text="@string/life_after_july_1"
             android:layout_below="@id/textview_calculator"
             android:drawablePadding="3dp"
             android:drawableLeft="@drawable/ic_action_ic_verified_user_black_48dp_1"
@@ -57,7 +57,7 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:id="@+id/textview_explore_bill"
-             android:text="Explore Bill"
+             android:text="@string/explore_bill"
              android:textStyle="bold"
              android:layout_alignParentRight="true"
              android:layout_marginRight="16dp"
@@ -79,7 +79,7 @@
             android:drawableLeft="@drawable/ic_action_icons8_question_26"
             android:drawablePadding="3dp"
             android:layout_marginLeft="16dp"
-            android:text="FAQ"
+            android:text="@string/faq"
             android:textStyle="bold"
             />
 
@@ -92,7 +92,7 @@
             android:layout_marginRight="16dp"
             android:drawableRight="@drawable/ic_action_ic_arrow_drop_down_black_48dp"
             android:drawableLeft="@drawable/ic_action_ic_arrow_drop_up_black_48dp"
-            android:text="Costlier/Cheaper"
+            android:text="@string/costlier_cheaper"
             android:textStyle="bold"
 
             />

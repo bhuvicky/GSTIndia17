@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageview_gst"
         android:ems="20"
-        android:hint="Amount"
+        android:hint="@string/amount"
         android:inputType="numberDecimal"
         />
     </android.support.design.widget.TextInputLayout>
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textview_applicable_gst"
-        android:text="Applicable GST Rate"
+        android:text="@string/applicable_gst_rate"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:layout_below="@id/text_input_layout_amount"
@@ -89,7 +89,7 @@
     android:layout_marginTop="10dp"
     android:layout_below="@id/radio_button_grp_gst"
     android:layout_marginLeft="20dp"
-    android:text="Add GST"
+    android:text="@string/add_gst"
     android:theme="@style/ZeroButton"
     />
     <Button
@@ -99,7 +99,7 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/radio_button_grp_gst"
         android:layout_alignParentEnd="true"
-        android:text="Remove GST"
+        android:text="@string/remove_gst"
         android:layout_marginRight="20dp"
         android:theme="@style/TwentyEightButton"
         android:layout_alignParentRight="true" />
@@ -118,7 +118,7 @@
     android:layout_marginTop="12dp"
     android:textColor="@color/color_text_black"
     android:layout_below="@id/view_line1_gst_calc"
-    android:text="Result:"
+    android:text="@string/result"
     />
     <LinearLayout
         android:layout_width="match_parent"
@@ -136,7 +136,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Net Amount"
+                android:text="@string/net_amount"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/textview_net_amt"
                 />
@@ -159,7 +159,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GST Amount"
+                android:text="@string/gst_amount"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/textview_gst_amt"
                 />
@@ -188,7 +188,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total Amount"
+                android:text="@string/total_amount"
                 android:layout_marginLeft="16dp"
                 android:id="@+id/textview_total_amt"
                 />
@@ -211,7 +211,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thank you "
+            android:text="@string/thank_you"
             android:gravity="center"
             android:layout_marginTop="8dp"
             />

@@ -61,11 +61,6 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void popAllFragmentsUpto(int index) {
-        if (getActivity() != null) {
-            ((BaseActivity) getActivity()).popAllFragmentsUpto(index);
-        }
-    }
 
     protected void onBackPress() {
         pop();

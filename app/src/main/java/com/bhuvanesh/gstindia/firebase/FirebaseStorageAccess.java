@@ -24,15 +24,9 @@ public class FirebaseStorageAccess {
     }
 
     public StorageReference getUrl(String filePath) {
-        // Create a storage reference from our app
-        //StorageReference storageRef = firebaseStorage.getReference();
-
-        // Create a reference with an initial file path and name
-
-        // Create a reference to a file from a Google Cloud Storage URI
-        StorageReference gsReference = firebaseStorage.getReferenceFromUrl("gs://gst-india-20cc9.appspot.com");
+       StorageReference gsReference = firebaseStorage.getReferenceFromUrl("gs://gst-india-20cc9.appspot.com");
         StorageReference pathReference = gsReference.child(filePath);
-       // StorageReference httpsReference = firebaseStorage.getReferenceFromUrl("https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg");
+
     return pathReference;
     }
     public UploadTask uploadPhoto(Uri photoUrl){

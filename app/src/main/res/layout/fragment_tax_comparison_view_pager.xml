@@ -22,7 +22,7 @@
             android:id="@+id/textview_item_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Items"
+            android:text="@string/items"
             android:textColor="@color/color_text_black"
             android:layout_weight="0.6" />
 
@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:text="after \nGST"
+            android:text="@string/after_ngst"
             android:textColor="@color/color_text_black"
 
             />
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:text="before GST"
+            android:text="@string/before_gst"
             android:textColor="@color/color_text_black"
             />
 

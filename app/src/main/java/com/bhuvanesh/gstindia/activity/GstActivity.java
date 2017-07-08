@@ -12,7 +12,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import io.fabric.sdk.android.Fabric;
 
 public class GstActivity extends BaseActivity {
-    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +20,5 @@ public class GstActivity extends BaseActivity {
         setActionBar(R.id.toolbar_main);
         replace(R.id.fragment_host, DashboardFragment.newInstance());
     }
-    public InterstitialAd getmInterstitialAd(){return mInterstitialAd;}
+
 }

@@ -29,8 +29,6 @@ public class GSTApplication extends Application {
 
     private static GSTApplication mInstance;
     private static FirebaseAnalytics mAnalyticsInstance;
-    private AdRequest mAdRequestInstance;
-    private InterstitialAd mInterstitialAdInstance;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     private LRUBitmapCache mLruBitmapCache;
@@ -58,59 +56,7 @@ public class GSTApplication extends Application {
         return mAnalyticsInstance;
     }
 
-    /*public AdRequest getAdRequest() {
-        if (mAdRequestInstance == null) {
-            if (BuildConfig.REPORT_TEST_AD) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(getInstance());
-                            if (info != null) {
-                                String advertisingId = info.getId();
-                                GstLoggerUtil.println("log advertising id = " + advertisingId);
-                                mAdRequestInstance =  new AdRequest.Builder()
-                                        .addTestDevice(advertisingId)
-                                        .build();
-                            } else {
-                                System.out.println("log info null");
-                            }
 
-                        } catch (IOException | GooglePlayServicesNotAvailableException | GooglePlayServicesRepairableException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-            else {
-                mAdRequestInstance = new AdRequest.Builder().build();
-            }
-        }
-        return mAdRequestInstance;
-    }
-*/
-
-    public AdRequest getAdRequest() {
-        if (mAnalyticsInstance == null) {
-            System.out.println("log ad ins null");
-            if (BuildConfig.REPORT_TEST_AD) {
-                System.out.println("log test device debug mode");
-                mAdRequestInstance = new AdRequest.Builder()
-                        .addTestDevice("D7485D34081F44384E25018239E6810B")
-                        .build();
-            }
-        } else {
-            System.out.println("log ad ins not null");
-        }
-        return mAdRequestInstance;
-    }
-    public InterstitialAd getInterstitialAdInstance() {
-        if (mInterstitialAdInstance == null) {
-            mInterstitialAdInstance = new InterstitialAd(getBaseContext());
-            mInterstitialAdInstance.setAdUnitId("ca-app-pub-2950380730218514/7106047184");
-        }
-        return mInterstitialAdInstance;
-    }
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
