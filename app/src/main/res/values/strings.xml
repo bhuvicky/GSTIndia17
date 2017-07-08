@@ -230,6 +230,7 @@
     </string-array>
 
     <string-array name="_18_products_names">
+        <item>AC Hotel</item>
         <item>Aluminum Foil</item>
         <item>Bamboo Furniture</item>
         <item>Biscuits</item>
@@ -274,22 +275,26 @@
     </string-array>
 
     <string-array name="_18_products_images">
+        <item>ac hotel.png</item>
         <item>Aluminum Foil.png</item>
         <item>bamboo furniture.png</item>
         <item>biscuits.png</item>
+        <item>branded graments.png</item>
         <item>cameras.png</item>
         <item>cctv.jpg</item>
         <item>Corn-Flakes.jpg</item>
         <item>curry paste.png</item>
         <item>electrical transformer.png</item>
         <item>envelopes.png</item>
+        <item>financialservices.jpg</item>
         <item>footwear.png</item>
         <item>headgear (cap).png</item>
         <item>helmets.png</item>
+        <item>hotel room 2500 - 7500.png</item>
         <item>Ice Cream.png</item>
         <item>instant food mixes.png</item>
         <item>jams.png</item>
-        <item>kajal pencil stick.png</item>
+        <item>kajal pencil stick.jpg</item>
         <item>mayonnaise.png</item>
         <item>mineral water.png</item>
         <item>mixed condiments.jpg</item>
@@ -309,13 +314,9 @@
         <item>steel products.png</item>
         <item>swimming and padding pool.jpg</item>
         <item>tampons.png</item>
+        <item>telecom services.png</item>
         <item>tissues.png</item>
         <item>Weighing Machinery [other than electric or electronic weighing machinery].png</item>
-        <item>ac hotel.png</item>
-        <item>branded graments.png</item>
-        <item>financialservices.jpg</item>
-        <item>hotel room 2500 - 7500.png</item>
-        <item>telecom services.png</item>
     </string-array>
 
     <string-array name="_28_products_names">
@@ -325,13 +326,17 @@
         <item>Ceramic Tiles</item>
         <item>Chewing Gum</item>
         <item>Chocolate</item>
+        <item>Cinema Ticket above 100</item>
         <item>Deodrants</item>
         <item>Dish Washer</item>
         <item>Dye</item>
+        <item>Hair Shampoo</item>
+        <item>Lottery</item>
         <item>Molasses</item>
         <item>Motor-Cycle</item>
         <item>Paan Masala</item>
         <item>Paint</item>
+        <item>Race Club betting</item>
         <item>Shaving Creams</item>
         <item>Shavers</item>
         <item>Sunscreen</item>
@@ -341,9 +346,6 @@
         <item>Washing Machine</item>
         <item>Water Heater</item>
         <item>Weighing Machine</item>
-        <item>Cinema Ticket above 100</item>
-        <item>Lottery</item>
-        <item>Race Club betting</item>
     </string-array>
 
     <string-array name="_28_products_images">
@@ -353,16 +355,19 @@
         <item>ceramic tiles.png</item>
         <item>chewing gum.png</item>
         <item>chocolate.png</item>
+        <item>cinema ticket above 100.png</item>
         <item>deodrants.png</item>
         <item>dishwasher.png</item>
         <item>dye.png</item>
         <item>hair shampoo.jpg</item>
+        <item>lottery.png</item>
         <item>molasses.png</item>
         <item>motorcycle.png</item>
         <item>paan masala.png</item>
         <item>paint.png</item>
-        <item>saving creams.png</item>
-        <item>shavers.png</item>
+        <item>race club betting.jpg</item>
+        <item>saving creams.jpg</item>
+        <item>shavers.jpg</item>
         <item>sunscreen.png</item>
         <item>vaccum_cleaner.png</item>
         <item>vending machine.png</item>
@@ -370,9 +375,6 @@
         <item>washing-machine.png</item>
         <item>water heater.png</item>
         <item>weighing machine.png</item>
-        <item>cinema ticket above 100.png</item>
-        <item>lottery.png</item>
-        <item>race club betting.jpg</item>
     </string-array>
 
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
