@@ -30,7 +30,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
 
     public List<Product> mProductList = new ArrayList<>();
-    public ImageLoader imageLoader = GSTApplication.getInstance().getImageLoader();
     private Context context;
 
     public ProductListAdapter(Context context) {

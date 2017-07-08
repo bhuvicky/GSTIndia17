@@ -57,7 +57,6 @@ public class BillFeedFragment extends BaseFragment {
     private FloatingActionButton addFab;
     private BillListAdapter billListAdapter;
     private int noOfColumns = 0;
-    private List<Bill> billList = new ArrayList<>();
     private Query postsQuery;
     private ProgressBar paginationProgressBar;
     private InterstitialAd mInterstitialAd;
@@ -135,16 +134,7 @@ public class BillFeedFragment extends BaseFragment {
                 paginationProgressBar.setVisibility(View.GONE);
             }
         });
-        postsQuery.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 
     public void newData() {

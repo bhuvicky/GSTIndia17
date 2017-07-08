@@ -62,9 +62,6 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
         billList.add(bill);
         notifyDataSetChanged();
     }
-    public long getTime(int position){
-        return billList.get(position).time;
-    }
     @Override
     public int getItemCount() {
         return billList.size();

@@ -50,9 +50,6 @@ import java.util.ArrayList;
 public class DashboardFragment extends BaseFragment {
 
     private PieChart pieChart;
-    private TextView exploreBillsTextView;
-    private TextView calculatorTextView;
-    private TextView faqTextview;
     private InterstitialAd interstitialAd;
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
@@ -63,7 +60,7 @@ public class DashboardFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ((BaseActivity) getActivity()).setBackEnabled(false);
-        ((BaseActivity) getActivity()).setTitle("GST India 2017");
+        ((BaseActivity) getActivity()).setTitle(R.string.app_name);
         DisplayMetrics metrics = new DisplayMetrics();
         setHasOptionsMenu(true);
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -110,7 +107,7 @@ public class DashboardFragment extends BaseFragment {
 
         snackbar.show();
 
-        exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
+        TextView exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
         exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,7 +116,7 @@ public class DashboardFragment extends BaseFragment {
                 replace(R.id.fragment_host, BillFeedFragment.newInstance());
             }
         });
-        calculatorTextView = view.findViewById(R.id.textview_calculator);
+        TextView calculatorTextView = view.findViewById(R.id.textview_calculator);
         calculatorTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +128,7 @@ public class DashboardFragment extends BaseFragment {
                 replace(R.id.fragment_host, GSTCalcFragment.newInstance());
             }
         });
-        faqTextview=view.findViewById(R.id.textview_faq);
+        TextView faqTextview = view.findViewById(R.id.textview_faq);
         faqTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,14 +147,6 @@ public class DashboardFragment extends BaseFragment {
         });
 
 
-        GSTApplication.getInstance().getInterstitialAdInstance().setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                GstLoggerUtil.println("log ad loaded");
-                GSTApplication.getInstance().getInterstitialAdInstance().show();
-
-            }
-        });
 
 
     }

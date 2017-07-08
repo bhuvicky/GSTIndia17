@@ -20,8 +20,6 @@ public class UIUtils {
         context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         float gapBetweenItem =UIUtils.convertDpToPixel(context,context.getResources().getDimension(R.dimen.dimen_gap_between_item));
         float containerWidth=(metrics.widthPixels*percentage)/100;
-        //THLoggerUtil.debug("hh",containerWidth+""+(UIUtils.convertDpToPixel(context,widthOfItem)+gapBetweenItem)+""+gapBetweenItem);
-        //THLoggerUtil.debug("hh",(containerWidth*gapBetweenItem)/(UIUtils.convertDpToPixel(context,widthOfItem)+gapBetweenItem)+"");
         return (int)((containerWidth*gapBetweenItem)/(UIUtils.convertDpToPixel(context,widthOfItem)+gapBetweenItem));
     }
     public static int convertDpToPixel(Context context, float dp)
