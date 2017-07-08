@@ -98,7 +98,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         productRecyclerView = view.findViewById(R.id.recycler_view_products);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         productListAdapter = new ProductListAdapter(getContext());
-        productListAdapter.setData(prepareData(gst));
+       // productListAdapter.setData();
+        prepareData(gst);
         productRecyclerView.setAdapter(productListAdapter);
 
         taxTextView.setText(tax.get(gst) + "% GST");
@@ -119,7 +120,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "five";
                 taxTextView.setText(getTitle(gst));
-                productListAdapter.setData(prepareData("five"));
+                prepareData("five");
+               // productListAdapter.setData();
             }
         });
         twelveButton.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +129,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "twelve";
                 taxTextView.setText(getTitle(gst));
-                productListAdapter.setData(prepareData("twelve"));
+                prepareData("twelve");
+                //productListAdapter.setData();
             }
         });
 
@@ -136,7 +139,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "eighteen";
                 taxTextView.setText(getTitle(gst));
-                productListAdapter.setData(prepareData("eighteen"));
+                prepareData("eighteen");
             }
         });
 
@@ -145,7 +148,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "twenty_eight";
                 taxTextView.setText(getTitle(gst));
-                productListAdapter.setData(prepareData("twenty_eight"));
+              prepareData("twenty_eight");
             }
         });
 
@@ -156,33 +159,33 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         return tax.get(gs) + "% GST";
     }
 
-    private List<Product> prepareData(String gst) {
+    private void prepareData(String gst) {
+        productListAdapter.clear();
         switch (gst) {
             case "zero":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                return productDetails(R.array._0_products_name, R.array._0_products_images, gst);
+                productDetails(R.array._0_products_name, R.array._0_products_images, gst);
             case "five":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                return productDetails(R.array._5_products_names, R.array._5_products_images, gst);
+                productDetails(R.array._5_products_names, R.array._5_products_images, gst);
             case "twelve":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                return productDetails(R.array._12_products_names, R.array._12_products_images, gst);
+                productDetails(R.array._12_products_names, R.array._12_products_images, gst);
             case "eighteen":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                return productDetails(R.array._18_products_names, R.array._18_products_images, gst);
+                 productDetails(R.array._18_products_names, R.array._18_products_images, gst);
             default:
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                return productDetails(R.array._28_products_names, R.array._28_products_images, gst);
+                 productDetails(R.array._28_products_names, R.array._28_products_images, gst);
         }
     }
 
-    private List<Product> productDetails(int arrayResIdNames, int arrayResIdImages, String gst) {
-        products = new ArrayList<>();
+    private void productDetails(int arrayResIdNames, int arrayResIdImages, String gst) {
         String[] namesOf12Products = getActivity().getResources().getStringArray(arrayResIdNames);
         String[] imagesOf12Products = getActivity().getResources().getStringArray(arrayResIdImages);
         for (int i = 0; i < namesOf12Products.length; i++) {
@@ -206,7 +209,6 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
                 }
             });
         }
-            return products;
     }
 
     @Override
@@ -245,14 +247,14 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         if (s.length() > 2) {
             filteredModelList = (filteredModelList.size() == 0) ? filter(products, s) : filter(filteredModelList, s);
             if (filteredModelList.size() == 0) {
-                productListAdapter.setData(prepareData(gst));
+                prepareData(gst);
                 Toast.makeText(getContext(), "No data found", Toast.LENGTH_LONG).show();
             } else {
                 productListAdapter.setData(filteredModelList);
             }
 
         } else {
-            productListAdapter.setData(prepareData(gst));
+            prepareData(gst);
         }
         return true;
     }

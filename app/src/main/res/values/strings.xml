@@ -119,8 +119,8 @@
 
     </string-array>
     <string-array name="_5_products_images">
-        <item>Fish-Fillets.jpeg</item>
-        <item>packaged_food.jpg</item>
+        <item>Fish-Fillets.jpg</item>
+        <item>packed_food.jpg</item>
         <item>footwear.jpg</item>
         <item>cream.jpg</item>
         <item>skimmedmilkpowder.jpg</item>
@@ -142,13 +142,13 @@
         <item>raisin.jpg</item>
         <item>biogas.jpg</item>
         <item>insulin.jpg</item>
-        <item>agarbatti.jpg</item>
+        <item>agarbatti.png</item>
         <item>kites.jpg</item>
         <item>postage_revenuestamps.jpg</item>
         <item>stamp_post_marks.jpg</item>
         <item>first_day_covers.jpg</item>
         <item>transport_services.jpg</item>
-        <item>restraurant.png</item>
+        <item>restaurant.png</item>
 
     </string-array>
     >
@@ -191,12 +191,12 @@
         <item>Work Contracts</item>
     </string-array>
     <string-array name="_12_products_images">
-        <item>frozen_meal_products.jpg</item>
+        <item>frozen_meat_products.jpg</item>
         <item>butter.jpeg</item>
         <item>cheese.jpg</item>
         <item>ghee.jpg</item>
-        <item>dry_fruits_packaged_form.jpg</item>
-        <item>animal_fat.png</item>
+        <item>dry_fruits _packaged_form.jpg</item>
+        <item>animalfat.png</item>
         <item>sausage.jpg</item>
         <item>fruitjuices.jpg</item>
         <item>namkeen.jpg</item>
@@ -209,7 +209,7 @@
         <item>cellphones.jpg</item>
         <item>ketchup.jpg</item>
         <item>diagnostickitsandreagents.png</item>
-        <item>exercisebooksnotebooks.jpg</item>
+        <item>exercisebooknotebooks.jpg</item>
         <item>spoons.jpg</item>
         <item>forks.jpg</item>
         <item>ladles.jpg</item>
@@ -217,15 +217,15 @@
         <item>cake_servers.jpg</item>
         <item>fish_knives.jpg</item>
         <item>tongs.jpg</item>
-        <item>spectacles.png</item>
+        <item>spectacle.png</item>
         <item>playing_cards.jpg</item>
         <item>chess_board.jpg</item>
         <item>carom_board.jpg</item>
         <item>board_games.jpg</item>
         <item>lottery-pic.jpg</item>
         <item>non_ac_hotel.png</item>
-        <item>business_class_air_ticket.jpg</item>
-        <item>fertilisers.png</item>
+        <item>buissiness_class_air_ticket.jpg</item>
+        <item>fertilizers.png</item>
         <item>work_contract.jpg</item>
     </string-array>
 

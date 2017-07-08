@@ -76,6 +76,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         mProductList.add(product);
         notifyDataSetChanged();
     }
+    public void clear(){
+        mProductList.clear();
+        notifyDataSetChanged();
+
+    }
+
 
     class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTextView;
