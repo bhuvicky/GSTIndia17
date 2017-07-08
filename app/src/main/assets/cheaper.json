@@ -344,13 +344,13 @@
          },
          {
             "itemName":"Fertilizers",
-            "beforeGST":"18.5",
-            "afterGST":"12"
+            "beforeGST":"12",
+            "afterGST":"5"
          },
          {
-            "itemName":"Tractors",
-            "beforeGST":"18.5",
-            "afterGST":"12"
+            "itemName":"Tractor Parts",
+            "beforeGST":"28",
+            "afterGST":"18"
          },
          {
             "itemName":"Sewing/knitting needles",
