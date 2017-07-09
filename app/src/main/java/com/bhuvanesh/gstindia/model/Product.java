@@ -6,8 +6,7 @@ package com.bhuvanesh.gstindia.model;
 
 public class Product {
 
-    public String productName;
-    public String productImage;
+    public String item;
     public String gst;
-    public String url;
+    public String URL;
 }

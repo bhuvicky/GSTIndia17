@@ -61,6 +61,13 @@
         android:textColor="@color/colorAccent"
         android:layout_marginBottom="8dp"
         />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/progressbar_products"
+        />
+
 <android.support.v7.widget.RecyclerView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

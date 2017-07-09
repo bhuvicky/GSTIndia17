@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -58,7 +64,8 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     List<Product> filteredModelList;
     Map<String, Integer> tax = new HashMap<>();
     private InterstitialAd mInterstitialAd;
-
+    private Query productQuery;
+    private ProgressBar productsProogressBar;
     public static ProductListFragment newInstance(String gst) {
         ProductListFragment productListFragment = new ProductListFragment();
         productListFragment.gst = gst;
@@ -94,7 +101,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         twelveButton = view.findViewById(R.id.button_twelve);
         eighteenButton = view.findViewById(R.id.button_eighteen);
         twentyEightButton = view.findViewById(R.id.button_twenty_eight);
-
+        productsProogressBar=view.findViewById(R.id.progressbar_products);
         productRecyclerView = view.findViewById(R.id.recycler_view_products);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         productListAdapter = new ProductListAdapter(getContext());
@@ -142,13 +149,42 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
                 prepareData("eighteen");
             }
         });
-
         twentyEightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gst = "twenty_eight";
                 taxTextView.setText(getTitle(gst));
               prepareData("twenty_eight");
+            }
+        });
+        productQuery.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+               productListAdapter.addItem(dataSnapshot.getValue(Product.class));
+                productsProogressBar.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                productListAdapter.addItem(dataSnapshot.getValue(Product.class));
+                productsProogressBar.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
@@ -161,54 +197,42 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
 
     private void prepareData(String gst) {
         productListAdapter.clear();
+        productsProogressBar.setVisibility(View.VISIBLE);
         switch (gst) {
             case "zero":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                productDetails(R.array._0_products_name, R.array._0_products_images, gst);
+                getData("zero");
+
+
             case "five":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                productDetails(R.array._5_products_names, R.array._5_products_images, gst);
+                getData("five");
+
             case "twelve":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                productDetails(R.array._12_products_names, R.array._12_products_images, gst);
+                getData("twelve");
+
             case "eighteen":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                 productDetails(R.array._18_products_names, R.array._18_products_images, gst);
+                getData("eighteen");
+
             default:
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
-                 productDetails(R.array._28_products_names, R.array._28_products_images, gst);
+                getData("twentyeight");
+
         }
     }
 
-    private void productDetails(int arrayResIdNames, int arrayResIdImages, String gst) {
-        String[] namesOf12Products = getActivity().getResources().getStringArray(arrayResIdNames);
-        String[] imagesOf12Products = getActivity().getResources().getStringArray(arrayResIdImages);
-        for (int i = 0; i < namesOf12Products.length; i++) {
-            final Product product = new Product();
-            product.productName = namesOf12Products[i];
-            product.productImage = imagesOf12Products[i];
-            product.gst = gst;
-            StorageReference storageReference = new FirebaseStorageAccess(getContext()).getUrl(product.gst + "/" + product.productImage);
 
-            storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    GstLoggerUtil.debug("hh", task.getResult().toString());
-                    product.url = task.getResult().toString();
-                    productListAdapter.addItem(product);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
 
-                }
-            });
-        }
+    public void getData(String gst) {
+        productQuery = FirebaseDatabase.getInstance().getReference().child(gst);
+
     }
 
     @Override
@@ -264,7 +288,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
 
         final List<Product> filteredModelList = new ArrayList<>();
         for (Product item : items) {
-            final String text = item.productName.toLowerCase();
+            final String text = item.item.toLowerCase();
             if (text.contains(query)) {
                 filteredModelList.add(item);
             }
