@@ -34,11 +34,12 @@ public class TaxComparisonViewPagerFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tax_comparison_view_pager, container, false);
-        ((BaseActivity) getActivity()).setBackEnabled(true);
-        ((BaseActivity) getActivity()).setTitle("Cheaper-Costiler-Unchanged");
         setHasOptionsMenu(true);
-        TabLayout tabLayout = view.findViewById(R.id.tablayout_cheaper_costlier);
-        ViewPager viewPager = view.findViewById(R.id.viewpager_cheaper_costlier_item);
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        (getActivity()).setTitle("Cheaper-Costiler-Unchanged");
+
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tablayout_cheaper_costlier);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager_cheaper_costlier_item);
         tabLayout.setupWithViewPager(viewPager);
         mInterstitialAd = getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());

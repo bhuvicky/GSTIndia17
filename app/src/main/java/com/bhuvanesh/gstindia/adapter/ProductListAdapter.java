@@ -56,8 +56,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         if(product.URL!=null) {
             holder.productNImageView.setImageUrl(product.URL, imageLoader);
-        }else {
-
         }
     }
 
@@ -71,7 +69,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         mProductList = productList;
         notifyDataSetChanged();
     }
-
+    public List<Product> getProductList(){return mProductList;}
     public void addItem(Product product){
         mProductList.add(product);
         notifyDataSetChanged();
@@ -89,8 +87,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.textview_name_of_product);
-            productNImageView = itemView.findViewById(R.id.network_imageview_product);
+            nameTextView = (TextView) itemView.findViewById(R.id.textview_name_of_product);
+            productNImageView = (NetworkImageView) itemView.findViewById(R.id.network_imageview_product);
 
         }
     }

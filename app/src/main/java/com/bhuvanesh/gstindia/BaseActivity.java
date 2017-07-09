@@ -28,7 +28,6 @@ public class BaseActivity extends AppCompatActivity {
     protected void setActionBar(int resId) {
         mToolbar = (Toolbar) findViewById(resId);
         setSupportActionBar(mToolbar);
-
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayShowTitleEnabled(true);
     }
@@ -38,6 +37,7 @@ public class BaseActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(resId);
         }
     }
+
 
     public void setBackEnabled(boolean enable) {
         if (getSupportActionBar() != null)

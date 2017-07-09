@@ -64,7 +64,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     List<Product> filteredModelList;
     Map<String, Integer> tax = new HashMap<>();
     private InterstitialAd mInterstitialAd;
-    private Query productQuery;
+
     private ProgressBar productsProogressBar;
     public static ProductListFragment newInstance(String gst) {
         ProductListFragment productListFragment = new ProductListFragment();
@@ -87,27 +87,27 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(true);
         ((BaseActivity) getActivity()).setTitle("Product List");
-        setHasOptionsMenu(true);
+
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
 
         filteredModelList = new ArrayList<>();
-        taxTextView = view.findViewById(R.id.textview_tax);
-        zeroButton = view.findViewById(R.id.button_zero);
-        fiveButton = view.findViewById(R.id.button_five);
-        twelveButton = view.findViewById(R.id.button_twelve);
-        eighteenButton = view.findViewById(R.id.button_eighteen);
-        twentyEightButton = view.findViewById(R.id.button_twenty_eight);
-        productsProogressBar=view.findViewById(R.id.progressbar_products);
-        productRecyclerView = view.findViewById(R.id.recycler_view_products);
+        taxTextView = (TextView) view.findViewById(R.id.textview_tax);
+        zeroButton = (Button) view.findViewById(R.id.button_zero);
+        fiveButton = (Button) view.findViewById(R.id.button_five);
+        twelveButton = (Button) view.findViewById(R.id.button_twelve);
+        eighteenButton = (Button) view.findViewById(R.id.button_eighteen);
+        twentyEightButton = (Button) view.findViewById(R.id.button_twenty_eight);
+        productsProogressBar= (ProgressBar) view.findViewById(R.id.progressbar_products);
+        productRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_products);
         productRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         productListAdapter = new ProductListAdapter(getContext());
        // productListAdapter.setData();
-        prepareData(gst);
         productRecyclerView.setAdapter(productListAdapter);
+        prepareData(gst);
 
         taxTextView.setText(tax.get(gst) + "% GST");
         taxTextView.setText(getTitle(gst));
@@ -154,37 +154,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
             public void onClick(View view) {
                 gst = "twenty_eight";
                 taxTextView.setText(getTitle(gst));
-              prepareData("twenty_eight");
-            }
-        });
-        productQuery.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-               productListAdapter.addItem(dataSnapshot.getValue(Product.class));
-                productsProogressBar.setVisibility(View.INVISIBLE);
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                productListAdapter.addItem(dataSnapshot.getValue(Product.class));
-                productsProogressBar.setVisibility(View.INVISIBLE);
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+              prepareData("twentyeight");
             }
         });
 
@@ -204,22 +174,23 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 getData("zero");
 
-
+                break;
             case "five":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 getData("five");
+                break;
 
             case "twelve":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 getData("twelve");
-
+               break;
             case "eighteen":
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
                 getData("eighteen");
-
+               break;
             default:
                 logDashboardEvent("Product Screen Content", "0% Slab", "favourite_app_feature",
                         "0% Slab", FirebaseAnalytics.Event.SELECT_CONTENT);
@@ -231,7 +202,36 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
 
 
     public void getData(String gst) {
-        productQuery = FirebaseDatabase.getInstance().getReference().child(gst);
+
+        Query productQuery = FirebaseDatabase.getInstance().getReference().child(gst).orderByChild("item");
+        productQuery.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                productListAdapter.addItem(dataSnapshot.getValue(Product.class));
+                productsProogressBar.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
@@ -243,9 +243,11 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
                 (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         android.support.v7.widget.SearchView searchView =
                 (android.support.v7.widget.SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getActivity().getComponentName()));
-        searchView.setOnQueryTextListener(ProductListFragment.this);
+        if (searchView!=null) {
+            searchView.setSearchableInfo(
+                    searchManager.getSearchableInfo(getActivity().getComponentName()));
+            searchView.setOnQueryTextListener(ProductListFragment.this);
+        }
     }
 
     @Override
@@ -269,7 +271,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
     public boolean onQueryTextChange(String s) {
 
         if (s.length() > 2) {
-            filteredModelList = (filteredModelList.size() == 0) ? filter(products, s) : filter(filteredModelList, s);
+            filteredModelList = (filteredModelList.size() == 0) ? filter(productListAdapter.getProductList(), s) : filter(filteredModelList, s);
             if (filteredModelList.size() == 0) {
                 prepareData(gst);
                 Toast.makeText(getContext(), "No data found", Toast.LENGTH_LONG).show();

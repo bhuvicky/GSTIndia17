@@ -8,8 +8,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
+import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +32,7 @@ public class BillViewFragment extends BaseFragment {
 
     private ZoomageView billZoomageView;
     private String url;
+    private ProgressBar loadImageProgressBar;
 
     public static BillViewFragment newInstance(String url) {
         BillViewFragment billViewFragment = new BillViewFragment();
@@ -43,23 +50,30 @@ public class BillViewFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
-        billZoomageView = view.findViewById(R.id.zoom_image_bill);
-        billZoomageView.setImageURI(Uri.parse(url));
-//                StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(url);
-//        storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Uri> task) {
-//                billZoomageView.setImageURI(task.getResult());
-//
-//            }
-//        });
-    }
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        ((BaseActivity) getActivity()).setTitle("Bill Explore");
+
+        billZoomageView = (ZoomageView) view.findViewById(R.id.zoom_image_bill);
+        loadImageProgressBar=view.findViewById(R.id.progressbar_load_large_image);
+        ImageLoader imageLoader= GSTApplication.getInstance().getImageLoader();
+        imageLoader.get(url, new ImageLoader.ImageListener() {
+            @Override
+            public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
+                loadImageProgressBar.setVisibility(View.INVISIBLE);
+                billZoomageView.setImageBitmap(response.getBitmap());
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(),"Error in Loading Image",Toast.LENGTH_SHORT).show();
+            }
+        });
+        }
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

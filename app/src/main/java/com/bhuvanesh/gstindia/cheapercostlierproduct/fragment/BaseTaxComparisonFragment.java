@@ -18,6 +18,7 @@ import com.bhuvanesh.gstindia.utils.FileUtil;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,14 +57,11 @@ public class BaseTaxComparisonFragment extends BaseFragment {
                 break;
         }
 
-        RecyclerView recyclerViewItemCategory = view.findViewById(R.id.recyclerview_item_category);
+        RecyclerView recyclerViewItemCategory = (RecyclerView) view.findViewById(R.id.recyclerview_item_category);
         recyclerViewItemCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
         GstLoggerUtil.debug("hh",list.get(0).categoryName);
-        CategoryItemsListAdapter adapter = new CategoryItemsListAdapter(getActivity());
-
-        adapter.setData(list);
-
-
+        CategoryItemsListAdapter adapter = new CategoryItemsListAdapter(getContext());
         recyclerViewItemCategory.setAdapter(adapter);
+        adapter.setData(list);
     }
 }

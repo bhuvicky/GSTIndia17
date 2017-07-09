@@ -24,6 +24,7 @@ import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
 import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.cheapercostlierproduct.fragment.TaxComparisonViewPagerFragment;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.github.mikephil.charting.charts.PieChart;
@@ -51,6 +52,7 @@ public class DashboardFragment extends BaseFragment {
 
     private PieChart pieChart;
     private InterstitialAd interstitialAd;
+
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
     }
@@ -59,24 +61,31 @@ public class DashboardFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        ((BaseActivity) getActivity()).setBackEnabled(false);
-        ((BaseActivity) getActivity()).setTitle(R.string.app_name);
-        DisplayMetrics metrics = new DisplayMetrics();
-        setHasOptionsMenu(true);
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-         interstitialAd=new InterstitialAd(getContext());
 
-        TextView textViewLifeAfterJuly1 = view.findViewById(R.id.textview_rules);
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
+        ((BaseActivity) getActivity()).setBackEnabled(false);
+        (getActivity()).setTitle("Life After GST");
+        TextView textViewLifeAfterJuly1 = (TextView) view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replace(R.id.fragment_host, LifeAfterJuly1Fragment.newInstance());
             }
         });
-        pieChart = view.findViewById(R.id.piechart);
+        DisplayMetrics metrics = new DisplayMetrics();
+        (getActivity()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        interstitialAd = getInterstitialAdInstance(getContext());
+        pieChart = (PieChart) view.findViewById(R.id.piechart);
         pieChart.setDescription("");
         pieChart.setUsePercentValues(true);
-        pieChart.setMinimumHeight(metrics.heightPixels/2);
+        pieChart.setMinimumHeight(metrics.heightPixels / 2);
         pieChart.setCenterText("GST");
         pieChart.setCenterTextSize(24f);
         pieChart.setCenterTextTypeface(Typeface.DEFAULT_BOLD);
@@ -85,59 +94,49 @@ public class DashboardFragment extends BaseFragment {
         pieChart.setRotationEnabled(true);*/
         createDataSet();
 
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        AdView adView=view.findViewById(R.id.adview);
-        AdRequest adRequest=new AdRequest.Builder()
-                .addTestDevice("D7485D34081F44384E25018239E6810B")
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        adView.loadAd(adRequest);
-        interstitialAd.setAdUnitId("ca-app-pub-2950380730218514/7106047184");
-        interstitialAd.loadAd(adRequest);
-        RelativeLayout relativeLayout=view.findViewById(R.id.relative_layout_dashboard);
+        AdView adView = (AdView) view.findViewById(R.id.adview);
+        AdRequest adRequest = getAdRequest();
+        if (adRequest != null) {
+            adView.loadAd(adRequest);
+            interstitialAd.loadAd(adRequest);
+        }
+        RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout_dashboard);
         Snackbar snackbar = Snackbar
-                .make(relativeLayout, "click pie chart to see items comes under respctive tax %", Snackbar.LENGTH_LONG);
+                .make(relativeLayout, "click the piechart for items under respctive tax%", Snackbar.LENGTH_LONG);
 
         snackbar.show();
 
-        TextView exploreBillsTextView = view.findViewById(R.id.textview_explore_bill);
+        TextView exploreBillsTextView = (TextView) view.findViewById(R.id.textview_explore_bill);
         exploreBillsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
+                logDashboardEvent("Dashboard Screen Content", "Explore Bill", "favourite_app_feature",
                         "Explore Bill", FirebaseAnalytics.Event.SELECT_CONTENT);
                 replace(R.id.fragment_host, BillFeedFragment.newInstance());
             }
         });
-        TextView calculatorTextView = view.findViewById(R.id.textview_calculator);
+        TextView calculatorTextView = (TextView) view.findViewById(R.id.textview_calculator);
         calculatorTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
-                System.out.println("log is test device = " +  adRequest.isTestDevice(getActivity()));
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice("33BE2250B43518CCDA7DE426D04EE232").build();
+                System.out.println("log is test device = " + adRequest.isTestDevice(getActivity()));
 
                 logDashboardEvent("Dashboard Screen Content", "GST Calculator", "favourite_app_feature",
                         "GST Calculator", FirebaseAnalytics.Event.SELECT_CONTENT);
                 replace(R.id.fragment_host, GSTCalcFragment.newInstance());
             }
         });
-        TextView faqTextview = view.findViewById(R.id.textview_faq);
+        TextView faqTextview = (TextView) view.findViewById(R.id.textview_faq);
         faqTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replace(R.id.fragment_host,FAQFragment.newInstance());
+                replace(R.id.fragment_host, FAQFragment.newInstance());
 
             }
         });
 
-        TextView textViewItemTax = view.findViewById(R.id.textview_cheaper_costlier);
+        TextView textViewItemTax = (TextView) view.findViewById(R.id.textview_cheaper_costlier);
         textViewItemTax.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,8 +144,6 @@ public class DashboardFragment extends BaseFragment {
 
             }
         });
-
-
 
 
     }
@@ -234,32 +231,38 @@ public class DashboardFragment extends BaseFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        inflater.inflate(R.menu.menu_dash_board,menu);
+        inflater.inflate(R.menu.menu_dash_board, menu);
         MenuItem item = menu.findItem(R.id.action_share);
-        ShareActionProvider actionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
-
+        ShareActionProvider myShareActionProvider =
+                (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        ;
         // Create the share Intent
-        String shareText = "Install Life After GSt app to Know completely about GST \n http://play.google.com/store/apps/details?id=com.bhuvanesh.gstindia";
-        Intent shareIntent = ShareCompat.IntentBuilder.from(getActivity())
-                .setType("text/plain").setText(shareText).getIntent();
-        actionProvider.setShareIntent(shareIntent);
+        String shareText = "Install Life After GSt app to get complete information about GST \n http://play.google.com/store/apps/details?id=com.bhuvanesh.gstindia \n Available on Hindi,English,Tamil";
+        Intent shareIntent = new Intent(Intent.ACTION_SEND)
+                .putExtra(android.content.Intent.EXTRA_SUBJECT, "Life After GST")
+                .putExtra(android.content.Intent.EXTRA_TEXT, shareText)
+                .setType("text/plain");
+        if (myShareActionProvider != null)
+            myShareActionProvider.setShareIntent(shareIntent);
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.action_send_feedback:
-                composeEmail(new String[]{"gstindia017@gmail.com"},"Life After GST Feedback");
+                composeEmail(new String[]{"gstindia017@gmail.com"}, "Life After GST Feedback");
                 return true;
 
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @Override
     protected void onBackPress() {
         super.onBackPress();
-        if (interstitialAd.isLoaded())interstitialAd.show();
+        if (interstitialAd.isLoaded()) interstitialAd.show();
     }
+
     public void composeEmail(String[] addresses, String subject) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this

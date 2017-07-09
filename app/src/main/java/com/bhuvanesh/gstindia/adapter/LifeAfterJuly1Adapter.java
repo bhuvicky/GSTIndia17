@@ -48,8 +48,8 @@ public class LifeAfterJuly1Adapter extends RecyclerView.Adapter<LifeAfterJuly1Ad
         ViewHolder(View itemView) {
             super(itemView);
 
-            textViewTitle = itemView.findViewById(R.id.textview_title);
-            textViewDescription = itemView.findViewById(R.id.textview_description);
+            textViewTitle = (TextView) itemView.findViewById(R.id.textview_title);
+            textViewDescription = (TextView) itemView.findViewById(R.id.textview_description);
         }
     }
 }

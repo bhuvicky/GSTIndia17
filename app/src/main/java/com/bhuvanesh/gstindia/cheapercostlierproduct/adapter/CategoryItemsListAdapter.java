@@ -29,6 +29,7 @@ public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItems
 
     public void setData(List<CategoryWiseItem> list) {
         mCategoryWiseItem.clear();
+        if (list!=null)
         mCategoryWiseItem.addAll(list);
         notifyDataSetChanged();
     }
@@ -44,8 +45,8 @@ public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItems
         holder.textViewCategoryName.setText(item.categoryName);
 
         holder.adapter = new ItemDetailsListAdapter(mContext);
-        holder.adapter.setData(item.taxComparedItemList);
         holder.recyclerViewItemTax.setAdapter(holder.adapter);
+        holder.adapter.setData(item.taxComparedItemList);
     }
 
     @Override
@@ -62,8 +63,8 @@ public class CategoryItemsListAdapter extends RecyclerView.Adapter<CategoryItems
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textViewCategoryName = itemView.findViewById(R.id.textview_category_name);
-            recyclerViewItemTax = itemView.findViewById(R.id.recycler_view_single_category_items);
+            textViewCategoryName = (TextView) itemView.findViewById(R.id.textview_category_name);
+            recyclerViewItemTax = (RecyclerView) itemView.findViewById(R.id.recycler_view_single_category_items);
             recyclerViewItemTax.setNestedScrollingEnabled(false);
             recyclerViewItemTax.setLayoutManager(new LinearLayoutManager(mContext));
         }

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.fragment.DashboardFragment;
+import com.bhuvanesh.gstindia.fragment.GSTCalcFragment;
+
 public class GstActivity extends BaseActivity {
 
     @Override

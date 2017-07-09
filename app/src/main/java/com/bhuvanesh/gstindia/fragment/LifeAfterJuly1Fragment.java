@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
@@ -41,19 +42,18 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_life_after_july1, container, false);
 
 
-        RecyclerView recyclerViewAfterJuly1 = view.findViewById(R.id.recyclerview_life_after_july1);
+        RecyclerView recyclerViewAfterJuly1 = (RecyclerView) view.findViewById(R.id.recyclerview_life_after_july1);
         recyclerViewAfterJuly1.setLayoutManager(new LinearLayoutManager(getActivity()));
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
 
-        List<LifeAfterJuly1> list = FileUtil.getFromAssetsFolder("life_after_july1", null,
+        List<LifeAfterJuly1> list = FileUtil.getFromAssetsFolder("life_after_july1.json", null,
                 new TypeToken<List<LifeAfterJuly1>> () {}.getType());
 
         LifeAfterJuly1Adapter adapter = new LifeAfterJuly1Adapter();
+        recyclerViewAfterJuly1.setAdapter(adapter);
         if (list != null)
             adapter.setData(list);
-        recyclerViewAfterJuly1.setAdapter(adapter);
-
         return view;
     }
 

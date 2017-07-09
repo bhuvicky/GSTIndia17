@@ -28,6 +28,7 @@ public class ItemDetailsListAdapter extends RecyclerView.Adapter<ItemDetailsList
 
     public void setData(List<ItemDetails> list) {
         mtemDetailsList.clear();
+        if (list!=null)
         mtemDetailsList.addAll(list);
         notifyDataSetChanged();
     }
@@ -58,12 +59,12 @@ public class ItemDetailsListAdapter extends RecyclerView.Adapter<ItemDetailsList
         private TextView textViewAfterGstRate;
         private TextView textViewBeforeGstRate;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
 
-            textViewItemName = itemView.findViewById(R.id.textview_item_name);
-            textViewAfterGstRate = itemView.findViewById(R.id.textview_tax_post_gst);
-            textViewBeforeGstRate = itemView.findViewById(R.id.textview_tax_pre_gst);
+            textViewItemName = (TextView) itemView.findViewById(R.id.textview_item_name);
+            textViewAfterGstRate = (TextView) itemView.findViewById(R.id.textview_tax_post_gst);
+            textViewBeforeGstRate = (TextView) itemView.findViewById(R.id.textview_tax_pre_gst);
         }
     }
 }

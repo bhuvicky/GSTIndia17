@@ -56,7 +56,7 @@ public class FAQAdapter extends RecyclerView.Adapter<FAQAdapter.ViewHolder> {
     private TextView questionTextView;
     public ViewHolder(View itemView) {
         super(itemView);
-        questionTextView=itemView.findViewById(R.id.textview_faq_question);    }
+        questionTextView= (TextView) itemView.findViewById(R.id.textview_faq_question);    }
 }
 
 }

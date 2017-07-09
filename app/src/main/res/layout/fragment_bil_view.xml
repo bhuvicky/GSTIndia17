@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.jsibbold.zoomage.ZoomageView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+<com.jsibbold.zoomage.ZoomageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/zoom_image_bill"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:background="@color/color_text_black"
     app:zoomage_restrictBounds="false"
     app:zoomage_animateOnReset="true"
@@ -15,3 +22,10 @@
     app:zoomage_maxScale="8">
 
 </com.jsibbold.zoomage.ZoomageView>
+    <ProgressBar
+        android:id="@+id/progressbar_load_large_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+</FrameLayout>

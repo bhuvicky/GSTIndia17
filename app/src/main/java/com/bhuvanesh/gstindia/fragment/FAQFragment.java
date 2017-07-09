@@ -41,13 +41,14 @@ public class FAQFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("GST FAQ ?");
-        setHasOptionsMenu(true);
+
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
 
-        RecyclerView questionRecyclerView=view.findViewById(R.id.recycler_view_question);
+        RecyclerView questionRecyclerView= (RecyclerView) view.findViewById(R.id.recycler_view_question);
         questionRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         final String[] answers=getActivity().getResources().getStringArray(R.array.answers);
 

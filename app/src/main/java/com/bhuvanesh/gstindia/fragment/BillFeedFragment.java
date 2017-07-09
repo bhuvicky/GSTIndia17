@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,18 +80,21 @@ public class BillFeedFragment extends BaseFragment {
         setHasOptionsMenu(true);
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
-        billRecyclerView = view.findViewById(R.id.recycler_view_bills);
-        paginationProgressBar = view.findViewById(R.id.progressbar);
-        addFab = view.findViewById(R.id.fab_add);
-        billListAdapter = new BillListAdapter(getContext(), new BillListAdapter.ItemClickListener() {
+        billRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_bills);
+        paginationProgressBar = (ProgressBar) view.findViewById(R.id.progressbar);
+        addFab = (FloatingActionButton) view.findViewById(R.id.fab_add);
+        DisplayMetrics metrics = new DisplayMetrics();
+        (getActivity()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        billListAdapter = new BillListAdapter(getContext(),metrics.widthPixels/3, new BillListAdapter.ItemClickListener() {
             @Override
             public void onClick(String url) {
                 replace(R.id.fragment_host, BillViewFragment.newInstance(url));
             }
         });
         billRecyclerView.setAdapter(billListAdapter);
-        noOfColumns = UIUtils.getNumOfColumns(getActivity(), 100);
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), noOfColumns);
+        //noOfColumns = UIUtils.getNumOfColumns(getActivity(), 100);
+
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
         billRecyclerView.setLayoutManager(gridLayoutManager);
 
         addFab.setOnClickListener(new View.OnClickListener() {
@@ -157,15 +161,11 @@ public class BillFeedFragment extends BaseFragment {
                     bill.billUrl = task.getResult().getDownloadUrl().toString();
                     bill.time = System.currentTimeMillis();
                     new FirebaseRTDB().addBill(bill);
+                    Toast.makeText(getContext(), " Your invoice is uploaded", Toast.LENGTH_SHORT).show();
 
                 }
             });
-            uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-//                    Toast.makeText(getContext(), " Your invoice is uploaded", Toast.LENGTH_SHORT).show();
-                }
-            });
+
 
         }
     }

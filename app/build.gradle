@@ -35,8 +35,8 @@ android {
         def REPORT_ANALYTICS = "REPORT_ANALYTICS"
         def REPORT_TEST_AD = "REPORT_TEST_AD"
         release {
-            shrinkResources true
-            minifyEnabled true
+
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField BOOLEAN, REPORT_CRASHES, TRUE
             buildConfigField BOOLEAN, REPORT_LOG, FALSE
@@ -49,7 +49,7 @@ android {
             buildConfigField BOOLEAN, REPORT_ANALYTICS, FALSE
             buildConfigField BOOLEAN, REPORT_TEST_AD, TRUE
             minifyEnabled false
-            shrinkResources false
+
         }
     }
 }

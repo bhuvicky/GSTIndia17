@@ -35,12 +35,12 @@ public class FAQAnswerFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("Answer");
-        setHasOptionsMenu(true);
 
-        TextView questionTexview =view.findViewById(R.id.texview_heading_question);
-        TextView answerTextView=view.findViewById(R.id.texview_answer);
+        TextView questionTexview = (TextView) view.findViewById(R.id.texview_heading_question);
+        TextView answerTextView= (TextView) view.findViewById(R.id.texview_answer);
         questionTexview.setText(question);
         answerTextView.setText(answer);
     }

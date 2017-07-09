@@ -50,18 +50,18 @@ public class GSTCalcFragment extends BaseFragment {
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle("GST Calculator");
         setHasOptionsMenu(true);
-        AdView adView=view.findViewById(R.id.adview);
+        AdView adView= (AdView) view.findViewById(R.id.adview);
         adView.loadAd(getAdRequest());
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
 
-        gstRadioGroup=view.findViewById(R.id.radio_button_grp_gst);
-        addGSTButton=view.findViewById(R.id.button_add_gst);
-        removeGSTButton=view.findViewById(R.id.button_remove_gst);
-        netValueTextView=view.findViewById(R.id.textview_net_value);
-        gstValueTextView=view.findViewById(R.id.textview_gst_value);
-        totalValueTextView=view.findViewById(R.id.textview_total_value);
-        amountEditText=view.findViewById(R.id.editText_amount);
+        gstRadioGroup= (RadioGroup) view.findViewById(R.id.radio_button_grp_gst);
+        addGSTButton= (Button) view.findViewById(R.id.button_add_gst);
+        removeGSTButton= (Button) view.findViewById(R.id.button_remove_gst);
+        netValueTextView= (TextView) view.findViewById(R.id.textview_net_value);
+        gstValueTextView= (TextView) view.findViewById(R.id.textview_gst_value);
+        totalValueTextView= (TextView) view.findViewById(R.id.textview_total_value);
+        amountEditText= (TextInputEditText) view.findViewById(R.id.editText_amount);
         addGSTButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,8 +69,15 @@ public class GSTCalcFragment extends BaseFragment {
                 if(amountEditText.getText().toString().equals("")){
                     Toast.makeText(getActivity(),"Nothing entered",Toast.LENGTH_SHORT).show();
                 }else {
-                    double amt=Double.parseDouble(amountEditText.getText().toString());
-                    if(amt<9999999999f) {
+                    double amt=0.0;
+                   try {
+
+                    amt=Double.parseDouble(amountEditText.getText().toString());
+                       }catch (NumberFormatException exception){
+
+                   }
+
+                       if(amt<9999999999f) {
                         netValueTextView.setText(String.format("₹%.2f", amt));
                         double gst = amt / 100;
                         switch (gstRadioGroup.getCheckedRadioButtonId()) {
@@ -106,7 +113,13 @@ public class GSTCalcFragment extends BaseFragment {
                 if(amountEditText.getText().equals("")){
                     Toast.makeText(getActivity(),"Nothing entered",Toast.LENGTH_SHORT).show();
                 }else {
-                    double amt=Double.parseDouble(amountEditText.getText().toString());
+                    double amt=0.0;
+                    try {
+
+                        amt=Double.parseDouble(amountEditText.getText().toString());
+                    }catch (NumberFormatException exception){
+                         Toast.makeText(getContext(),"Invalid Amount",Toast.LENGTH_SHORT).show();
+                    }
                     if(amt<9999999999f){
                         netValueTextView.setText(String.format("₹%.2f", amt));
                         double gst=amt/100;
