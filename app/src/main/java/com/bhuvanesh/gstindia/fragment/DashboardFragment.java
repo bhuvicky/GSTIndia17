@@ -68,7 +68,7 @@ public class DashboardFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(false);
-        (getActivity()).setTitle(getString(R.string.dash_titlte));
+        ((BaseActivity)getActivity()).setTitle(getString(R.string.dash_titlte));
         TextView textViewLifeAfterJuly1 = (TextView) view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +144,8 @@ public class DashboardFragment extends BaseFragment {
 
 
     }
+
+
 
     private void createDataSet() {
         ArrayList<Entry> yvalues = new ArrayList<>();

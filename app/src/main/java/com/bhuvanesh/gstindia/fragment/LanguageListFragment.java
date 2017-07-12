@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,6 +36,8 @@ public class LanguageListFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_language_list, container, false);
         ((BaseActivity) getActivity()).setTitle(R.string.lbl_select_lang);
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        setHasOptionsMenu(true);
 
         if (GSTPreference.getInstance().isFirstTime()) {
             GSTPreference.getInstance().setFirstTime(false);
@@ -58,6 +61,17 @@ public class LanguageListFragment extends BaseFragment {
         });
 
         return view;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                 onBackPress();
+                return true;
+
+        }
+        return false;
     }
 }
 
