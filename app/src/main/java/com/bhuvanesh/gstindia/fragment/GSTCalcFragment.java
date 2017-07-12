@@ -48,7 +48,7 @@ public class GSTCalcFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("GST Calculator");
+        ((BaseActivity)getActivity()).setTitle(getString(R.string.calculator));
         setHasOptionsMenu(true);
         AdView adView= (AdView) view.findViewById(R.id.adview);
         adView.loadAd(getAdRequest());

@@ -37,7 +37,7 @@ public class FAQAnswerFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("Answer");
+        ((BaseActivity)getActivity()).setTitle(getResources().getString(R.string.faq));
 
         TextView questionTexview = (TextView) view.findViewById(R.id.texview_heading_question);
         TextView answerTextView= (TextView) view.findViewById(R.id.texview_answer);

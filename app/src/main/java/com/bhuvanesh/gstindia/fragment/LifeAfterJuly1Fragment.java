@@ -62,7 +62,8 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("Life after July 1");
+        ((BaseActivity)getActivity()).setTitle(getResources().getString(R.string.life_after_july_1)) ;
+
 
 
     }

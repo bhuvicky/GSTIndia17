@@ -89,7 +89,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(true);
-        ((BaseActivity) getActivity()).setTitle("Product List");
+        ((BaseActivity) getActivity()).setTitle(getString(R.string.product_list_title));
 
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());

@@ -14,7 +14,7 @@
     <string name="calculator">கால்குலேட்டர்</string>
     <string name="life_after_july_1">ஜூலை 1 க்குப் பிறகு வாழ்க்கை</string>
     <string name="explore_bill">விலைப்பட்டியல் ஆராயுங்கள்</string>
-    <string name="faq">FAQ</string>
+    <string name="faq">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
     <string name="costlier_cheaper">விலையுயர்ந்த / மலிவான</string>
     <string name="items">பொருட்கள்</string>
     <string name="after_ngst">ஜிஎஸ்டிக்குப் பிறகு</string>
@@ -32,6 +32,8 @@
     <string name="send_your_feedback">உங்கள் கருத்துக்களை அனுப்புங்கள்</string>
 
     <string name="action_search">தேடல்</string>
+    <string name="dash_titlte">ஜி.எஸ்.டிக்குப் பிறகு வாழ்க்கை</string>
+    <string name="product_list_title">தயாரிப்பு பட்டியல்</string>
 
     <string-array name="array_cheaper_costlier">
         <item>மலிவான</item>

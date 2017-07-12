@@ -76,7 +76,7 @@ public class BillFeedFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((BaseActivity) getActivity()).setBackEnabled(true);
-        ((BaseActivity) getActivity()).setTitle("Bill Explore");
+        ((BaseActivity) getActivity()).setTitle(getString(R.string.explore_bill));
         setHasOptionsMenu(true);
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());

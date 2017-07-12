@@ -14,7 +14,7 @@
     <string name="calculator">క్యాలిక్యులేటర్</string>
     <string name="life_after_july_1">జూలై 1 తర్వాత జీవితం</string>
     <string name="explore_bill">Explore Bill</string>
-    <string name="faq">FAQ</string>
+    <string name="faq">తరచుగా అడుగు ప్రశ్నలు</string>
     <string name="costlier_cheaper">ఖరీదైన / చవకైనది</string>
     <string name="items">వస్తువుల</string>
     <string name="after_ngst">GST తర్వాత</string>
@@ -30,6 +30,8 @@
     <string name="thank_you">ధన్యవాదాలు</string>
     <string name="share">Share</string>
     <string name="send_your_feedback">మీ అభిప్రాయాన్ని పంపండి</string>
+    <string name="dash_titlte">GST తర్వాత లైఫ్</string>
+    <string name="product_list_title">ఉత్పత్తి జాబితా</string>
 
     <string-array name="array_cheaper_costlier">
         <item>డజన్</item>

@@ -43,7 +43,7 @@ public class FAQFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity)getActivity()).setBackEnabled(true);
-        ((BaseActivity)getActivity()).setTitle("GST FAQ ?");
+        ((BaseActivity)getActivity()).setTitle(getResources().getString(R.string.faq));
 
         mInterstitialAd=getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());

@@ -410,6 +410,10 @@
 
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="action_search">search</string>
+    <string name="bill_feed_title">Bill Explore</string>
+    <string name="dash_titlte">Life After GST</string>
+    <string name="calc_title">GST Calculator</string>
+    <string name="product_list_title">Product List</string>
 
     <string-array name="questions" formatted="false">
         <item>1.Why petrol and alcohol exempt ?</item>

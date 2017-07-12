@@ -68,7 +68,7 @@ public class DashboardFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(false);
-        (getActivity()).setTitle("Life After GST");
+        (getActivity()).setTitle(getString(R.string.dash_titlte));
         TextView textViewLifeAfterJuly1 = (TextView) view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,7 +249,7 @@ public class DashboardFragment extends BaseFragment {
             case R.id.action_send_feedback:
                 composeEmail(new String[]{"gstindia017@gmail.com"}, "Life After GST Feedback");
                 return true;
-            case R.id.menu_lang:
+            case R.id.menu_langu:
                 replace(R.id.fragment_host, LanguageListFragment.newInstance());
                 return true;
         }

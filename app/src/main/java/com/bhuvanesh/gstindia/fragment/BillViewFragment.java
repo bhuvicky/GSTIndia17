@@ -51,7 +51,7 @@ public class BillViewFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(true);
-        ((BaseActivity) getActivity()).setTitle("Bill Explore");
+        ((BaseActivity) getActivity()).setTitle(getString(R.string.explore_bill));
 
         billZoomageView = (ZoomageView) view.findViewById(R.id.zoom_image_bill);
         loadImageProgressBar=view.findViewById(R.id.progressbar_load_large_image);

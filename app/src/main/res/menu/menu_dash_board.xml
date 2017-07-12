@@ -9,7 +9,7 @@
         android:title="@string/share"
         app:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
     <item
-        android:id="@+id/menu_lang"
+        android:id="@+id/menu_langu"
         android:title="@string/lbl_select_lang"/>
 
 </menu>
