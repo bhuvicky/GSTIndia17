@@ -78,4 +78,8 @@ public class BaseFragment extends Fragment {
         GSTApplication.getAnalyticsInstance().setUserProperty(propertyName, propertyName);
         GSTApplication.getAnalyticsInstance().logEvent(eventName, bundle);
     }
+
+    protected void sendUserProperties(String propertyName, String propertyValue) {
+        GSTApplication.getAnalyticsInstance().setUserProperty(propertyName, propertyValue);
+    }
 }

@@ -21,6 +21,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,19 +42,24 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_life_after_july1, container, false);
 
-
-        RecyclerView recyclerViewAfterJuly1 = (RecyclerView) view.findViewById(R.id.recyclerview_life_after_july1);
+        RecyclerView recyclerViewAfterJuly1 = view.findViewById(R.id.recyclerview_life_after_july1);
         recyclerViewAfterJuly1.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mInterstitialAd=getInterstitialAdInstance(getContext());
+        mInterstitialAd = getInterstitialAdInstance(getContext());
         mInterstitialAd.loadAd(getAdRequest());
 
-        List<LifeAfterJuly1> list = FileUtil.getFromAssetsFolder("life_after_july1.json", null,
-                new TypeToken<List<LifeAfterJuly1>> () {}.getType());
+        String[] quesArray = getResources().getStringArray(R.array.array_after_july1_ques);
+        String[] ansArray = getResources().getStringArray(R.array.array_after_july1_ans);
+        List<LifeAfterJuly1> lifeAfterJuly1List = new ArrayList<>();
 
+        for (int i = 0; i < quesArray.length; i++) {
+            LifeAfterJuly1 item = new LifeAfterJuly1();
+            item.title = quesArray[i];
+            item.description = ansArray[i];
+            lifeAfterJuly1List.add(item);
+        }
         LifeAfterJuly1Adapter adapter = new LifeAfterJuly1Adapter();
         recyclerViewAfterJuly1.setAdapter(adapter);
-        if (list != null)
-            adapter.setData(list);
+        adapter.setData(lifeAfterJuly1List);
         return view;
     }
 
@@ -61,27 +67,31 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
+        ((BaseActivity) getActivity()).setBackEnabled(true);
+        (getActivity()).setTitle(getString(R.string.life_after_july_1));
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle(getResources().getString(R.string.life_after_july_1)) ;
 
 
 
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case android.R.id.home:
                 pop();
-                if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+                if (mInterstitialAd.isLoaded()) mInterstitialAd.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
     @Override
     protected void onBackPress() {
         super.onBackPress();
-        if(mInterstitialAd.isLoaded())mInterstitialAd.show();
+        if (mInterstitialAd.isLoaded()) mInterstitialAd.show();
 
     }
 }

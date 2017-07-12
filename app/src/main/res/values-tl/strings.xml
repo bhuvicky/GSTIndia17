@@ -10,7 +10,7 @@
 
     <string name="action_settings">సెట్టింగులు</string>
     <string name="one_market">కేవలం ఒక మార్కెట్</string>
-    <string name="one_tax">కేవలం ఒక పన్ను </string>
+    <string name="one_tax">కేవలం ఒక పన్ను</string>
     <string name="calculator">క్యాలిక్యులేటర్</string>
     <string name="life_after_july_1">జూలై 1 తర్వాత జీవితం</string>
     <string name="explore_bill">Explore Bill</string>
@@ -32,6 +32,7 @@
     <string name="send_your_feedback">మీ అభిప్రాయాన్ని పంపండి</string>
     <string name="dash_titlte">GST తర్వాత లైఫ్</string>
     <string name="product_list_title">ఉత్పత్తి జాబితా</string>
+    <string name="action_search">శోధన</string>
 
     <string-array name="array_cheaper_costlier">
         <item>డజన్</item>
@@ -69,6 +70,7 @@
         <item>చార్టర్డ్ అకౌంటెంట్స్ విద్యార్ధులకు ఒక కొత్త సిలబస్. \n ఈ కొత్త సిలబస్ GST కింద పన్నుల వ్యవస్థను కలిగి ఉంటుంది మరియు ఇంటర్నేషనల్ ఫెడరేషన్ ఆఫ్ అకౌంటెంట్స్ యొక్క అంతర్జాతీయ విద్యా ప్రమాణాలకు అనుగుణంగా ఉంటుంది.</item>
         <item>ఆమోదం ప్రక్రియ వేగవంతం చేయడానికి, ఆస్ట్రేలియన్ ప్రభుత్వం జూలై 1 నుండి భారత సందర్శకులు వారి సందర్శకుల వీసా కోసం దరఖాస్తు చేసుకోవచ్చని ప్రకటించింది.</item>
     </string-array>
+
     <string-array name="questions" formatted="false">
         <item>1.ఎందుకు పెట్రోల్ మరియు మద్యం మినహాయింపు?</item>
         <item formatted="false">2.దేశానికి GST ఎలా ప్రయోజనకరంగా ఉంటుంది?.ఇది దేశ ఆర్ధిక వ్యవస్థను మెరుగుపరచడానికి ఎలా సహాయపడుతుంది?</item>
