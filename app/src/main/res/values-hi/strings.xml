@@ -29,7 +29,9 @@
     <string name="thank_you">धन्यवाद</string>
     <string name="share">शेयर करें</string>
     <string name="send_your_feedback">अपना फ़ीडबैक भेजें</string>
-
+    <string name="dash_titlte">जीवन जीएसटी के बाद</string>
+    <string name="faq">अक्सर पूछे जाने वाले प्रश्न</string>
+    <string name="product_list_title">उत्पाद सूची</string>
     <string-array name="array_cheaper_costlier">
         <item>सस्ता</item>
         <item>महंगा</item>
@@ -49,9 +51,7 @@
         <item>10.जीएसटी बिल के कार्यान्वयन में बेहतर अंक क्या हैं?</item>
     </string-array>
 
-    <string name="dash_titlte">जीवन जीएसटी के बाद</string>
-    <string name="faq">अक्सर पूछे जाने वाले प्रश्न</string>
-    <string name="product_list_title">उत्पाद सूची</string>
+
 
     <string-array name="answers" formatted="false">
               <item>"कर लगाना\n"
