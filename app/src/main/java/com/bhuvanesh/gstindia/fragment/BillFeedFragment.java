@@ -33,6 +33,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -100,6 +101,9 @@ public class BillFeedFragment extends BaseFragment {
         addFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                logDashboardEvent("Bill Explore Content", "Bill Feed", "favourite_app_feature",
+                        "Explore Invoice", FirebaseAnalytics.Event.SELECT_CONTENT);
+
                 Intent intent = new Intent();
 // Show only images, no videos or anything else
                 intent.setType("image/*");

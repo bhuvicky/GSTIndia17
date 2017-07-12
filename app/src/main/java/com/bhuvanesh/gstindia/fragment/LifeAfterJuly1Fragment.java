@@ -71,9 +71,6 @@ public class LifeAfterJuly1Fragment extends BaseFragment {
         (getActivity()).setTitle(getString(R.string.life_after_july_1));
         ((BaseActivity)getActivity()).setBackEnabled(true);
         ((BaseActivity)getActivity()).setTitle(getResources().getString(R.string.life_after_july_1)) ;
-
-
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

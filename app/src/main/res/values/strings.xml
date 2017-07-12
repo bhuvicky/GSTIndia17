@@ -39,6 +39,8 @@
     <string name="thank_you">Thank you</string>
     <string name="share">Share</string>
     <string name="send_your_feedback">Send your Feedback</string>
+    <string name="user_property_lang" translatable="false">language_preference</string>
+    <string name="user_property_faq" translatable="false">most_read_faq</string>
 
     <string-array name="array_cheaper_costlier">
         <item>Cheaper</item>

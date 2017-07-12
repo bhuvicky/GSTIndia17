@@ -55,6 +55,7 @@ public class FAQFragment extends BaseFragment {
         FAQAdapter faqAdapter=new FAQAdapter(new FAQAdapter.IOnItemClickListener() {
             @Override
             public void onItemClick(int postion, String question) {
+                sendUserProperties(getString(R.string.user_property_faq), String.valueOf(postion));
                 replace(R.id.fragment_host,FAQAnswerFragment.newInstance(question,answers[postion]));
             }
         });

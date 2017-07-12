@@ -35,9 +35,8 @@ public class LanguageListFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_language_list, container, false);
-        ((BaseActivity) getActivity()).setTitle(R.string.lbl_select_lang);
-        ((BaseActivity) getActivity()).setBackEnabled(true);
-        setHasOptionsMenu(true);
+        (getActivity()).setTitle(getString(R.string.lbl_select_lang));
+        ((BaseActivity)getActivity()).setBackEnabled(true);
 
         if (GSTPreference.getInstance().isFirstTime()) {
             GSTPreference.getInstance().setFirstTime(false);
@@ -56,22 +55,12 @@ public class LanguageListFragment extends BaseFragment {
             @Override
             public void onLangSelected(String langCode) {
                 GSTApplication.getInstance().updateLang(langCode);
+                sendUserProperties("language_preference", langCode);
                 onBackPress();
             }
         });
 
         return view;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                 onBackPress();
-                return true;
-
-        }
-        return false;
     }
 }
 

@@ -68,7 +68,8 @@ public class DashboardFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
         ((BaseActivity) getActivity()).setBackEnabled(false);
-        ((BaseActivity)getActivity()).setTitle(getString(R.string.dash_titlte));
+        (getActivity()).setTitle(getString(R.string.dash_titlte));
+
         TextView textViewLifeAfterJuly1 = (TextView) view.findViewById(R.id.textview_rules);
         textViewLifeAfterJuly1.setOnClickListener(new View.OnClickListener() {
             @Override
