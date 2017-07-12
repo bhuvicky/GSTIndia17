@@ -35,7 +35,8 @@ public class GSTApplication extends Application {
         if (BuildConfig.REPORT_CRASHES)
             Fabric.with(this, new Crashlytics());
 
-        mAnalyticsInstance = FirebaseAnalytics.getInstance(this);
+        if (BuildConfig.REPORT_ANALYTICS)
+            mAnalyticsInstance = FirebaseAnalytics.getInstance(this);
     }
 
     public static synchronized GSTApplication getInstance() {
