@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="lbl_select_lang">மொழியைத் தேர்ந்தெடுக்கவும்</string>
-
+    <string name="app_name">Life After GST</string>
+    <string name="_0">0%</string>
+    <string name="_5">5%</string>
+    <string name="_12">12%</string>
+    <string name="_18">18%</string>
+    <string name="_28">28%</string>
     <string name="lbl_gst_slab_zero">0% வரி</string>
     <string name="lbl_gst_slab_five">5% வரி</string>
     <string name="lbl_gst_slab_twelve">12% வரி</string>
@@ -29,6 +34,7 @@
     <string name="thank_you">நன்றி</string>
     <string name="share">பகிர்</string>
     <string name="send_your_feedback">உங்கள் கருத்துக்களை அனுப்புங்கள்</string>
+    <string name="faq">FAQ</string>
 
     <string name="action_search">தேடல்</string>
     <string name="dash_titlte">ஜி.எஸ்.டிக்குப் பிறகு வாழ்க்கை</string>

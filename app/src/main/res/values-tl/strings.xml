@@ -33,7 +33,12 @@
     <string name="dash_titlte">GST తర్వాత లైఫ్</string>
     <string name="product_list_title">ఉత్పత్తి జాబితా</string>
     <string name="action_search">శోధన</string>
-
+    <string name="app_name">Life After GST</string>
+    <string name="_0">0%</string>
+    <string name="_5">5%</string>
+    <string name="_12">12%</string>
+    <string name="_18">18%</string>
+    <string name="_28">28%</string>
     <string-array name="array_cheaper_costlier">
         <item>డజన్</item>
         <item>ఖరీదైన</item>
