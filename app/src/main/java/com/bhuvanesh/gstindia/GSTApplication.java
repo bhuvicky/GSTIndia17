@@ -1,6 +1,8 @@
 package com.bhuvanesh.gstindia;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.res.Configuration;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
@@ -8,6 +10,8 @@ import com.android.volley.toolbox.Volley;
 import com.bhuvanesh.gstindia.utils.LRUBitmapCache;
 import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.util.Locale;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -24,7 +28,6 @@ public class GSTApplication extends Application {
 
     //onCreate will call only one time
     @Override
-
     public void onCreate() {
         super.onCreate();
         mInstance = this;
@@ -43,6 +46,7 @@ public class GSTApplication extends Application {
         mAnalyticsInstance.setAnalyticsCollectionEnabled(true);
         return mAnalyticsInstance;
     }
+
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -64,4 +68,14 @@ public class GSTApplication extends Application {
         return this.mLruBitmapCache;
     }
 
+    public void updateLang(String lang) {
+
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+    }
 }

@@ -1,10 +1,9 @@
 package com.bhuvanesh.gstindia;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.content.Context;
+import android.os.Bundle;
 
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.google.android.gms.ads.AdRequest;
@@ -47,6 +46,12 @@ public class BaseFragment extends Fragment {
     }
 
     public void replace(int containerId, BaseFragment fragment) {
+        if (getActivity() != null) {
+            ((BaseActivity) getActivity()).replace(containerId, fragment);
+        }
+    }
+
+    public void replace(int containerId, BaseFragment fragment, boolean addToBackStack) {
         if (getActivity() != null) {
             ((BaseActivity) getActivity()).replace(containerId, fragment);
         }

@@ -54,7 +54,6 @@ public class BaseTaxComparisonFragment extends BaseFragment {
                 break;
             case TaxComparisonViewPagerAdapter.TAB_UNCHANGED:
                 list = FileUtil.getFromAssetsFolder("unchanged.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
-                break;
         }
 
         RecyclerView recyclerViewItemCategory = (RecyclerView) view.findViewById(R.id.recyclerview_item_category);

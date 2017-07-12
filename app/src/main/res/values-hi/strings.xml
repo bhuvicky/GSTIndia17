@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="lbl_gst_slab_zero">0% कर</string>
+    <string name="lbl_gst_slab_five">5% कर</string>
+    <string name="lbl_gst_slab_twelve">12% कर</string>
+    <string name="lbl_gst_slab_eighteen">18% कर</string>
+    <string name="lbl_gst_slab_twentyeight">28% कर</string>
+</resources>

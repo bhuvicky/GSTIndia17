@@ -22,11 +22,9 @@ import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
 import com.bhuvanesh.gstindia.BaseFragment;
-import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
 import com.bhuvanesh.gstindia.activity.GstActivity;
 import com.bhuvanesh.gstindia.cheapercostlierproduct.fragment.TaxComparisonViewPagerFragment;
-import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
@@ -36,7 +34,6 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -159,11 +156,11 @@ public class DashboardFragment extends BaseFragment {
         PieDataSet dataSet = new PieDataSet(yvalues, "");
         ArrayList<String> xVals = new ArrayList<>();
 
-        xVals.add("0% Tax");
-        xVals.add("5% Tax");
-        xVals.add("12% Tax");
-        xVals.add("18% Tax");
-        xVals.add("28% Tax");
+        xVals.add(getString(R.string.lbl_gst_slab_zero));
+        xVals.add(getString(R.string.lbl_gst_slab_five));
+        xVals.add(getString(R.string.lbl_gst_slab_twelve));
+        xVals.add(getString(R.string.lbl_gst_slab_eighteen));
+        xVals.add(getString(R.string.lbl_gst_slab_twentyeight));
 
         PieData data = new PieData(xVals, dataSet);
         data.setValueFormatter(new PercentFormatter());
@@ -252,7 +249,9 @@ public class DashboardFragment extends BaseFragment {
             case R.id.action_send_feedback:
                 composeEmail(new String[]{"gstindia017@gmail.com"}, "Life After GST Feedback");
                 return true;
-
+            case R.id.menu_lang:
+                replace(R.id.fragment_host, LanguageListFragment.newInstance());
+                return true;
         }
         return false;
     }

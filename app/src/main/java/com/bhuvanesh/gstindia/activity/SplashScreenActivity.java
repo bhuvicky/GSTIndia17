@@ -5,8 +5,10 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.TransformationMethod;
 import android.util.DisplayMetrics;
+import android.util.SparseArray;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Interpolator;
@@ -15,8 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bhuvanesh.gstindia.BaseActivity;
+import com.bhuvanesh.gstindia.GSTApplication;
 import com.bhuvanesh.gstindia.R;
+import com.bhuvanesh.gstindia.utils.GSTPreference;
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
+import com.google.gson.Gson;
 
 import static android.R.attr.animation;
 import static android.R.attr.manageSpaceActivity;
@@ -26,6 +31,9 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (!TextUtils.isEmpty(GSTPreference.getInstance().getLanguageCode()))
+            GSTApplication.getInstance().updateLang(GSTPreference.getInstance().getLanguageCode());
+
         setContentView(R.layout.activity_splash_screen);
 
         DisplayMetrics metrics = new DisplayMetrics();

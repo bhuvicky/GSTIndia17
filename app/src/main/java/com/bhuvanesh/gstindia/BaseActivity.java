@@ -1,20 +1,12 @@
 package com.bhuvanesh.gstindia;
 
-import android.content.Context;
-import android.support.v4.app.DialogFragment;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.bhuvanesh.gstindia.utils.GstLoggerUtil;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-
-import java.io.IOException;
 
 /**
  * Created by bhuvanesh on 01-07-2017.
@@ -66,6 +58,20 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+    public void add(int containerId, BaseFragment fragment, boolean isFirstTime) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(containerId, fragment, Integer.toString(getSupportFragmentManager().getBackStackEntryCount()));
+        if (isFirstTime) ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    public void remove(BaseFragment fragment) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.remove(fragment);
+        ft.commit();
+    }
 
 
     @Override
