@@ -49,7 +49,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
 
         Bill bill=billList.get(position);
        // holder.billImageView.setImageUrl(bill.billUrl,imageLoader);
-        holder.billImageView.setDefaultImageResId(R.drawable.gray);
+       // holder.billImageView.setDefaultImageResId(R.drawable.gray);
         if(bill.billUrl!=null){
 
         imageLoader.get(bill.billUrl, new ImageLoader.ImageListener() {
@@ -91,7 +91,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.ViewHo
     }
 
      class ViewHolder extends RecyclerView.ViewHolder{
-        private NetworkImageView billImageView;
+        private ImageView billImageView;
          ViewHolder(View itemView) {
             super(itemView);
             billImageView=  itemView.findViewById(R.id.network_imageview_bill);

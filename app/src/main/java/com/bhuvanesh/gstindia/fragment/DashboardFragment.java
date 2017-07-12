@@ -237,7 +237,7 @@ public class DashboardFragment extends BaseFragment {
                 (ShareActionProvider) MenuItemCompat.getActionProvider(item);
         ;
         // Create the share Intent
-        String shareText = "Install Life After GSt app to get complete information about GST \n http://play.google.com/store/apps/details?id=com.bhuvanesh.gstindia \n Available on Hindi,English,Tamil";
+        String shareText = "Install Life After GSt app to get complete information about GST \n http://play.google.com/store/apps/details?id=com.bhuvanesh.gstindia \n #SteveNodeCreation";
         Intent shareIntent = new Intent(Intent.ACTION_SEND)
                 .putExtra(android.content.Intent.EXTRA_SUBJECT, "Life After GST")
                 .putExtra(android.content.Intent.EXTRA_TEXT, shareText)

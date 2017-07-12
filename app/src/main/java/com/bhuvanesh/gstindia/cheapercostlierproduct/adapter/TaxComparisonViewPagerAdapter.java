@@ -20,7 +20,7 @@ public class TaxComparisonViewPagerAdapter extends FragmentStatePagerAdapter {
 
     public static final byte TAB_CHEAPER = 0;
     public static final byte TAB_COSTLIER = TAB_CHEAPER + 1;
-    public static final byte TAB_UNCHANGED = TAB_COSTLIER;
+    public static final byte TAB_UNCHANGED = TAB_COSTLIER+1;
 
     private static String[] TAB_TITLE;
     private SparseArray<BaseFragment> fragArray = new SparseArray<>();

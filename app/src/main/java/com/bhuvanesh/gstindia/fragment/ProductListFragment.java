@@ -73,7 +73,7 @@ public class ProductListFragment extends BaseFragment implements SearchView.OnQu
         productListFragment.tax.put("five", 5);
         productListFragment.tax.put("twelve", 12);
         productListFragment.tax.put("eighteen", 18);
-        productListFragment.tax.put("twenty_eight", 28);
+        productListFragment.tax.put("twentyeight", 28);
 
         return productListFragment;
     }

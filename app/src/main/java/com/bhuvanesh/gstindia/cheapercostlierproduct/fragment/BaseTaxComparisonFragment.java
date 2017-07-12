@@ -44,7 +44,7 @@ public class BaseTaxComparisonFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
-        List<CategoryWiseItem> list;
+        List<CategoryWiseItem> list=new ArrayList<>();
         switch (mItemCategoryType) {
             case TaxComparisonViewPagerAdapter.TAB_CHEAPER:
                 list = FileUtil.getFromAssetsFolder("cheaper.json",null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
@@ -52,7 +52,7 @@ public class BaseTaxComparisonFragment extends BaseFragment {
             case TaxComparisonViewPagerAdapter.TAB_COSTLIER:
                 list = FileUtil.getFromAssetsFolder("costlier.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
                 break;
-            default:
+            case TaxComparisonViewPagerAdapter.TAB_UNCHANGED:
                 list = FileUtil.getFromAssetsFolder("unchanged.json", null, new TypeToken<List<CategoryWiseItem>>() {}.getType());
                 break;
         }
